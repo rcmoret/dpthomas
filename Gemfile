@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
+gem 'devise'
 gem 'fabrication'
 gem 'pg'
 gem 'rails', '3.2.8'
-
 
 
 # Gems used only for assets and not required
