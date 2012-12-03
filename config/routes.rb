@@ -1,6 +1,9 @@
 Dpthomas::Application.routes.draw do
   root :to => 'pages#index'
 
+  resource :pages, only: [:show, :edit] do
+    resources :sub_pages
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
