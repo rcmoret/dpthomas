@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'devise'
 gem 'fabrication'
+gem 'friendly_id'
 gem 'haml-rails'
 gem 'jquery-rails'
 gem 'kaminari'
