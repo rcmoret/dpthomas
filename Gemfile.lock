@@ -175,6 +175,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  capybara
   carrierwave
   coffee-rails (~> 3.2.1)
   cucumber-rails

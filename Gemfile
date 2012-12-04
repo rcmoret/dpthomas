@@ -10,6 +10,7 @@ gem 'kaminari'
 gem 'pg'
 gem 'rails', '3.2.8'
 gem 'rmagick'
+gem 'rspec-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -24,6 +25,7 @@ group :assets do
 end
 
 group :test do
+  gem 'capybara'
   gem 'cucumber-rails'
   gem 'database_cleaner'
   gem 'rspec-rails'

@@ -1,0 +1,19 @@
+@charset 'UTF-8';
+
+$dolly_blue: rgb(153, 180, 203);
+$footer_gray: rgb(56, 67, 75);
+
+html {
+  font-family: Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  table, ul, ol, dl {
+    list-style: none;
+  }
+  body {
+  background: rgb(34 ,57, 75);
+  }
+  image {
+    border: none;
+  }
+}
