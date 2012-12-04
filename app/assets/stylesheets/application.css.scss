@@ -2,18 +2,39 @@
 
 $dolly_blue: rgb(153, 180, 203);
 $footer_gray: rgb(56, 67, 75);
+$background_matte: rgb(34, 57, 75);
 
 html {
   font-family: Arial, sans-serif;
-  padding: 0;
-  margin: 0;
+  // padding: 0;
+  // margin: 0;
+  font-size: 16px;
   table, ul, ol, dl {
     list-style: none;
-  }
-  body {
-  background: rgb(34 ,57, 75);
   }
   image {
     border: none;
   }
 }
+
+
+body {
+  background: $background_matte;
+  margin: 0;
+  padding: 0;
+  width: 960px;
+  margin-top: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  header#index_header {
+    background: white;
+    height: 350px;
+    position: relative;
+    img {
+      position: relative;
+      left: 237px;
+      margin-top: 20px;
+    }
+  }
+}
+
