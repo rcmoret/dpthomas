@@ -1,7 +1,7 @@
 Dpthomas::Application.routes.draw do
   root :to => 'pages#index'
 
-  resource :pages, except: [:destroy, :create] do
+  resources :pages, except: [:destroy, :create] do
     resources :sub_pages
   end
   # The priority is based upon order of creation:
