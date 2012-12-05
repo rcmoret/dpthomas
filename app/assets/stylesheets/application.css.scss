@@ -6,17 +6,19 @@ $background_matte: rgb(34, 57, 75);
 
 html {
   font-family: Arial, sans-serif;
-  // padding: 0;
-  // margin: 0;
+  padding: 0;
+  margin: 0;
   font-size: 16px;
-  table, ul, ol, dl {
+  table, ul, ol, dl, li {
     list-style: none;
+  }
+  a, a.visited {
+    text-decoration: none;
   }
   image {
     border: none;
   }
 }
-
 
 body {
   background: $background_matte;
@@ -26,15 +28,51 @@ body {
   margin-top: 0px;
   margin-left: auto;
   margin-right: auto;
-  header#index_header {
-    background: white;
-    height: 350px;
+}
+
+header#index_header {
+  background: white;
+  height: 400px;
+  position: relative;
+  img {
     position: relative;
-    img {
-      position: relative;
-      left: 237px;
-      margin-top: 20px;
+    left: 237px;
+    margin-top: 20px;
+  }
+  p {
+    text-align: right;
+    margin-right: 50px;
+    font-style: italic;
+    font-size: 0.8em;
+  }
+  div {
+    height: 75px;
+    background: $dolly_blue;
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      font-family: Georgia, Times, Serif;
+      margin: 15px, 0;
+      color: white;
+      line-height: 75px;
+    }
+  }
+  ul {
+    width: 960px;
+    padding: 0px;
+    margin-top: 0px;
+    li a, li a.visited {
+      width: 240px;
+      height: 50px;
+      line-height: 50px;
+      float: left;
+      text-align: center;
+      background: white;
+      color: $dolly_blue;
+      font-size: 1.4em;
+    }
+    li a.hover {
+      font-weight: bold;
     }
   }
 }
-

@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+    pages = Page.create([
+                        { title: 'Email List' },
+                        { title: 'Events' },
+                        { title: 'About Us' },
+                        { title: 'Services' },
+                        { title: 'Donate' }
+                        ])
