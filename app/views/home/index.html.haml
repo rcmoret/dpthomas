@@ -1,3 +1,4 @@
+= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Carter+One'
 %body
   %header#index_header
     = image_tag('dpfound_lrg.png', width: "486", height: "287")
@@ -13,3 +14,15 @@
         = link_to "Services", services_path
       %li
         = link_to "Donate", donations_path
+  #small_banner
+  %article#home_page
+    .announcement
+      %h4 Thanks to Everyone for Making our First Event a Success
+      %hr
+      %p Pictures have been added to the #{ link_to "photo gallery", abouts_path }
+    %h2 Mission Statement
+    %p DP Thomas Foundation for Obesity promotes healthy living as a way to combat obesity and its negative affect on society by educating the community on nutrition, exercise, and the importance of maintaining a balanced lifestyle.
+    %hr
+    %h2 Vision Statement
+    %p The DP Thomas Foundation for Obesity envisions a distinctively different outlook of the obesity epidemic, where communities gain the knowledge of proper nutrition, accountability and exercise to help its citizens achieve and maintain a balanced lifestyle, free from obesity.
+  = render :partial => '/footer'
