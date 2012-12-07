@@ -1,0 +1,15 @@
+%body
+  %header#index_header
+    = image_tag('dpfound_lrg.png', width: "486", height: "287")
+    %p Join the #{ link_to "email list", email_lists_path }
+    %div
+      %h1 Welcome to the DP Thomas Home Page
+    %ul
+      %li
+        = link_to "Events", events_path
+      %li
+        = link_to "About Us", abouts_path
+      %li
+        = link_to "Services", services_path
+      %li
+        = link_to "Donate", donations_path

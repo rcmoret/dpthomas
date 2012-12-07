@@ -1,19 +1,19 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: dpt_development
+  database: dpthomas_development
   pool: 5
 
 test: &test
   adapter: postgresql
   encoding: unicode
-  database: dpt_test
+  database: dpthomas_test
   pool: 5
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: dpt_production
+  database: dpthomas_production
   pool: 5
 
 cucumber:

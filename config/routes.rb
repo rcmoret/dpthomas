@@ -1,9 +1,13 @@
 Dpthomas::Application.routes.draw do
-  root :to => 'pages#index'
+  root :to => 'home#index'
 
-  resources :pages, except: [:destroy, :create] do
-    resources :sub_pages
-  end
+  resources :home, except: [:destroy, :create]
+  resources :email_lists, only: [:index]
+  resources :events, only: [:index]
+  resources :donations, only: [:index]
+  resources :abouts, only: [:index]
+  resources :services, only: [:index]
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
