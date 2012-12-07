@@ -10,15 +10,9 @@ html {
   padding: 0;
   margin: 0;
   font-size: 16px;
-  table, ul, ol, dl, li {
-    list-style: none;
-  }
-  a, a.visited {
-    text-decoration: none;
-  }
-  image {
-    border: none;
-  }
+  table, ul, ol, dl, li { list-style: none; }
+  a, a.visited { text-decoration: none; }
+  image { border: none; }
 }
 
 body {
@@ -31,9 +25,48 @@ body {
   margin-right: auto;
 }
 
+header {
+  width: 960px;
+  height: 186px;
+  margin: 0;
+  background-color: white;
+  img#small_logo {
+    float: left;
+    clear: right;
+    top: 0;
+    left: 0;
+  }
+  div#page_header {
+    height: 186px;
+    background: white;
+    z-index: 3;
+    width: 660px;
+    float: right;
+    h1 {
+      line-height: 100px;
+      color: $footer_gray;
+      font-family: Georgia, Times, serif;
+      background: $dolly_blue;
+      position: relative;
+      top: 43px;
+      z-index: 4;
+      font-size: 2em;
+      margin-top: 0;
+      margin-bottom: 0;
+      padding-left: 15px;
+    }
+  }
+}
+
 header#index_header {
-  background: white;
   height: 400px;
+    background: -moz-linear-gradient(-45deg, rgba(56,67,75,1) 24%, rgba(255,255,255,1) 99%);
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(24%,rgba(56,67,75,1)), color-stop(99%,rgba(255,255,255,1)));
+    background: -webkit-linear-gradient(-45deg, rgba(56,67,75,1) 24%,rgba(255,255,255,1) 99%);
+    background: -o-linear-gradient(-45deg, rgba(56,67,75,1) 24%,rgba(255,255,255,1) 99%);
+    background: -ms-linear-gradient(-45deg, rgba(56,67,75,1) 24%,rgba(255,255,255,1) 99%);
+    background: linear-gradient(135deg, rgba(56,67,75,1) 24%,rgba(255,255,255,1) 99%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#38434b', endColorstr='#ffffff',GradientType=1 );height: 400px;
   position: relative;
   img {
     position: relative;
@@ -71,12 +104,14 @@ header#index_header {
       text-align: center;
       background: $footer_gray;
       color: $dolly_blue;
-      font-size: 1.4em;
+      font-size: 1.7em;
     }
-    li a.hover {
-      font-weight: bold;
-    }
+    li a.hover { font-weight: bold; }
   }
+}
+
+section {
+  overflow: hidden;
 }
 
 article {
@@ -86,12 +121,10 @@ article {
   padding: 25px;
 }
 
-
 #home_page {
   clear:both;
-  p {
-    font-style: italic;
-  }
+  width: 920px;
+  p { font-style: italic; }
   .announcement {
     background: $announcement_red;
     padding: 15px;
@@ -109,9 +142,7 @@ article {
       font-style: normal;
       margin: 0;
     }
-    a {
-      color: silver;
-    }
+    a { color: $footer_gray; }
   }
 }
 
@@ -121,8 +152,40 @@ article {
   background: $dolly_blue;
 }
 
+article {
+  background: white;
+  float: right;
+  width: 750px;
+  padding: 20px;
+  h2 { color: $footer_gray; }
+}
+
+nav {
+  background: $dolly_blue;
+  width: 170px;
+  float: left;
+  ul {
+    padding: 0;
+    font-size: 1.2em;
+    a { color: $footer_gray; }
+    li {
+      margin-bottom: 20px;
+      border-bottom: 2px solid $footer_gray;
+      text-align: center;
+      line-height: 40px;
+    }
+  }
+}
+
 footer {
-  background: $footer_gray;
+  background: rgb(255,255,255);
+    background: -moz-linear-gradient(45deg, rgba(255,255,255,1) 0%, rgba(56,67,75,1) 51%);
+    background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,rgba(255,255,255,1)), color-stop(51%,rgba(56,67,75,1)));
+    background: -webkit-linear-gradient(45deg, rgba(255,255,255,1) 0%,rgba(56,67,75,1) 51%);
+    background: -o-linear-gradient(45deg, rgba(255,255,255,1) 0%,rgba(56,67,75,1) 51%);
+    background: -ms-linear-gradient(45deg, rgba(255,255,255,1) 0%,rgba(56,67,75,1) 51%);
+    background: linear-gradient(45deg, rgba(255,255,255,1) 0%,rgba(56,67,75,1) 51%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#38434b',GradientType=1 );
   width: 960px;
   text-align: center;
   padding-top: 10px;
@@ -130,7 +193,13 @@ footer {
   color: $dolly_blue;
   padding-top: 20px;
   padding-bottom: 20px;
-  a {
-    color: silver;
-  }
+  clear: both;
+  a { color: silver; }
+}
+
+.wrapper { overflow: hidden; }
+
+section nav, section article {
+  padding-bottom: 1000px;
+  margin-bottom: -1000px;
 }

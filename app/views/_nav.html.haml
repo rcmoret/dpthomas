@@ -1,11 +1,14 @@
-%footer
-  DP Thomas Foundation for Obesity
-  %br
-  P. O. Box 70262
-  %br
-  Nashville, Tennessee 37207
-  %br
-  phone: (615) 474-1286
-  %br
-  email: #{ mail_to "example@example.com", 'dpthomasfoundation@gmail.com' }
-
+%nav
+  %ul
+    %li
+      = link_to "Home Page", :root
+    %li
+      = link_to "Events", events_path
+    %li
+      = link_to "About Us", about_us_path
+    %li
+      = link_to "Services", services_path
+    %li
+      = link_to "Donate", donations_path
+    %li
+      = link_to "Email List Sign Up", events_path

@@ -1,23 +1,14 @@
 Dpthomas::Application.routes.draw do
   root :to => 'home#index'
 
-  resources :home, except: [:destroy, :create]
-  resources :email_lists, only: [:index]
+  resources :email_list
   resources :events, only: [:index]
   resources :donations, only: [:index]
-  resources :abouts, only: [:index]
+  resources :about_us, only: [:index]
   resources :services, only: [:index]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
-
-  # Sample of regular route:
-  #   match 'products/:id' => 'catalog#view'
-  # Keep in mind you can assign values other than :controller and :action
-
-  # Sample of named route:
-  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
-  # This route can be invoked with purchase_url(:id => product.id)
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
@@ -54,14 +45,4 @@ Dpthomas::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-  # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
-
-  # See how all your routes lay out with "rake routes"
-
-  # This is a legacy wild controller route that's not recommended for RESTful applications.
-  # Note: This route will make all actions in every controller accessible via GET requests.
-  # match ':controller(/:action(/:id))(.:format)'
 end
