@@ -1,0 +1,11 @@
+%body
+  = render :partial => '/header', :locals => { :page_title => 'Events' }
+  .wrapper
+    %section
+      = render :partial => '/nav'
+      %article
+        = render :partial => '/flash_message'
+        %h2 DP Thomas Foundation Inaugural Fundraiser:<br/>5K Walk &amp; Run and Kid's One Mile Fun Run
+        %p We want to say thank you to all of the participants and sponsors for such a great event!<br/>
+        #{ link_to "View photos from the event", :root }
+    = render :partial => '/footer'

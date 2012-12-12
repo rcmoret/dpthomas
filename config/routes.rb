@@ -2,11 +2,12 @@ Dpthomas::Application.routes.draw do
   root :to => 'home#index'
   get 'email' => 'email_list#new', :as => 'email'
   post 'email' => 'email_list#create', :as => 'email'
+  get 'about_us' =>'members#index', :as => 'about_us'
 
   resources :email_list
   resources :events, only: [:index]
   resources :donations, only: [:index]
-  resources :about_us, only: [:index]
+  resources :members
   resources :services, only: [:index]
 
   # The priority is based upon order of creation:
