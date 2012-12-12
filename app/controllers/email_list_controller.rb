@@ -1,5 +1,6 @@
 class EmailListController < ApplicationController
-  def join
+  def index
+    @email_list_members = EmailList.all
   end
 
   def new

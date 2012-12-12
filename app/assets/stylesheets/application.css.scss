@@ -124,7 +124,7 @@ article {
 #home_page {
   clear:both;
   width: 920px;
-  p { font-style: italic; }
+  p.italicized { font-style: italic; }
   .announcement {
     background: $announcement_red;
     padding: 15px;
@@ -139,7 +139,6 @@ article {
     }
     p {
       font-size: 1.5em;
-      font-style: normal;
       margin: 0;
     }
     a { color: $footer_gray; }
@@ -202,4 +201,20 @@ footer {
 section nav, section article {
   padding-bottom: 1000px;
   margin-bottom: -1000px;
+}
+
+table.email_table {
+  border-collapse: collapse;
+  tr {
+  }
+  th {
+    text-align: left;
+  }
+  th, td {
+    border: 1px solid black;
+    padding-right: 25px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 20px;
+  }
 }

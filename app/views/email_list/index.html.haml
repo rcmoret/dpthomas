@@ -1,0 +1,17 @@
+%body
+  = render :partial => '/header', :locals => { :page_title => 'Email List' }
+  .wrapper
+    %section
+      = render :partial => '/nav'
+      %article
+        = render :partial => '/flash_message'
+        %h2 Email List
+        %table.email_table
+          %tr
+            %th Name:
+            %th Email Address:
+          - @email_list_members.each do |member|
+            %tr
+              %td #{member.first_name} #{member.last_name}
+              %td #{member.email_address}
+    = render :partial => '/footer'
