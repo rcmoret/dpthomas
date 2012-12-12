@@ -11,7 +11,7 @@ describe 'HomeController' do
   end
   it "has links and they work" do
     visit '/'
-    click_link_or_button "Events"
-    assert_equal '/events', current_path
+    click_link_or_button "email list"
+    assert_equal '/email', current_path
   end
 end

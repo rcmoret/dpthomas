@@ -1,5 +1,7 @@
 Dpthomas::Application.routes.draw do
   root :to => 'home#index'
+  get 'email' => 'email_list#new', :as => 'email'
+  post 'email' => 'email_list#create', :as => 'email'
 
   resources :email_list
   resources :events, only: [:index]

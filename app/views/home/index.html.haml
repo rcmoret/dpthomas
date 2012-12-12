@@ -2,7 +2,7 @@
 %body
   %header#index_header
     = image_tag('dpfound_lrg.png', width: "486", height: "287")
-    %p Join the #{ link_to "email list", 'email_list/join' }
+    %p Join the #{ link_to "email list", '/email' }
     %div
       %h1 Welcome to the DP Thomas Home Page
     %ul
@@ -16,6 +16,7 @@
         = link_to "Donate", donations_path
   #small_banner
   %article#home_page
+    = render :partial => '/flash_message'
     .announcement
       %h4 Thanks to Everyone for Making our First Event a Success
       %hr

@@ -4,5 +4,20 @@
     %section
       = render :partial => '/nav'
       %article
-        %h2 Sign Up for the email list
+        = render :partial => '/flash_message'
+        %h2 Sign Up for the Email List
+        = form_for :email_list do |f|
+          = f.label :email_address
+          %br
+          = f.text_field :email_address
+          %br
+          = f.label :first_name
+          %br
+          = f.text_field :first_name
+          %br
+          = f.label :last_name
+          %br
+          = f.text_field :last_name
+          %br
+          = f.submit "Sign Up"
     = render :partial => '/footer'
