@@ -1,9 +1,27 @@
 %body
-  = render :partial => '/header', :locals => { :page_title => '' }
+  = render :partial => '/header', :locals => { :page_title => 'Create Member Profile' }
   .wrapper
     %section
       = render :partial => '/nav'
       %article
         = render :partial => '/flash_message'
-        %h2
+        %h2 Member Profile
+        = form_for :member do |f|
+          = f.label :name
+          %br
+          = f.text_field :name
+          %br
+          = f.label :email
+          %br
+          = f.text_field :email
+          %br
+          = f.label :title
+          %br
+          = f.text_field :title
+          %br
+          = f.label :profile
+          %br
+          = f.text_area :profile
+          %br
+          = f.submit "Create Profile", :class => "button"
     = render :partial => '/footer'

@@ -6,6 +6,8 @@ def path_to(page_name)
     '/email'
   when /^the email list\spage$/
     '/email_list'
+  when /^the sign up\spage$/
+    '/member/sign_up'
   else
     raise "Can't find mappting from \"#{page_name}\" to a path.\n" +
       "Now, go and add a mapping in #{__FILE__}"

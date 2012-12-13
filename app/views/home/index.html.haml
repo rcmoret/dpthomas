@@ -26,4 +26,11 @@
     %hr
     %h2 Vision Statement
     %p.italicized The DP Thomas Foundation for Obesity envisions a distinctively different outlook of the obesity epidemic, where communities gain the knowledge of proper nutrition, accountability and exercise to help its citizens achieve and maintain a balanced lifestyle, free from obesity.
+    - if member_signed_in?
+      %p You are currently signed in (#{current_member.email})
+      = link_to "Sign Out", destroy_member_session_path, :method => :delete
+    - else
+      = link_to "Member Sign In", new_member_session_path
+      %br
+      = link_to "Member Sign Up", new_member_registration_path
   = render :partial => '/footer'

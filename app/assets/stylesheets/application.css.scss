@@ -218,3 +218,15 @@ table.email_table {
     padding-left: 20px;
   }
 }
+
+form {
+  input { width: 300px; }
+  textarea {
+    resize: none;
+    width: 300px;
+  }
+  input, textarea { margin-bottom: 15px; }
+  input.button {
+    width: 150px;
+  }
+}

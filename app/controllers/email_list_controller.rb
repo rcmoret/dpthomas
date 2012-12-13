@@ -12,7 +12,7 @@ class EmailListController < ApplicationController
       flash[:notice] = "You successfully signed up for the email list."
       redirect_to '/'
     else
-      flash[:error] = "Your sign up was unsucessful; please check your information and try again."
+      flash[:error] = "Your sign up was unsuccessful; please check your information and try again."
       render :action => :new
     end
   end
