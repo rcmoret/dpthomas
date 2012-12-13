@@ -3,7 +3,7 @@ Dpthomas::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  devise_for :members
+  devise_for :members, ActiveAdmin::Devise.config
 
   root :to => 'home#index'
   get 'about_us' => 'members#index', :as => 'about_us'
