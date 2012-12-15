@@ -1,4 +1,6 @@
 Dpthomas::Application.routes.draw do
+  devise_for :members
+
   root :to => 'home#index'
   get 'email' => 'email_list#new', :as => 'email'
   post 'email' => 'email_list#create', :as => 'email'
