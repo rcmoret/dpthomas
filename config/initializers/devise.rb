@@ -82,7 +82,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = "51e43f0f58eec8ca0b3951865cb05d05b34fa10891c9614e159f4a651989cb94a4e435e62aeae240b36901076bf228811dd1d7c7214a5693e48bf1ff121bb101"
+  # config.pepper = "ac725783e3d30d9aafcf6523fb995869a8011c6cebe52b86afd77b994a2020f3fcc2a08a10b740f49fbfc80e61b21f81f4e9ae2df2788dc5bfe699513ca724fa"
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -90,7 +90,7 @@ Devise.setup do |config|
   # able to access the website for two days without confirming his account,
   # access will be blocked just in the third day. Default is 0.days, meaning
   # the user cannot access the website without confirming his account.
-  # config.allow_unconfirmed_access_for = 2.days
+  config.allow_unconfirmed_access_for = 0.days
 
   # If true, requires any email changes to be confirmed (exactly the same way as
   # initial account confirmation) to be applied. Requires additional unconfirmed_email

@@ -2,9 +2,10 @@ Dpthomas::Application.routes.draw do
   devise_for :members
 
   root :to => 'home#index'
+  get 'about_us' =>'members#index', :as => 'about_us'
   get 'email' => 'email_list#new', :as => 'email'
   post 'email' => 'email_list#create', :as => 'email'
-  get 'about_us' =>'members#index', :as => 'about_us'
+  get 'member/sign_up' => 'devise/registration#new', :as => 'member/sign_up'
 
   resources :email_list
   resources :events, only: [:index]
