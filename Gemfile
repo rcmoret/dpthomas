@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'activeadmin'
 gem 'carrierwave'
+gem 'decent_exposure'
 gem 'devise'
 gem 'fabrication'
 gem 'friendly_id'
