@@ -1,0 +1,9 @@
+%body
+  = render :partial => '/header', :locals => { :page_title => 'New Member Profile' }
+  .wrapper
+    %section
+      = render :partial => '/nav'
+      %article
+        = render :partial => '/flash_message'
+
+    = render :partial => '/footer'
