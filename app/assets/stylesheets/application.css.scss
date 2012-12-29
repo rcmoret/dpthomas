@@ -118,7 +118,7 @@ article {
   width: 910px;
   background: white;
   margin-top: 0;
-  padding: 25px;
+  padding-top: 5px;
 }
 
 #home_page {
@@ -156,7 +156,16 @@ article {
   float: right;
   width: 750px;
   padding: 20px;
-  h2 { color: $footer_gray; }
+  h2 {
+    color: $footer_gray;
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+  p {
+    margin-top: 10px;
+    margin-bottom: 0;
+    padding-right: 30px;
+  }
 }
 
 nav {
