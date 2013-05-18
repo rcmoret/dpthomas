@@ -11,40 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121216024232) do
+ActiveRecord::Schema.define(:version => 20130518125441) do
 
-  create_table "email_lists", :force => true do |t|
-    t.string   "email_address"
-    t.string   "first_name"
-    t.string   "last_name"
+  create_table "board_members", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "profile_image"
+    t.string   "biography"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end
 
-  create_table "members", :force => true do |t|
-    t.string   "email",                  :default => "", :null => false
-    t.string   "encrypted_password",     :default => "", :null => false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          :default => 0
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
-    t.string   "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string   "unconfirmed_email"
-    t.datetime "created_at",                             :null => false
-    t.datetime "updated_at",                             :null => false
-    t.string   "name"
-    t.text     "profile"
-    t.string   "title"
+  create_table "pages", :force => true do |t|
+    t.string   "title",      :null => false
+    t.string   "content",    :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
-
-  add_index "members", ["confirmation_token"], :name => "index_members_on_confirmation_token", :unique => true
-  add_index "members", ["email"], :name => "index_members_on_email", :unique => true
-  add_index "members", ["reset_password_token"], :name => "index_members_on_reset_password_token", :unique => true
 
 end
