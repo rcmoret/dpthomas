@@ -1,0 +1,13 @@
+%body
+  = render partial: '/header', locals: { page_title: page.title }
+  .wrapper
+    %section
+      -# pages: 'pages' will need to become pages: pages
+      = render partial: '/nav', locals: { pages: 'pages' }
+      %article
+        = render partial: '/flash_message'
+        -# %h2= page.subtitle
+        %p= page.content
+        -# - if page.sub_page
+        -#   %p= page.sub_page
+    = render partial: '/footer'
