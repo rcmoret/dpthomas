@@ -2,8 +2,11 @@
   = render partial: '/header', locals: { page_title: page.title }
   .wrapper
     %section
-      -# pages: 'pages' will need to become pages: pages
-      = render partial: '/nav', locals: { pages: 'pages' }
+      %nav
+        - pages.each do |page|
+          %ul
+            %li
+              = link_to page.title, page_path(page)
       %article
         = render partial: '/flash_message'
         -# %h2= page.subtitle
