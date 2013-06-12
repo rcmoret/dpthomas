@@ -5,6 +5,7 @@ class CreateTableForMembers < ActiveRecord::Migration
       t.string :last_name
       t.string :position_title
       t.text :biography
+      t.string :image
       t.string :email
 
       t.timestamps
