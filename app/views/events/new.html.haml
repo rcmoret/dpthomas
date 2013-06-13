@@ -5,8 +5,9 @@
       = render partial: '/nav'
       %article
         = render partial: '/flash_message'
-        - future_events.each do |event|
-          %h2= event.title
-          %p= event.event_details
-          = link_to "View photos from the event", :root
+        = simple_form_for :event do |f|
+          = f.input :title
+          = f.input :date, as: :date
+          = f.input :event_details, as: :text
+          = f.submit
     = render partial: '/footer'
