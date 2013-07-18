@@ -17,7 +17,7 @@ def path_to(page_name)
   when /^the email list\spage$/
     '/email_list'
   else
-    raise "Can't find mappting from \"#{page_name}\" to a path.\n" +
+    raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
       "Now, go and add a mapping in #{__FILE__}"
   end
 end
