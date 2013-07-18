@@ -8,4 +8,12 @@ class ApplicationController < ActionController::Base
       members_dashboard_path
     end
   end
+
+  private
+  def authenticate!
+    unless current_member
+      redirect_to new_member_session_path, alert: 'Must be signed in'
+      false
+    end
+  end
 end

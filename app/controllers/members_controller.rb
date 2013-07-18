@@ -3,9 +3,7 @@ class MembersController < ApplicationController
   expose(:members)
   expose(:member)
 
-  def dashboard
-
-  end
+  before_filter :authenticate!, except: [:index, :show]
 
   def update
     if member.save
