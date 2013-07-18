@@ -14,3 +14,5 @@
             %h3 #{ member.name } - #{ member.position_title }
             %p= member.biography
             %p= member.email
+            - if current_member == member
+              %p= link_to 'edit your profile', edit_member_path(member)
