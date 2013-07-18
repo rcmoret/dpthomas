@@ -1,12 +1,12 @@
-%body
-  = render partial: '/header', :locals => { :page_title => 'Events' }
-  .wrapper
-    %section
-      = render partial: '/nav'
-      %article
-        = render partial: '/flash_message'
-        - future_events.each do |event|
-          %h2= event.title
-          %p= event.event_details
-          = link_to "View photos from the event", :root
-    = render partial: '/footer'
+= render partial: '/header', :locals => { :page_title => 'Events' }
+.wrapper
+  %section
+    = render partial: '/nav'
+    %article
+      = render partial: '/flash_message'
+      - future_events.each do |event|
+        %h2= event.title
+        %div= event.date.strftime('%-m/%d/%y')
+        %div= event.location
+        %div= event.details
+        -# = link_to "View photos from the event", :root

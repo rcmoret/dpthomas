@@ -9,4 +9,8 @@ class Member < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :first_name, :last_name, :position_title, :image, :biography, :email
 
+  def incomplete_profile?
+    [self.first_name, self.last_name, self.position_title, self.biography].include? nil
+  end
+
 end
