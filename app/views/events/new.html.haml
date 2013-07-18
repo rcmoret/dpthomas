@@ -7,6 +7,6 @@
         = render partial: '/flash_message'
         = simple_form_for :event do |f|
           = f.input :title
-          = f.input :date, as: :date
+          = f.input :date, as: :string
           = f.input :event_details, as: :text
           = f.submit
