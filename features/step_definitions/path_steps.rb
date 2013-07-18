@@ -2,6 +2,16 @@ def path_to(page_name)
   case page_name
   when /^the home\s?page$/
     '/'
+  when /^the member sign up page$/
+    new_member_registration_path
+  when /^my member profile page$/
+    edit_member_path(Member.last.id)
+  when /^the members dashboard$/
+    members_dashboard_path
+  when /^the sign in page$/
+    new_member_session_path
+  when /^the about the board page$/
+    members_path
   when /^the email sign up\spage$/
     '/email'
   when /^the email list\spage$/

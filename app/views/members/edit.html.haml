@@ -1,0 +1,12 @@
+= render partial: '/header', :locals => { :page_title => 'Member Profile' }
+.wrapper
+  %section
+    = render partial: '/nav'
+    %article
+      = render partial: '/flash_message'
+      = simple_form_for member do |f|
+        = f.input :first_name
+        = f.input :last_name
+        = f.input :position_title
+        = f.input :biography, as: :text
+        = f.submit 'Update your profile'

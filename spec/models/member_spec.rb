@@ -14,5 +14,13 @@ describe Member do
       member.update_attribute(:biography, 'i was born...')
       member.incomplete_profile?.should be_false
     end
+    describe 'completed_profiles' do
+      let!(:profile){ FactoryGirl.create(:member_with_profile, email: "new@example.com") }
+      it 'should return only the first member' do
+        Member.count.should eq(2)
+        Member.completed_profiles.count.should eq(1)
+      end
+    end
   end
+
 end
