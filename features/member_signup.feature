@@ -33,3 +33,9 @@ Feature: Members need to be able to sign up and sign in.
     Then I should be on the members dashboard
     When I go to the about the board page
     Then I should see "ryan@example.com"
+
+  Scenario: Sign out
+    Given I am signed in as "ryancmoret@example.com"
+    When I click "sign out"
+    Then I should be on the home page
+    And I should see "Signed out successfully"
