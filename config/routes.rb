@@ -1,5 +1,7 @@
 Dpthomas::Application.routes.draw do
 
+  devise_for :members
+
   root :to => 'home#index'
   get '/about_us' => 'members#index', as: :members
 
