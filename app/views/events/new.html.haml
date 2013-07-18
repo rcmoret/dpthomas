@@ -5,8 +5,9 @@
       = render partial: '/nav'
       %article
         = render partial: '/flash_message'
-        = simple_form_for :event do |f|
+        = simple_form_for event do |f|
           = f.input :title
+          = f.input :location
           = f.input :date, as: :string
-          = f.input :event_details, as: :text
+          = f.input :details, as: :text
           = f.submit

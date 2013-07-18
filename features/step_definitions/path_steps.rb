@@ -12,6 +12,10 @@ def path_to(page_name)
     new_member_session_path
   when /^the about the board page$/
     members_path
+  when /^the new event page$/
+    new_event_path
+  when /^the events page$/
+    events_path
   when /^the email sign up\spage$/
     '/email'
   when /^the email list\spage$/

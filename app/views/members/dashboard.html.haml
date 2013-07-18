@@ -5,3 +5,14 @@
       = render partial: '/nav'
       %article
         = render partial: '/flash_message'
+        .events
+          %h3 Events
+          - if future_events.present?
+            - future_events.each do |event|
+              %p Event title: #{ event.title }
+              %p Date: #{ event.date.strftime('%-m/%-d/%Y') }
+              %p Location: #{ event.location }
+              %p Details: #{ event.details }
+          - else
+            %p No scheduled events
+          %p= link_to "Add a new event", new_event_path

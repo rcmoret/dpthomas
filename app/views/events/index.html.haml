@@ -4,9 +4,12 @@
     = render partial: '/nav'
     %article
       = render partial: '/flash_message'
-      - future_events.each do |event|
-        %h2= event.title
-        %div= event.date.strftime('%-m/%d/%y')
-        %div= event.location
-        %div= event.details
-        -# = link_to "View photos from the event", :root
+      - if future_events.present?
+        - future_events.each do |event|
+          %h2= event.title
+          %div= event.date.strftime('%-m/%d/%y')
+          %div= event.location
+          %div= event.details
+          -# = link_to "View photos from the event", :root
+      - else
+        %p No scheduled events
