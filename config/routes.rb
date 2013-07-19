@@ -11,6 +11,8 @@ Dpthomas::Application.routes.draw do
   resources :services, only: :index
   resources :donations, only: :new
 
-  resources :discussions
+  resources :discussions do
+    resources :replies
+  end
 
 end

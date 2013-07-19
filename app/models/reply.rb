@@ -1,9 +1,8 @@
-class Discussion < ActiveRecord::Base
-
-  attr_accessible :topic, :content, :member_id
+class Reply < ActiveRecord::Base
+  attr_accessible :content, :member_id, :discussion_id
 
   belongs_to :member
-  has_many :replies
+  belongs_to :discussion
 
   scope :recent_first, order('created_at DESC')
 

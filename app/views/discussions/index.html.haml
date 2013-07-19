@@ -11,6 +11,10 @@
           %h5 Topic: #{ discussion.topic }
           %p posted by: #{ discussion.author }
           %p posted at: #{ discussion.created_at.strftime('%-m/%-d/%Y') }
+          - if discussion.replies.empty?
+            %p no replies
+          - else
+            %p #{ discussion.replies.count } #{ discussion.replies.count == 1 ? 'reply' : 'replies' }
           %p= link_to "see more >>", discussion_path(discussion)
           - if discussion.member_id == current_member.id
             %p= link_to "edit discussion", edit_discussion_path(discussion)
