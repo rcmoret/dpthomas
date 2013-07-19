@@ -22,7 +22,7 @@ Feature: Members need to be able to sign up and sign in.
     And I click "Sign In"
     Then I should be on my member profile page
     When I go to the about the board page
-    Then I should not see "ryan@example.com"
+    Then I should not see "email: ryan@example.com"
 
   Scenario: Sign in: completed profile
     Given I am a member; my email is "ryan@example.com"; my profile is complete
