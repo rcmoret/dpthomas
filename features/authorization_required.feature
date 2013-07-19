@@ -10,3 +10,4 @@ Feature: I want to protect certain pages
       |the new event page           |
       |the members dashboard        |
       |the new discussion page      |
+      |the main discussion page     |

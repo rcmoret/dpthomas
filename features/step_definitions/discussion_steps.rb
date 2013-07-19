@@ -5,7 +5,9 @@ end
 
 Given /^there (?:was|were) (\d+) discussions? posted earlier this week$/ do |number|
   author = FactoryGirl.create(:member, email: 'candace@example.com')
+  n = 1
   number.to_i.times do
-    FactoryGirl.create(:discussion, member_id: author.id, created_at: 4.days.ago)
+    FactoryGirl.create(:discussion, member_id: author.id, topic: "topic ##{n}", created_at: 4.days.ago)
+    n += 1
   end
 end

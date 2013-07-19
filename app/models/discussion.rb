@@ -4,6 +4,8 @@ class Discussion < ActiveRecord::Base
 
   belongs_to :member
 
+  scope :recent_first, order('created_at DESC')
+
   def author
     self.member.name
   end

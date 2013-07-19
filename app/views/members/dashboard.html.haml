@@ -27,6 +27,7 @@
               %p= link_to "see more >>", discussion_path(discussion)
               - if discussion.member_id == current_member.id
                 %p= link_to "edit discussion", edit_discussion_path(discussion)
+              %p= link_to "View all discussions", discussions_path
           - else
             %p No active discussions
           %p= link_to "create a new discussion", new_discussion_path

@@ -1,5 +1,5 @@
 class DiscussionsController < ApplicationController
-  expose(:discussions)
+  expose(:discussions){ Discussion.recent_first.page(params[:page]).per(10) }
   expose(:discussion)
 
   before_filter :authenticate!

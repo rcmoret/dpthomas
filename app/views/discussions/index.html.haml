@@ -6,6 +6,7 @@
       %article
         = render partial: '/flash_message'
         %h3 Discussions
+        %p= paginate discussions
         - discussions.each do |discussion|
           %h5 Topic: #{ discussion.topic }
           %p posted by: #{ discussion.author }

@@ -31,6 +31,20 @@ Feature: I want the board members to be able to keep up with one another via a d
     Then I should be on the members dashboard
     And I should see "Your discussion was updated"
 
+  Scenario: index and pagination
+    Given there were 12 discussions posted earlier this week
+    And I have posted a discussion topic: "Pagination", as "ryan@example.com"
+    And I am on the members dashboard
+    When I click "View all discussions"
+    Then I should be on the main discussion page
+    Then I should see "Pagination"
+    And I should see "posted by: ryan moret"
+    And I should see "Next"
+    And I should see "Last"
+    When I click "Next"
+    Then I should not see "Pagination"
+    And I should see "posted by: candace@example.com"
+
   Scenario: edit only avaiable to author
     Given I have posted a discussion topic: "Fundraiser", as "ryan@example.com"
     And I sign out
