@@ -1,0 +1,15 @@
+%body
+  = render partial: '/header', :locals => { :page_title => 'Discussions' }
+  .wrapper
+    %section
+      = render partial: '/nav'
+      %article
+        = render partial: '/flash_message'
+        %h3 Discussions
+        - discussions.each do |discussion|
+          %h5 Topic: #{ discussion.topic }
+          %p posted by: #{ discussion.author }
+          %p posted at: #{ discussion.created_at.strftime('%-m/%-d/%Y') }
+          %p= link_to "see more >>", discussion_path(discussion)
+          - if discussion.member_id == current_member.id
+            %p= link_to "edit discussion", edit_discussion_path(discussion)

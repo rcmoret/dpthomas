@@ -18,6 +18,8 @@ def path_to(page_name)
     events_path
   when /^the new discussion page$/
     new_discussion_path
+  when /^the main discussion page$/
+    discussions_path
   when /^the email sign up\spage$/
     '/email'
   when /^the email list\spage$/

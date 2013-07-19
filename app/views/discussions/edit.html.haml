@@ -3,8 +3,8 @@
   %section
     = render partial: '/nav'
     %article
-      %h3 Create Discussion
       = render partial: '/flash_message'
+      %h3 Edit Discussion
       = simple_form_for discussion do |f|
         = f.input :topic
         = f.input :content, as: :text

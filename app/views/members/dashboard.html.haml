@@ -24,6 +24,9 @@
               %p Topic: #{ discussion.topic }
               %p posted by: #{ discussion.author }
               %p posted at: #{ discussion.created_at.strftime('%-m/%-d/%Y') }
+              %p= link_to "see more >>", discussion_path(discussion)
+              - if discussion.member_id == current_member.id
+                %p= link_to "edit discussion", edit_discussion_path(discussion)
           - else
             %p No active discussions
           %p= link_to "create a new discussion", new_discussion_path
