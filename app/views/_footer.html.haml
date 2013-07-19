@@ -8,5 +8,3 @@
   phone: (615) 474-1286
   %br
   email: #{ mail_to "example@example.com", 'dpthomasfoundation@gmail.com' }
-  - if current_member
-    %p#sign_out= link_to 'sign out', destroy_member_session_path, method: :delete
