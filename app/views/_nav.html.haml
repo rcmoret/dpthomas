@@ -12,3 +12,8 @@
       = link_to "Donate", new_donation_path
     %li
       = link_to "Email List Sign Up", '/email'
+  - if current_member
+    .session_info
+      %p Currently signed in as #{ current_member.name }
+      %p= link_to "Visit the Members' Dashboard", members_dashboard_path
+      %p= link_to "sign out", destroy_member_session_path, method: :delete
