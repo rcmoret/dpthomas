@@ -16,3 +16,14 @@
           - else
             %p No scheduled events
           %p= link_to "Add a new event", new_event_path
+        %hr
+        .discussions
+          %h3 Discussions
+          - if discussions.present?
+            - discussions.each do |discussion|
+              %p Topic: #{ discussion.topic }
+              %p posted by: #{ discussion.author }
+              %p posted at: #{ discussion.created_at.strftime('%-m/%-d/%Y') }
+          - else
+            %p No active discussions
+          %p= link_to "create a new discussion", new_discussion_path

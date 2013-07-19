@@ -1,0 +1,10 @@
+= render partial: '/header', :locals => { :page_title => 'Discussion Board' }
+.wrapper
+  %section
+    = render partial: '/nav'
+    %article
+      = render partial: '/flash_message'
+      = simple_form_for discussion do |f|
+        = f.input :topic
+        = f.input :content, as: :text
+        = f.submit
