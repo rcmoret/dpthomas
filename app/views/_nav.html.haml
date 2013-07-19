@@ -17,3 +17,4 @@
       %p Currently signed in as #{ current_member.name }
       %p= link_to "Visit the Members' Dashboard", members_dashboard_path
       %p= link_to "sign out", destroy_member_session_path, method: :delete
+      %p= link_to "edit your profile", edit_member_path(current_member)

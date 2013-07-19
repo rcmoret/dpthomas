@@ -1,6 +1,8 @@
 Dpthomas::Application.routes.draw do
 
-  devise_for :members
+  devise_for :members do
+    get 'members', to: 'members#dashboard', as: :member_root
+  end
 
   root :to => 'home#index'
   get '/about_us' => 'members#index', as: :members

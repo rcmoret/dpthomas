@@ -10,3 +10,4 @@
         = f.input :position_title
         = f.input :biography, as: :text
         = f.submit 'Update your profile'
+      = link_to 'change my password', edit_member_registration_path(current_member)
