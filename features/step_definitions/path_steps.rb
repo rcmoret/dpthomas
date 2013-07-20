@@ -6,7 +6,7 @@ def path_to(page_name)
     new_member_registration_path
   when /^my member profile page$/
     edit_member_path(Member.last.id)
-  when /^the members dashboard$/
+  when /^the members dashboard(?:| page)$/
     members_dashboard_path
   when /^the sign in page$/
     new_member_session_path
@@ -20,6 +20,10 @@ def path_to(page_name)
     new_discussion_path
   when /^the main discussion page$/
     discussions_path
+  when /^the new service page$/
+    new_service_path
+  when /^the services index$/
+    services_path
   when /^the email sign up\spage$/
     '/email'
   when /^the email list\spage$/

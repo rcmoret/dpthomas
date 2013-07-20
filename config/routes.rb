@@ -10,7 +10,7 @@ Dpthomas::Application.routes.draw do
 
   resources :events, except: :show
   resources :members
-  resources :services, only: :index
+  resources :services, except: :show
   resources :donations, only: :new
 
   resources :discussions do
