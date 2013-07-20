@@ -23,4 +23,9 @@ class DiscussionsController < ApplicationController
       render :new, alert: 'There was an error creating your discussion'
     end
   end
+
+  def destroy
+    discussion.destroy
+    redirect_to members_dashboard_path, notice: 'Discussion was removed'
+  end
 end

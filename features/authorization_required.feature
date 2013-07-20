@@ -14,7 +14,7 @@ Feature: I want to protect certain pages
       |the new service page         |
 
   Scenario:
-    Given the foundation has a "Education" service
+    Given the foundation has an "Education" service
     When I go to the services index
     Then I should see "Education"
     And I should not see "add a service"

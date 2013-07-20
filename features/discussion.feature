@@ -53,3 +53,28 @@ Feature: I want the board members to be able to keep up with one another via a d
     Then I should not see "edit discussion"
     When I click "see more >>"
     Then I should not see "edit discussion"
+
+  Scenario: delete, from discussion index
+    Given I have posted a discussion topic: "Fundraiser", as "ryan@example.com"
+    When I go to the main discussion page
+    And I click "remove this discussion"
+    Then I should be on the members dashboard
+    And I should see "Discussion was removed"
+
+  Scenario: delete, from member dashboard
+    Given I have posted a discussion topic: "Fundraiser", as "ryan@example.com"
+    And I am on the members dashboard
+    And I click "remove this discussion"
+    Then I should be on the members dashboard
+    And I should see "Discussion was removed"
+
+  Scenario: delete available to author only
+    Given I have posted a discussion topic: "Fundraiser", as "ryan@example.com"
+    And I sign out
+    And I sign in as "julie@example.com"
+    And I am on the members dashboard
+    Then I should see "Fundraiser"
+    And I should not see "remove this discussion"
+    When I go to the main discussion page
+    Then I should see "Fundraiser"
+    And I should not see "remove this discussion"
