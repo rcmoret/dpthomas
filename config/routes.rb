@@ -9,7 +9,10 @@ Dpthomas::Application.routes.draw do
   get '/members/dashboard' => 'members#dashboard', as: :members_dashboard
   get '/newsletter/sign_up' => 'email_listings#new', as: :new_email_listing
 
-  resources :events, except: :show
+  resources :events do
+    resource :registration
+  end
+
   resources :services, except: :show
 
   resources :email_listings, only: [:new, :create, :index]

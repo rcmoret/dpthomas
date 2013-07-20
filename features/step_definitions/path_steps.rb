@@ -28,6 +28,8 @@ def path_to(page_name)
     email_listings_path
   when /^the email list sign up page$/
     new_email_listing_path
+  when /^the event registration page$/
+    new_event_registration_path
   else
     raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
       "Now, go and add a mapping in #{__FILE__}"

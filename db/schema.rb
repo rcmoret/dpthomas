@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130720042400) do
+ActiveRecord::Schema.define(:version => 20130720055044) do
 
   create_table "discussions", :force => true do |t|
     t.string   "topic"
@@ -61,6 +61,16 @@ ActiveRecord::Schema.define(:version => 20130720042400) do
 
   add_index "members", ["email"], :name => "index_members_on_email", :unique => true
   add_index "members", ["reset_password_token"], :name => "index_members_on_reset_password_token", :unique => true
+
+  create_table "registrations", :force => true do |t|
+    t.integer  "event_id"
+    t.string   "email"
+    t.integer  "adults"
+    t.integer  "children"
+    t.string   "additional_info"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "replies", :force => true do |t|
     t.text     "content"

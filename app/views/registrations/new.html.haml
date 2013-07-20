@@ -1,0 +1,15 @@
+%body
+  = render partial: '/header', :locals => { :page_title => 'Event Registration' }
+  .wrapper
+    %section
+      = render partial: '/nav'
+      %article
+        = render partial: '/flash_message'
+        %h3 Register for #{ event.title }
+        = simple_form_for registration, url: event_registration_path, method: 'post' do |f|
+          = f.input :email
+          = f.input :adults, collection: 1..5
+          = f.input :children, collection: 1..5
+          %p List your the size t-shirts you would like for your goodie bag
+          = f.input :additional_info
+          = f.submit 'Register'

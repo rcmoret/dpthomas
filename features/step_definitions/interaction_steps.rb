@@ -34,3 +34,6 @@ When /^I confirm delete$/ do
   visit(current_path)
 end
 
+When /^I select "(.*?)" for "(.*?)"$/ do |value, field|
+  select(value, from: field)
+end
