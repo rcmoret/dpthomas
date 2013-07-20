@@ -8,6 +8,8 @@ class Member < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :first_name, :last_name, :position_title, :image, :biography
 
+  mount_uploader :image, ImageUploader
+
   scope :completed_profiles, where('first_name IS NOT NULL').where('last_name IS NOT NULL').where('position_title IS NOT NULL').where('biography IS NOT NULL')
 
   def incomplete_profile?
