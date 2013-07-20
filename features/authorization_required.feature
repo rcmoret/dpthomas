@@ -12,6 +12,7 @@ Feature: I want to protect certain pages
       |the new discussion page      |
       |the main discussion page     |
       |the new service page         |
+      |the email listing index      |
 
   Scenario:
     Given the foundation has an "Education" service

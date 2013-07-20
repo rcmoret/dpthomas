@@ -24,10 +24,10 @@ def path_to(page_name)
     new_service_path
   when /^the services index$/
     services_path
-  when /^the email sign up\spage$/
-    '/email'
-  when /^the email list\spage$/
-    '/email_list'
+  when /^the email listing index$/
+    email_listings_path
+  when /^the email list sign up page$/
+    new_email_listing_path
   else
     raise "Can't find mapping from \"#{page_name}\" to a path.\n" +
       "Now, go and add a mapping in #{__FILE__}"
