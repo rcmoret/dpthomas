@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require event_registration
 //= require_tree .
 //= require pikaday

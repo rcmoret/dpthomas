@@ -11,6 +11,7 @@
           %div= event.location
           %div= event.details
           -# = link_to "View photos from the event", :root
-          %p= link_to 'register for this event', new_event_registration_path(event)
+          - if event.has_registration?
+            %p= link_to 'register for this event', new_event_registration_path(event)
       - else
         %p No scheduled events

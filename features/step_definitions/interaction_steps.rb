@@ -37,3 +37,7 @@ end
 When /^I select "(.*?)" for "(.*?)"$/ do |value, field|
   select(value, from: field)
 end
+
+When /^I check "([^"]*)"$/ do |checkbox|
+  check(checkbox)
+end
