@@ -3,6 +3,7 @@ class Registration < ActiveRecord::Base
 
   validates_presence_of :email
 
+  validate :participants
   before_save :calculate_registration_fee
 
   belongs_to :event
@@ -10,9 +11,13 @@ class Registration < ActiveRecord::Base
   private
 
   def calculate_registration_fee
-    adult_fee = self.event.adult_fee || 0
-    child_fee = self.event.child_fee || 0
-    self.fee = ( self.adults * adult_fee) + ( self.children * child_fee )
+    self.adults ||= 0
+    self.children ||= 0
+    self.fee = ( self.adults * self.event.adult_fee) + ( self.children * self.event.child_fee )
+  end
+
+  def participants
+    errors.add(:registration, 'must have 1 participant') if self.adults.nil? && self.children.nil?
   end
 
 end

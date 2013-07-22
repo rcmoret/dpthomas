@@ -1,3 +1,13 @@
+function totalParticipants() {
+    var adults = $('#registration_adults').val();
+    var children = $('#registration_children').val();
+    if ((children + adults) === '') {
+        return 0
+    } else {
+        return children + adults
+    }
+}
+
 function calculateFee() {
     var adults = $('#registration_adults').val();
     var adultFee = $('#adult_fee').text();
@@ -17,5 +27,11 @@ $(document).ready(function() {
 
     $('#registration select').change(function() {
         $('#registration_fee').text('($' + calculateFee() + ')');
+    });
+    $('form#new_registration').submit(function(ev) {
+        // if (totalParticipants() === 0) {
+        //     ev.preventDefault();
+        //     alert('You need to be registering at least one participant');
+        // }
     });
 });
