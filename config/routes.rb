@@ -11,7 +11,7 @@ Dpthomas::Application.routes.draw do
   get '/events/:event_id/registrations/complete/:id' => 'registrations#show', as: :complete_registration
 
   resources :events do
-    resource :registration
+    resources :registrations
   end
 
   resources :services, except: :show

@@ -17,3 +17,8 @@ Feature: As a participant in the Foundations events I want to be able to registe
     And I press "Continue >>"
     Then I should see "Step 2 of 2 (review and payment)"
     And I should see "donate the $50 registration fee using PayPal"
+    When I click "Click here"
+    Then I should see "Event Registration"
+    When I select "2" for "Adults"
+    And I press "Continue >>"
+    And I should see "donate the $80 registration fee using PayPal"
