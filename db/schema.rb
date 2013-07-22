@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130721204805) do
+ActiveRecord::Schema.define(:version => 20130722152859) do
 
   create_table "discussions", :force => true do |t|
     t.string   "topic"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(:version => 20130721204805) do
     t.string   "additional_info"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "fee"
   end
 
   create_table "replies", :force => true do |t|
