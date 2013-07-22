@@ -5,11 +5,21 @@
       = render partial: '/nav'
       %article
         = render partial: '/flash_message'
-        %h3 Register for #{ event.title }
-        = simple_form_for registration, url: event_registration_path, method: 'post' do |f|
-          = f.input :email
-          = f.input :adults, collection: 1..5
-          = f.input :children, collection: 1..5
-          %p List your the size t-shirts you would like for your goodie bag
-          = f.input :additional_info
-          = f.submit 'Register'
+        #registration
+          %h3 Register for #{ event.title }
+          = simple_form_for registration, url: event_registration_path, method: 'post' do |f|
+            = f.input :email
+            - unless event.adult_fee.nil?
+              = f.input :adults, collection: 1..5
+              %p (pre-registration fee is $#{event.adult_fee} per adult)
+              #adult_fee.hidden= event.adult_fee
+            - unless event.child_fee.nil?
+              = f.input :children, collection: 1..5
+              %p (pre-registration fee is $#{event.child_fee} per child)
+              #child_fee.hidden= event.child_fee
+            %p List your the size t-shirts you would like for your goodie bag in the additional information
+            = f.input :additional_info
+            = f.submit 'Register'
+            %div
+              Registration Fee:
+              %span#total_fee $0.00
