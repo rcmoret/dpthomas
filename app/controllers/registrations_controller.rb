@@ -3,8 +3,9 @@ class RegistrationsController < ApplicationController
   expose(:event)
 
   def create
+    registration.event_id = params[:event_id]
     if registration.save
-      redirect_to events_path, notice: 'You have successfully registered'
+      redirect_to complete_registration_path(event, registration), notice: 'Review your registration'
     else
       render :new, alert: 'You registration was unsuccessful'
     end

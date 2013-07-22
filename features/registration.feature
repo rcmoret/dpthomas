@@ -13,7 +13,7 @@ Feature: As a participant in the Foundations events I want to be able to registe
     When I select "1" for "Adults"
     And I select "2" for "Children"
     And I fill in "1 large; 2 child small" for "Additional info"
-    Then I should see "Registration Fee: $50"
-    And I press "Register"
-    Then I should be on the events page
-    And I should see "You have successfully registered"
+    Then I should see "registration fee ($50)"
+    And I press "Continue >>"
+    Then I should see "Step 2 of 2 (review and payment)"
+    And I should see "donate the $50 registration fee using PayPal"

@@ -1,10 +1,9 @@
-function calculateFee(adults, adultFee, childFee) {
-    var adults = $('#registration_adults').val()
+function calculateFee() {
+    var adults = $('#registration_adults').val();
     var adultFee = $('#adult_fee').text();
-    var children = $('#registration_children').val()
+    var children = $('#registration_children').val();
     var childFee = $('#child_fee').text();
-    registrationFee = (adults * adultFee) + (children * childFee)
-    return "$" + registrationFee
+    return (adults * adultFee) + (children * childFee)
 }
 
 
@@ -17,6 +16,6 @@ $(document).ready(function() {
     });
 
     $('#registration select').change(function() {
-        $('#total_fee').text(calculateFee());
+        $('#registration_fee').text('($' + calculateFee() + ')');
     });
 });

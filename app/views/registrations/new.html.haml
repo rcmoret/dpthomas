@@ -7,6 +7,7 @@
         = render partial: '/flash_message'
         #registration
           %h3 Register for #{ event.title }
+          %p Step 1 of 2 (your information)
           = simple_form_for registration, url: event_registration_path, method: 'post' do |f|
             = f.input :email
             - unless event.adult_fee.nil?
@@ -19,7 +20,5 @@
               #child_fee.hidden= event.child_fee
             %p List your the size t-shirts you would like for your goodie bag in the additional information
             = f.input :additional_info
-            = f.submit 'Register'
-            %div
-              Registration Fee:
-              %span#total_fee $0.00
+            = f.submit 'Continue >>'
+            %div Review your registration and pay the registration fee <span id='registration_fee'></span>

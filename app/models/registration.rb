@@ -1,7 +1,7 @@
 class Registration < ActiveRecord::Base
   attr_accessible :event_id, :email, :adults, :children, :additional_info, :fee
 
-  validates_presence_of :email, :adults, :children
+  validates_presence_of :email
 
   before_save :calculate_registration_fee
 

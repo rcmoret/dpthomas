@@ -8,6 +8,7 @@ Dpthomas::Application.routes.draw do
   get '/about_us' => 'members#index', as: :members
   get '/members/dashboard' => 'members#dashboard', as: :members_dashboard
   get '/newsletter/sign_up' => 'email_listings#new', as: :new_email_listing
+  get '/events/:event_id/registrations/complete/:id' => 'registrations#show', as: :complete_registration
 
   resources :events do
     resource :registration
