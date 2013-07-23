@@ -1,0 +1,7 @@
+= render partial: '/header', :locals => { :page_title => 'Donate' }
+.wrapper
+  %section
+    = render partial: '/nav'
+    %article
+      = render partial: '/flash_message'
+      = render 'paypal'
