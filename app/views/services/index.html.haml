@@ -9,7 +9,7 @@
         - if services.present?
           - services.each do |service|
             %h4= service.name
-            %p= service.details
+            %p= service.details.html_safe
             - if current_member
               %p= link_to "edit this service", edit_service_path(service)
               %p= link_to "remove this service", service_path(service), method: :delete, confirm: "Are you sure that you want to delete this service?"

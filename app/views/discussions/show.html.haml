@@ -8,7 +8,7 @@
       %p Topic: #{ discussion.topic }
       %p posted by: #{ discussion.author }
       %p posted at: #{ discussion.created_at.strftime('%-m/%-d/%Y') }
-      .content= discussion.content
+      .content= discussion.content.html_safe
       - if discussion.member_id == current_member.id
         %p= link_to "edit discussion", edit_discussion_path(discussion)
       - if replies.present?

@@ -9,7 +9,7 @@
           %h2= event.title
           %div= event.date.strftime('%-m/%d/%y')
           %div= event.location
-          %div= event.details
+          %div= event.details.html_safe
           -# = link_to "View photos from the event", :root
           - if event.has_registration?
             %p= link_to 'register for this event', new_event_registration_path(event)

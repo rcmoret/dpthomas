@@ -13,7 +13,7 @@
           %h3 #{ member.name } - #{ member.position_title }
           - if member.image_url
             = image_tag member.image_url
-          %p= member.biography
+          %p= member.biography.html_safe
           %p email: #{ member.email }
           - if current_member == member
             %p= link_to 'edit your profile', edit_member_path(member)
