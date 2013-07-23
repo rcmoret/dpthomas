@@ -1,6 +1,8 @@
 class Reply < ActiveRecord::Base
   attr_accessible :content, :member_id, :discussion_id
 
+  validates_presence_of :content
+
   belongs_to :member
   belongs_to :discussion
 

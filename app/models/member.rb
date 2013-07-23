@@ -5,6 +5,8 @@ class Member < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  validates_presence_of :email
+
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :first_name, :last_name, :position_title, :image, :biography
 
