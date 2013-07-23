@@ -16,6 +16,7 @@
           - replies.each do |reply|
             .reply
               %p #{ reply.author } replied:
+              %p= reply.content.html_safe
               %p posted at: #{ reply.created_at.strftime('%-m/%-d/%Y') }
       %p= link_to "reply to this discussion", '#', id: 'discussion_reply'
       #reply_form

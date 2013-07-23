@@ -16,3 +16,5 @@ Feature: as I member I want to add to discussion by adding replies
     And I should see "ryan moret replied:"
     When I go to the members dashboard
     Then I should see "1 reply"
+    When I click "see more >>"
+    Then I should see "great idea"
