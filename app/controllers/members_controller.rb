@@ -3,7 +3,7 @@ class MembersController < ApplicationController
   expose(:members)
   expose(:member)
   expose(:future_events){ Event.in_the_future }
-  expose(:discussions){ Discussion.limit(5) }
+  expose(:discussions){ Discussion.recent_first.limit(5) }
 
   before_filter :authenticate!, except: [:index, :show]
 
