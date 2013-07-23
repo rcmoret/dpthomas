@@ -36,3 +36,14 @@ Feature: This test will cover addition member profile customization
     And I click "Sign In"
     Then I should see "Member Dashboard"
     And I should see "Signed in successfully"
+
+  Scenario: Add phone number
+    When I click "edit your profile"
+    Then show me the page
+    And I fill in "256-534-8451" for "Phone number"
+    And I press "Update"
+    When I go to the about the board page
+    Then I should see "(256) 534-8451"
+    When I sign out
+    And I go to the about the board page
+    Then I should not see "(256) 534-8451"

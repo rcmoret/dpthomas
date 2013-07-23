@@ -35,4 +35,12 @@ describe Member do
     end
   end
 
+  describe 'phone number' do
+    it 'should validate only valid phone numbers' do
+      member.phone = '256-534-8451'
+      member.save
+      member.phone.should eq('2565348451')
+    end
+  end
+
 end

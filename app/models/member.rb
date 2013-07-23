@@ -6,9 +6,10 @@ class Member < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   validates_presence_of :email
+  before_save :strip_phone_number
 
   attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessible :first_name, :last_name, :position_title, :image, :biography
+  attr_accessible :first_name, :last_name, :position_title, :image, :biography, :phone
 
   mount_uploader :image, ImageUploader
 
@@ -24,6 +25,12 @@ class Member < ActiveRecord::Base
     else
       self.email
     end
+  end
+
+  private
+
+  def strip_phone_number
+    self.phone = self.phone.gsub(/\D/, '') unless self.phone.nil?
   end
 
 end
