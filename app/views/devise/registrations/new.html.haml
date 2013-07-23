@@ -1,22 +1,21 @@
-%body
-  = render :partial => '/header', :locals => { :page_title => 'Member Sign Up' }
-  .wrapper
-    %section
-      = render :partial => '/nav'
-      %article
-        = render :partial => '/flash_message'
-        %h2 Member Sign Up
-        = form_for(resource, :as => resource_name, :url => member_registration_path) do |f|
-          = f.label :email
-          %br
-          = f.email_field :email
-          %br
-          = f.label :password
-          %br
-          = f.password_field :password
-          %br
-          = f.label :password_confirmation
-          %br
-          = f.password_field :password_confirmation
-          %br
-          = f.submit "Sign Up", :class => 'button'
+= render :partial => '/header', :locals => { :page_title => 'Member Sign Up' }
+.wrapper
+  %section
+    = render :partial => '/nav'
+    %article
+      = render :partial => '/flash_message'
+      %h2 Member Sign Up
+      = form_for(resource, :as => resource_name, :url => member_registration_path) do |f|
+        = f.label :email
+        %br
+        = f.email_field :email
+        %br
+        = f.label :password
+        %br
+        = f.password_field :password
+        %br
+        = f.label :password_confirmation
+        %br
+        = f.password_field :password_confirmation
+        %br
+        = f.submit "Sign Up", :class => 'button'

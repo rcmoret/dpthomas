@@ -1,18 +1,17 @@
-%body
-  = render :partial => '/header', :locals => { :page_title => 'Member Sign In' }
-  .wrapper
-    %section
-      = render :partial => '/nav'
-      %article
-        = render :partial => '/flash_message'
-        %h2 Member Sign In
-        = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-          = f.label :email
-          %br
-          = f.email_field :email
-          %br
-          = f.label :password
-          %br
-          = f.password_field :password
-          %br
-          = f.submit 'Sign In', :class => 'button'
+= render :partial => '/header', :locals => { :page_title => 'Member Sign In' }
+.wrapper
+  %section
+    = render :partial => '/nav'
+    %article
+      = render :partial => '/flash_message'
+      %h2 Member Sign In
+      = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+        = f.label :email
+        %br
+        = f.email_field :email
+        %br
+        = f.label :password
+        %br
+        = f.password_field :password
+        %br
+        = f.submit 'Sign In', :class => 'button'

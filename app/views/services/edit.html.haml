@@ -1,11 +1,11 @@
-%body
-  = render partial: '/header', :locals => { :page_title => 'Services' }
-  .wrapper
-    %section
-      = render partial: '/nav'
-      %article
-        = render partial: '/flash_message'
-        = simple_form_for service do |f|
-          = f.input :name
-          = f.input :details, as: :text
-          = f.submit
+= javascript_include_tag 'editor'
+= render partial: '/header', :locals => { :page_title => 'Services' }
+.wrapper
+  %section
+    = render partial: '/nav'
+    %article
+      = render partial: '/flash_message'
+      = simple_form_for service do |f|
+        = f.input :name
+        = f.input :details, as: :text
+        = f.submit

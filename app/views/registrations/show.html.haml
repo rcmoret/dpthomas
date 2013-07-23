@@ -1,20 +1,19 @@
-%body
-  = render partial: '/header', :locals => { :page_title => 'Event Registration' }
-  .wrapper
-    %section
-      = render partial: '/nav'
-      %article
-        = render partial: '/flash_message'
-        %h3 Register for #{ event.title }
-        %p Step 2 of 2 (review and payment)
-        %p You are registering for #{event.title} on #{event.date.strftime('%-m/%-d/%Y')}
-        %ul
-          %li Your Email: #{registration.email}
-          %li Adults registering: #{registration.adults}
-          %li Children registering: #{registration.children}
-          %li Registration Fee: $#{registration.fee}
-          %li Additional info: #{registration.additional_info}
-          %li #{link_to 'Click here', edit_event_registration_path(event, registration)} to update your registration info
+= render partial: '/header', :locals => { :page_title => 'Event Registration' }
+.wrapper
+  %section
+    = render partial: '/nav'
+    %article
+      = render partial: '/flash_message'
+      %h3 Register for #{ event.title }
+      %p Step 2 of 2 (review and payment)
+      %p You are registering for #{event.title} on #{event.date.strftime('%-m/%-d/%Y')}
+      %ul
+        %li Your Email: #{registration.email}
+        %li Adults registering: #{registration.adults}
+        %li Children registering: #{registration.children}
+        %li Registration Fee: $#{registration.fee}
+        %li Additional info: #{registration.additional_info}
+        %li #{link_to 'Click here', edit_event_registration_path(event, registration)} to update your registration info
 
-        #paypal
-          = render 'paypal'
+      #paypal
+        = render 'paypal'

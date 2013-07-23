@@ -1,12 +1,12 @@
-%body
-  = render partial: '/header', :locals => { :page_title => 'Event Registration' }
-  .wrapper
-    %section
-      = render partial: '/nav'
-      %article
-        = render partial: '/flash_message'
-        #registration
-          %h3 Register for #{ event.title }
-          %p Step 1 of 2 (your information)
-          = simple_form_for registration, url: event_registrations_path, method: 'post' do |f|
-            = render partial: 'form', locals: { f: f }
+= javascript_include_tag 'editor'
+= render partial: '/header', :locals => { :page_title => 'Event Registration' }
+.wrapper
+  %section
+    = render partial: '/nav'
+    %article
+      = render partial: '/flash_message'
+      #registration
+        %h3 Register for #{ event.title }
+        %p Step 1 of 2 (your information)
+        = simple_form_for registration, url: event_registrations_path, method: 'post' do |f|
+          = render partial: 'form', locals: { f: f }
