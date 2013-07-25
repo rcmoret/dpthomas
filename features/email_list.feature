@@ -6,6 +6,7 @@ Feature: A visitor signs up for the email list
     Then I should be on the email list sign up page
     When I fill in "crystal" for "First name"
     And I fill in "robinson" for "Last name"
+    And I fill in "crob@example.com" for "Email"
     And I press "Sign up"
     Then I should be on the home page
     And I should see "thanks for signing up for the mailing list"
