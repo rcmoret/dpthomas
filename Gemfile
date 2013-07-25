@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '1.9.3' if respond_to?(:ruby)
+
 gem 'activeadmin'
 gem 'carrierwave'
 gem 'decent_exposure'
