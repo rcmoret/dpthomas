@@ -35,3 +35,7 @@ group :test do
   gem 'rspec-rails'
   gem 'selenium-webdriver', '~> 2.33.0'
 end
+
+group :production do
+  gem 'unicorn'
+end
