@@ -2,6 +2,7 @@ FactoryGirl.define do
   factory :event do
 
     title 'Fundraiser'
+    name '5k run'
     location 'Shelby Bottoms'
     details 'lots of fun'
     has_registration true

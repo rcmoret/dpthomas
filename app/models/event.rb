@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
   attr_accessible :title, :date, :location, :details,
-    :has_registration, :adult_fee, :child_fee
+    :has_registration, :adult_fee, :child_fee, :title, :name
 
   validates_presence_of :title, :date, :location, :details
 

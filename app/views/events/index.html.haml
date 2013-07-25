@@ -6,7 +6,7 @@
       = render partial: '/flash_message'
       - if future_events.present?
         - future_events.each do |event|
-          %h2= event.title
+          %h2= event.name
           %div= event.date.strftime('%-m/%d/%y')
           %div= event.location
           %div= event.details.html_safe

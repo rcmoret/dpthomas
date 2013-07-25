@@ -8,7 +8,7 @@
         %h3 Events
         - if future_events.present?
           - future_events.each do |event|
-            %p Event title: #{ event.title }
+            %p Event title: #{ event.name }
             %p Date: #{ event.date.strftime('%-m/%-d/%Y') }
             %p Location: #{ event.location }
             %p Details: #{ event.details }
