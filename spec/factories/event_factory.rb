@@ -7,6 +7,7 @@ FactoryGirl.define do
     has_registration true
     adult_fee 30
     child_fee 10
+    date 3.days.from_now
 
     factory :future_event do
       date { 3.days.from_now }
