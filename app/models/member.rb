@@ -13,10 +13,12 @@ class Member < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  scope :by_rank, order('rank ASC')
+
   scope :completed_profiles, where('first_name IS NOT NULL').where('last_name IS NOT NULL').where('position IS NOT NULL').where('biography IS NOT NULL')
 
   def incomplete_profile?
-    [self.first_name, self.last_name, self.position, self.biography].include? nil
+    [self.first_name, self.last_name, self.position].include? nil
   end
 
   def name

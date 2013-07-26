@@ -1,6 +1,6 @@
 class MembersController < ApplicationController
-  expose(:members_with_profiles){ Member.completed_profiles }
-  expose(:members)
+  expose(:members_with_profiles){ Member.completed_profiles.by_rank }
+  expose(:members){ Member.by_rank }
   expose(:member)
   expose(:future_events){ Event.in_the_future }
   expose(:discussions){ Discussion.recent_first.limit(5) }

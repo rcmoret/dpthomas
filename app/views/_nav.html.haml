@@ -11,7 +11,7 @@
     %li
       = link_to "Donate", donations_path
     %li
-      = link_to "Email List Sign Up", '/email'
+      = link_to "Email List Sign Up", new_email_listing_path
   - if current_member
     .session_info
       %p Currently signed in as #{ current_member.name }
