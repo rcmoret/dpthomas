@@ -7,7 +7,7 @@ FactoryGirl.define do
     factory :member_with_profile do
       first_name 'ryan'
       last_name 'moret'
-      position_title 'consultant'
+      position 'consultant'
       biography 'gonna keep it short...'
     end
 

@@ -10,7 +10,7 @@
       %h2 Board Members
       - members_with_profiles.each do |member|
         .member_profile
-          %h3 #{ member.name } - #{ member.position_title }
+          %h3 #{ member.name } - #{ member.position }
           - if member.image_url
             = image_tag member.image_url
           %p= member.biography.html_safe

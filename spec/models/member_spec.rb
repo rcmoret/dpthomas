@@ -11,7 +11,7 @@ describe Member do
       member.incomplete_profile?.should be_true
       member.update_attribute(:last_name, 'moret')
       member.incomplete_profile?.should be_true
-      member.update_attribute(:position_title, 'consultant')
+      member.update_attribute(:position, 'consultant')
       member.incomplete_profile?.should be_true
       member.update_attribute(:biography, 'i was born...')
       member.incomplete_profile?.should be_false
