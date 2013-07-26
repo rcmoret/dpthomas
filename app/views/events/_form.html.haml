@@ -1,4 +1,4 @@
--# = javascript_include_tag 'editor'
+= javascript_tag "var picker = new Pikaday({ field: $('#event_date')[0] });"
 
 = simple_form_for event do |f|
   = f.input :title
