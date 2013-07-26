@@ -1,11 +1,13 @@
 = javascript_tag "$(document).ready(function() { var picker = new Pikaday({ field: $('#event_date')[0] }); })"
+= tinymce_assets
+= tinymce
 
 = simple_form_for event do |f|
   = f.input :title
   = f.input :name
   = f.input :location
   = f.input :date, as: :string
-  = f.input :details, as: :text
+  = f.input :details, as: :text, input_html: { class: 'tinymce' }
   = f.input :has_registration, as: :boolean, label: 'Registration required?'
   #registration_fees
     = f.input :adult_fee, label: 'Adult registration fee'
