@@ -4,6 +4,10 @@ class EventsController < ApplicationController
 
   before_filter :authenticate!, except: [:index, :show]
 
+  def index
+    flash[:notice] = "Thank you for your donation" if params[:paypal] && params[:paypal] == 'success'
+  end
+
   def create
     if event.save
       redirect_to members_dashboard_path, notice: 'Event successfully created'
