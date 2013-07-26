@@ -16,6 +16,7 @@ gem 'rails', '3.2.8'
 gem 'rmagick'
 gem 'rspec-rails'
 gem 'simple_form'
+gem 'tinymce-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.

@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require event_registration
+//= require tinymce
 //= require_tree .
