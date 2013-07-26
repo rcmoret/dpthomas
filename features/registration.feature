@@ -6,6 +6,7 @@ Feature: As a participant in the Foundations events I want to be able to registe
   @javascript
   Scenario: Happy Path
     Given I am on the events page
+    Then I should not see "edit"
     When I click on "register for this event"
     Then I should see "Event Registration"
     And I should see "Register for a Walk & Run"

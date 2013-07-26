@@ -12,6 +12,7 @@
             %p Date: #{ event.date.strftime('%-m/%-d/%Y') }
             %p Location: #{ event.location }
             %p Details: #{ event.details }
+            %p= link_to 'edit this event', edit_event_path(event)
         - else
           %p No scheduled events
         %p= link_to "Add a new event", new_event_path

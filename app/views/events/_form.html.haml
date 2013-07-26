@@ -1,0 +1,11 @@
+= simple_form_for event do |f|
+  = f.input :title
+  = f.input :name
+  = f.input :location
+  = f.input :date, as: :string
+  = f.input :details, as: :text
+  = f.input :has_registration, as: :boolean, label: 'Registration required?'
+  #registration_fees
+    = f.input :adult_fee, label: 'Adult registration fee'
+    = f.input :child_fee, label: 'Child registration fee'
+  = f.submit

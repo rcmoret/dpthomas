@@ -46,3 +46,12 @@ Feature: Members need to add and update events
     And I check "Registration required?"
     And I press "Create Event"
     Then I should be on the members dashboard
+
+  Scenario: Edit event
+    Given there is a future a Walk & Run event
+    When I go to the events page
+    And I click on "edit this event"
+    And I fill in "New Name" for "Name"
+    And I press "Update Event"
+    Then I should be on the events page
+    And I should see "New Name"

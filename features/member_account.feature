@@ -35,6 +35,6 @@ Feature: Members need to be able to sign up and sign in.
     Then I should be on my member profile page
     When I fill in "Web consultant" for "Position"
     And I press "Update your profile"
-    And I should be on the about the board page
+    Then I should be on the about the board page
     And I should see "You successfully updated your profile"
     And I should see "Web consultant"

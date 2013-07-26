@@ -15,6 +15,8 @@
             Event Details:
             %br
             = event.details.html_safe
+          - if current_member
+            %p= link_to 'edit this event', edit_event_path(event)
           - if event.has_registration?
             %p= link_to 'register for this event', new_event_registration_path(event)
       - else

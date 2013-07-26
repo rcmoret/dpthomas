@@ -11,4 +11,12 @@ class EventsController < ApplicationController
       render :new, alert: 'There was an error creating your event'
     end
   end
+
+  def update
+    if event.save
+      redirect_to events_path, notice: 'Event successfully update'
+    else
+      render :new, alert: 'There was an error updating your event'
+    end
+  end
 end
