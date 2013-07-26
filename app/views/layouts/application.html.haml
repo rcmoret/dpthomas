@@ -4,7 +4,6 @@
     %title DP Thomas
     = stylesheet_link_tag "application", :media => "all"
     = javascript_include_tag 'application'
-    %script(src="/tinymce.min.js")
     = csrf_meta_tags
   %body
     - if params[:controller] == 'home' && params[:action] == 'index'
