@@ -5,7 +5,4 @@
     = render partial: '/nav'
     %article
       = render partial: '/flash_message'
-      = simple_form_for service do |f|
-        = f.input :name
-        = f.input :details, as: :text
-        = f.submit
+      = render 'form'

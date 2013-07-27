@@ -1,0 +1,6 @@
+= tinymce_assets
+= tinymce
+= simple_form_for discussion do |f|
+  = f.input :topic
+  = f.input :content, as: :text, input_html: { class: 'tinymce' }
+  = f.submit

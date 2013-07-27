@@ -6,7 +6,4 @@
     %article
       %h3 Create Discussion
       = render partial: '/flash_message'
-      = simple_form_for discussion do |f|
-        = f.input :topic
-        = f.input :content, as: :text
-        = f.submit
+      = render 'form'
