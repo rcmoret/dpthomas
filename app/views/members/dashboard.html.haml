@@ -11,7 +11,7 @@
             %p Event title: #{ event.name }
             %p Date: #{ event.date.strftime('%-m/%-d/%Y') }
             %p Location: #{ event.location }
-            %p Details: #{ event.details }
+            %p Details: #{ event.details.html_safe }
             %p= link_to 'edit this event', edit_event_path(event)
         - else
           %p No scheduled events
