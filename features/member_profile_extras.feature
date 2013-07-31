@@ -38,8 +38,9 @@ Feature: This test will cover addition member profile customization
     And I should see "Signed in successfully"
 
   Scenario: Add phone number
+    When I go to the about the board page
+    Then I should not see "Phone"
     When I click "edit your profile"
-    Then show me the page
     And I fill in "256-534-8451" for "Phone number"
     And I press "Update"
     When I go to the about the board page
