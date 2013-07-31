@@ -241,6 +241,8 @@ textarea {
 .hidden { display: none; }
 
 .member_profile {
+  clear: both;
+  min-height: 200px;
   img {
     float: left;
     margin-right: 20px;
