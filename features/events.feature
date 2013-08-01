@@ -35,14 +35,13 @@ Feature: Members need to add and update events
     Then I should not see "Fundraiser"
     And I should see "No scheduled events"
 
-  @javascript
   Scenario: New Event; requires registration
     Given I am on the new event page
     And I fill in "Fundraising" for "Title"
     And I fill in "2nd Annual walk and run" for "Name"
-    And I fill in "Sat Mar 08 2015" for "Date"
     And I fill in "Shelby Bottoms" for "Location"
     And I fill in "Walk run" for "Details"
+    And I fill in "Sat Mar 08 2015" for "Date"
     And I check "Registration required?"
     And I press "Create Event"
     Then I should be on the members dashboard

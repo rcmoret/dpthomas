@@ -41,3 +41,7 @@ end
 When /^I check "([^"]*)"$/ do |checkbox|
   check(checkbox)
 end
+
+When /^I uncheck "([^"]*)"$/ do |checkbox|
+  uncheck(checkbox)
+end

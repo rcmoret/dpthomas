@@ -1,24 +1,24 @@
 Feature: Members need to be able to sign up and sign in.
 
   Scenario: Sign in: incomplete profile
-    Given I am a member; my email is "ryan@example.com"
+    Given I am a member; my email is "ryan@mail.com"
     And I am on the sign in page
-    And I fill in "ryan@example.com" for "Email"
+    And I fill in "ryan@mail.com" for "Email"
     And I fill in "password" for "Password"
     And I click "Sign In"
     Then I should be on my member profile page
     When I go to the about the board page
-    Then I should not see "email: ryan@example.com"
+    Then I should not see "email: ryan@mail.com"
 
   Scenario: Sign in: completed profile
-    Given I am a member; my email is "ryan@example.com"; my profile is complete
+    Given I am a member; my email is "ryan@mail.com"; my profile is complete
     And I am on the sign in page
-    And I fill in "ryan@example.com" for "Email"
+    And I fill in "ryan@mail.com" for "Email"
     And I fill in "password" for "Password"
     And I click "Sign In"
     Then I should be on the members dashboard
     When I go to the about the board page
-    Then I should see "ryan@example.com"
+    Then I should see "ryan@mail.com"
 
   Scenario: Sign out
     Given I am signed in as "ryancmoret@example.com"

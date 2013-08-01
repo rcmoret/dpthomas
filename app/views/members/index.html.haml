@@ -14,7 +14,7 @@
           - if member.image_url
             = image_tag member.image_url
           %div= member.biography.html_safe
-          - unless member.email =~  /example\.com/
+          - if !member.email.match(/example\.com/) && (current_member || member.public_email?)
             %p email: #{ mail_to member.email }
           - if current_member && member.phone
             %p Phone: #{ number_to_phone(member.phone, area_code: true) }

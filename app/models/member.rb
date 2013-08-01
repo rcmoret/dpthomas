@@ -8,8 +8,8 @@ class Member < ActiveRecord::Base
   validates_presence_of :email
   before_save :strip_phone_number
 
-  attr_accessible :email, :password, :password_confirmation, :remember_me
-  attr_accessible :first_name, :last_name, :position, :image, :biography, :phone
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :public_email,
+                  :first_name, :last_name, :position, :image, :biography, :phone
 
   mount_uploader :image, ImageUploader
 

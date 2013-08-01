@@ -4,7 +4,7 @@ Feature: This test will cover addition member profile customization
   Upload Image
 
   Background:
-    Given I am signed in as "ryan@example.com"
+    Given I am signed in as "ryan@mail.com"
 
   Scenario: Change Password
     When I click "edit your profile"
@@ -16,7 +16,7 @@ Feature: This test will cover addition member profile customization
     Then I should see "You updated your account successfully."
     Then I sign out
     When I go to the sign in page
-    And I fill in "ryan@example.com" for "Email"
+    And I fill in "ryan@mail.com" for "Email"
     And I fill in "NeWpAsSwOrD" for "Password"
     And I click "Sign In"
     Then I should see "Member Dashboard"
@@ -25,13 +25,13 @@ Feature: This test will cover addition member profile customization
   Scenario: Change Email
     When I click "edit your profile"
     And I click "change my email or password"
-    And I fill in "renee@example.com" for "Email"
+    And I fill in "renee@mail.com" for "Email"
     And I fill in "password" for "Current password"
     And I press "Update"
     Then I should see "You updated your account successfully."
     Then I sign out
     When I go to the sign in page
-    And I fill in "renee@example.com" for "Email"
+    And I fill in "renee@mail.com" for "Email"
     And I fill in "password" for "Password"
     And I click "Sign In"
     Then I should see "Member Dashboard"
@@ -48,3 +48,13 @@ Feature: This test will cover addition member profile customization
     When I sign out
     And I go to the about the board page
     Then I should not see "(256) 534-8451"
+
+  Scenario: Private email
+    When I click "edit your profile"
+    And I click "change my email or password"
+    And I uncheck "Show my email publicly"
+    And I fill in "password" for "Current password"
+    And I press "Update"
+    And I sign out
+    And I go to the about the board page
+    Then I should not see "ryan@mail.com"
