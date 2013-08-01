@@ -20,3 +20,4 @@
             %p Phone: #{ number_to_phone(member.phone, area_code: true) }
           - if current_member == member
             %p= link_to 'edit your profile', edit_member_path(member)
+          .clear
