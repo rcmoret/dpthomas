@@ -243,6 +243,12 @@ textarea {
 .member_profile {
   clear: both;
   min-height: 200px;
+  .clear { margin-bottom: 20px; }
+  div, p {
+    float: right;
+    width: 575px;
+  }
+  p:nth-child(1) { margin-top: 0; }
   img {
     float: left;
     margin-right: 20px;

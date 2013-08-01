@@ -13,7 +13,7 @@
           %h3 #{ member.name } - #{ member.position }
           - if member.image_url
             = image_tag member.image_url
-          %p= member.biography.html_safe
+          %div= member.biography.html_safe
           - unless member.email =~  /example\.com/
             %p email: #{ mail_to member.email }
           - if current_member && member.phone
