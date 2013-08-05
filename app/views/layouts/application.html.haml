@@ -6,7 +6,16 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
-    - if params[:controller] == 'home' && params[:action] == 'index'
-      = render partial: '/home/header'
-    = yield
-    = render :partial => '/footer'
+    #header
+      = render '/layouts/header'
+      #title_bar
+        .left-side
+          #logo= image_tag 'dp-thomas.png'
+        .right-side
+          %h1 DP Thomas Foundation for Obesity
+          %hr
+          %h2 Home Page
+    #top_back
+
+    .wrapper
+      = yield

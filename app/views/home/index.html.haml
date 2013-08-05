@@ -1,15 +1,13 @@
-= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Carter+One'
-#small_banner
-%article#home_page
-  = render :partial => '/flash_message'
-  .announcement
-    %h4 Announcing the 2nd Annual DP Thomas walk and run
+.left-side
+  %section#left
+    left section
+
+.right-side
+  %section#right
+    %h3 Mission Statement
+    %p
+      DP Thomas Foundation for Obesity promotes healthy living as a way to combat obesity and its negative affect on society by educating the community on nutrition, exercise, and the importance of maintaining a balanced lifestyle.
     %hr
-    %p Details are available on the #{ link_to "events page", events_path }
-  %h2 Mission Statement
-  %p.italicized DP Thomas Foundation for Obesity promotes healthy living as a way to combat obesity and its negative affect on society by educating the community on nutrition, exercise, and the importance of maintaining a balanced lifestyle.
-  %hr
-  %h2 Vision Statement
-  %p.italicized The DP Thomas Foundation for Obesity envisions a distinctively different outlook of the obesity epidemic, where communities gain the knowledge of proper nutrition, accountability and exercise to help its citizens achieve and maintain a balanced lifestyle, free from obesity.
-  - if current_member
-    = link_to "sign out", destroy_member_session_path, method: :delete
+    %h3 Vision Statement
+    %p
+      The DP Thomas Foundation for Obesity envisions a distinctively different outlook of the obesity epidemic, where communities gain the knowledge of proper nutrition, accountability and exercise to help its citizens achieve and maintain a balanced lifestyle, free from obesity.
