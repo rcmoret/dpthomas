@@ -42,6 +42,17 @@ hr
   padding: 0
   border-top: 1px solid white
 
+.left
+  width: 30%
+  min-width: 30%
+  min-height: 1px
+  margin-right: 2%
+  float: left
+
+.right
+  width: 48%
+  float: left
+
 header
   position: absolute
   margin: 0
@@ -51,6 +62,8 @@ header
   z-index: 5
   background: $dark_gray
   font-size: 1.5em
+  a
+    color: $dolly_blue
   hr
     border-top: 1px solid $dolly_blue
   ul
@@ -70,8 +83,6 @@ header
       border-radius: 12px
       &:hover
         background: $charcoal
-  a
-    color: $dolly_blue
 
 #title_bar
   height: 242px
@@ -79,23 +90,16 @@ header
   padding: 0 5%
   width: 100%
   background: $light_gray
-
-#left-header
-  width: 30%
-  float: left
-  margin-right: 2%
-  padding: 10px 0
-  background: $light_gray
-  img
-    width: 100%
-    max-width: 400px
-    background: $dark_gray
-    border-radius: 40px
-
-#right-header
-  width: 48.4%
-  float: left
-  margin-top: 10px
+  .left
+    padding: 10px 0
+    background: $light_gray
+    img
+      width: 100%
+      max-width: 400px
+      background: $dark_gray
+      border-radius: 40px
+  .right
+    margin-top: 10px
   h1, h2
     margin: 0
     color: $dolly_blue
