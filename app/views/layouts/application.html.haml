@@ -6,16 +6,16 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
   %body
-    #header
+    %header
       = render '/layouts/header'
       #title_bar
-        .left-side
+        #left-header
           #logo= image_tag 'dp-thomas.png'
-        .right-side
+        #right-header
           %h1 DP Thomas Foundation for Obesity
           %hr
           %h2 Home Page
-    #top_back
 
     .wrapper
+      #top_back
       = yield
