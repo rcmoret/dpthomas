@@ -13,3 +13,5 @@
     = link_to "view the members' dashboard", members_dashboard_path
     %br
     = link_to 'edit your member profile', edit_member_path(current_member)
+    %br
+    = link_to 'sign out', destroy_member_session_path, method: :delete

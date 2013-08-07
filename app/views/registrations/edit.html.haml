@@ -3,8 +3,9 @@
     = render 'members/actions'
 
 %section.right
-  #registration
-    %h3 Edit registeration for #{ event.name }
-    %p Step 1 of 2 (your information)
-    = simple_form_for registration, url: event_registration_path, method: 'put' do |f|
-      = render partial: 'form', locals: { f: f }
+  %div
+    #registration
+      %h3 Edit registeration for #{ event.name }
+      %p Step 1 of 2 (your information)
+      = simple_form_for registration, url: event_registration_path, method: 'put' do |f|
+        = render partial: 'form', locals: { f: f }

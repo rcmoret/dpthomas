@@ -3,8 +3,9 @@
     = render 'members/actions'
 
 %section.right
-  = simple_form_for email_listing do |f|
-    = f.input :first_name
-    = f.input :last_name
-    = f.input :email
-    = f.submit 'Sign up'
+  %div
+    = simple_form_for email_listing do |f|
+      = f.input :first_name
+      = f.input :last_name
+      = f.input :email
+      = f.submit 'Sign up'

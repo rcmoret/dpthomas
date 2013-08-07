@@ -2,25 +2,26 @@
   = render '/members/actions'
 
 %section.right
-  %p= paginate discussions
-  .events
-  - if discussions.present?
-    - discussions.each do |discussion|
-      .discussion
-        .title Topic: #{ discussion.topic }
-        .content #{ truncate(discussion.content.html_safe, length: 200) } #{ link_to "see more", discussion_path(discussion) }
-        .details
-          %div posted by #{ discussion.author } at #{ discussion.created_at.strftime('%-m/%-d/%Y') }
-          %div
-            - if discussion.replies.empty?
-              no replies
-            - else
-              #{ discussion.replies.count } #{ discussion.replies.count == 1 ? 'reply' : 'replies' }
-          - if discussion.member_id == current_member.id
+  %div
+    %p= paginate discussions
+    .events
+    - if discussions.present?
+      - discussions.each do |discussion|
+        .discussion
+          .title Topic: #{ discussion.topic }
+          .content #{ truncate(discussion.content.html_safe, length: 200) } #{ link_to "see more", discussion_path(discussion) }
+          .details
+            %div posted by #{ discussion.author } at #{ discussion.created_at.strftime('%-m/%-d/%Y') }
             %div
-              = link_to "edit discussion", edit_discussion_path(discussion)
-              or
-              = link_to "remove this discussion", discussion_path(discussion), method: :delete, confirm: 'Are you sure you want to remove this discussion (and all replies)?'
-        %hr
-  - else
-    %p There are no active discussions
+              - if discussion.replies.empty?
+                no replies
+              - else
+                #{ discussion.replies.count } #{ discussion.replies.count == 1 ? 'reply' : 'replies' }
+            - if discussion.member_id == current_member.id
+              %div
+                = link_to "edit discussion", edit_discussion_path(discussion)
+                or
+                = link_to "remove this discussion", discussion_path(discussion), method: :delete, confirm: 'Are you sure you want to remove this discussion (and all replies)?'
+          %hr
+    - else
+      %p There are no active discussions

@@ -2,39 +2,40 @@
   = render 'actions'
 
 %section.right
-  .events
-    %h3 Events
-    - if future_events.present?
-      - future_events.each do |event|
-        .event
-          .event-title Event: #{ event.name }
-          .event-date Date: #{ event.date.strftime('%-m/%-d/%Y') }
-          .event-location Location: #{ event.location }
-          %div= link_to "Event Details", event_path(event)
-          %div= link_to 'edit this event', edit_event_path(event)
-    - else
-      %p No scheduled events
-  %hr
-    %h3 Recent Discussions
-    - if discussions.present?
-      - discussions.each do |discussion|
-        .discussion
-          .title Topic: #{ discussion.topic }
-          .content #{ truncate(discussion.content.html_safe, length: 200) } #{ link_to "see more", discussion_path(discussion) }
-          .details
-            %div posted by #{ discussion.author } at #{ discussion.created_at.strftime('%-m/%-d/%Y') }
-            %div
-              - if discussion.replies.empty?
-                no replies
-              - else
-                #{ discussion.replies.count } #{ discussion.replies.count == 1 ? 'reply' : 'replies' }
-            - if discussion.member_id == current_member.id
+  %div
+    .events
+      %h3 Events
+      - if future_events.present?
+        - future_events.each do |event|
+          .event
+            .event-title Event: #{ event.name }
+            .event-date Date: #{ event.date.strftime('%-m/%-d/%Y') }
+            .event-location Location: #{ event.location }
+            %div= link_to "Event Details", event_path(event)
+            %div= link_to 'edit this event', edit_event_path(event)
+      - else
+        %p No scheduled events
+    %hr
+      %h3 Recent Discussions
+      - if discussions.present?
+        - discussions.each do |discussion|
+          .discussion
+            .title Topic: #{ discussion.topic }
+            .content #{ truncate(discussion.content.html_safe, length: 200) } #{ link_to "see more", discussion_path(discussion) }
+            .details
+              %div posted by #{ discussion.author } at #{ discussion.created_at.strftime('%-m/%-d/%Y') }
               %div
-                = link_to "edit discussion", edit_discussion_path(discussion)
-                or
-                = link_to "remove this discussion", discussion_path(discussion), method: :delete, confirm: 'Are you sure you want to remove this discussion (and all replies)?'
-          %hr
-    - else
-      %p No active discussions
-    %div= link_to "View all discussions", discussions_path, class: 'large-link'
-  %hr
+                - if discussion.replies.empty?
+                  no replies
+                - else
+                  #{ discussion.replies.count } #{ discussion.replies.count == 1 ? 'reply' : 'replies' }
+              - if discussion.member_id == current_member.id
+                %div
+                  = link_to "edit discussion", edit_discussion_path(discussion)
+                  or
+                  = link_to "remove this discussion", discussion_path(discussion), method: :delete, confirm: 'Are you sure you want to remove this discussion (and all replies)?'
+            %hr
+      - else
+        %p No active discussions
+      %div= link_to "View all discussions", discussions_path, class: 'large-link'
+    %hr

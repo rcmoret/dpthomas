@@ -2,23 +2,24 @@
   = render '/members/actions'
 
 %section.right
-  %h3 Topic: #{ discussion.topic }
-  .content= discussion.content.html_safe
-  .info
-    %em posted by #{ discussion.author } on #{ discussion.created_at.strftime('%-m/%-d/%Y') }
-  - if discussion.member_id == current_member.id
-    %p= link_to "edit discussion", edit_discussion_path(discussion)
-  - if replies.present?
-    .replies
-      - replies.each do |reply|
-        .reply
-          %div #{ reply.author } replied:
-          %p= reply.content.html_safe
-          .info
-            %em posted at: #{ reply.created_at.strftime('%-m/%-d/%Y') }
-  %p= link_to "add a reply to this discussion", '#', id: 'discussion_reply'
-  #reply_form
-    %p Post a reply to this discussion
-    = simple_form_for [discussion, reply] do |f|
-      = f.input :content, input_html: { class: 'tinymce' }
-      = f.submit
+  %div
+    %h3 Topic: #{ discussion.topic }
+    .content= discussion.content.html_safe
+    .info
+      %em posted by #{ discussion.author } on #{ discussion.created_at.strftime('%-m/%-d/%Y') }
+    - if discussion.member_id == current_member.id
+      %p= link_to "edit discussion", edit_discussion_path(discussion)
+    - if replies.present?
+      .replies
+        - replies.each do |reply|
+          .reply
+            %div #{ reply.author } replied:
+            %p= reply.content.html_safe
+            .info
+              %em posted at: #{ reply.created_at.strftime('%-m/%-d/%Y') }
+    %p= link_to "add a reply to this discussion", '#', id: 'discussion_reply'
+    #reply_form
+      %p Post a reply to this discussion
+      = simple_form_for [discussion, reply] do |f|
+        = f.input :content, input_html: { class: 'tinymce' }
+        = f.submit
