@@ -7,7 +7,7 @@ Feature: This test will cover addition member profile customization
     Given I am signed in as "ryan@mail.com"
 
   Scenario: Change Password
-    When I click "edit your profile"
+    When I click "edit your member profile"
     And I click "change my email or password"
     When I fill in "NeWpAsSwOrD" for "Password"
     And I fill in "NeWpAsSwOrD" for "Password confirmation"
@@ -19,11 +19,10 @@ Feature: This test will cover addition member profile customization
     And I fill in "ryan@mail.com" for "Email"
     And I fill in "NeWpAsSwOrD" for "Password"
     And I click "Sign In"
-    Then I should see "Member Dashboard"
-    And I should see "Signed in successfully"
+    Then I should see "Signed in successfully"
 
   Scenario: Change Email
-    When I click "edit your profile"
+    When I click "edit your member profile"
     And I click "change my email or password"
     And I fill in "renee@mail.com" for "Email"
     And I fill in "password" for "Current password"
@@ -34,13 +33,12 @@ Feature: This test will cover addition member profile customization
     And I fill in "renee@mail.com" for "Email"
     And I fill in "password" for "Password"
     And I click "Sign In"
-    Then I should see "Member Dashboard"
-    And I should see "Signed in successfully"
+    Then I should see "Signed in successfully"
 
   Scenario: Add phone number
     When I go to the about the board page
     Then I should not see "Phone"
-    When I click "edit your profile"
+    When I click "edit your member profile"
     And I fill in "256-534-8451" for "Phone number"
     And I press "Update"
     When I go to the about the board page
@@ -50,7 +48,7 @@ Feature: This test will cover addition member profile customization
     Then I should not see "(256) 534-8451"
 
   Scenario: Private email
-    When I click "edit your profile"
+    When I click "edit your member profile"
     And I click "change my email or password"
     And I uncheck "Show my email publicly"
     And I fill in "password" for "Current password"

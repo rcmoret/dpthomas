@@ -7,7 +7,7 @@ Feature: as I member I want to add to discussion by adding replies
     Given there was 1 discussion posted earlier this week
     And I am on the members dashboard
     Then I should see "no replies"
-    And I click "see more >>"
+    And I click "see more"
     And I click "reply to this discussion"
     Then I should see "Post a reply to this discussion"
     When I fill in "I think that is a great idea" for "Content"
@@ -16,5 +16,5 @@ Feature: as I member I want to add to discussion by adding replies
     And I should see "ryan moret replied:"
     When I go to the members dashboard
     Then I should see "1 reply"
-    When I click "see more >>"
+    When I click "see more"
     Then I should see "great idea"

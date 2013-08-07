@@ -14,17 +14,17 @@ Feature: I want the board members to be able to keep up with one another via a d
     Then I should be on the members dashboard
     And I should see "Your discussion was created"
     And I should see "Fundraiser"
-    And I should see "posted by: ryan moret"
-    When I click "see more >>"
+    And I should see "posted by ryan moret"
+    When I click "see more"
     Then I should see "Topic: Fundraiser"
-    And I should see "posted by: ryan moret"
+    And I should see "posted by ryan moret"
     And I should see "details, details"
 
   Scenario: edit
     Given I have posted a discussion topic: "Fundraiser", as "ryan@example.com"
     When I go to the members dashboard
     Then I should see "edit discussion"
-    When I click "see more >>"
+    When I click "see more"
     And I click "edit discussion"
     And I fill in "more specific details" for "Content"
     When I press "Update Discussion"
@@ -38,12 +38,12 @@ Feature: I want the board members to be able to keep up with one another via a d
     When I click "View all discussions"
     Then I should be on the main discussion page
     Then I should see "Pagination"
-    And I should see "posted by: ryan moret"
+    And I should see "posted by ryan moret"
     And I should see "Next"
     And I should see "Last"
     When I click "Next"
     Then I should not see "Pagination"
-    And I should see "posted by: candace@example.com"
+    And I should see "posted by candace@example.com"
 
   Scenario: edit only avaiable to author
     Given I have posted a discussion topic: "Fundraiser", as "ryan@example.com"
@@ -51,7 +51,7 @@ Feature: I want the board members to be able to keep up with one another via a d
     And I sign in as "julie@example.com"
     When I go to the members dashboard
     Then I should not see "edit discussion"
-    When I click "see more >>"
+    When I click "see more"
     Then I should not see "edit discussion"
 
   Scenario: delete, from discussion index

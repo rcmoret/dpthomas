@@ -29,7 +29,7 @@ Feature: Members need to be able to sign up and sign in.
     Then I should not see "edit your profile"
 
   Scenario: Edit profile from Foundation Board page
-    Given I am signed in as "ryancmoret@example.com"
+    Given I am signed in as "ryancmoret@mail.com"
     When I go to the about the board page
     And I click "edit your profile"
     Then I should be on my member profile page

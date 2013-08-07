@@ -8,8 +8,7 @@ Feature: As a participant in the Foundations events I want to be able to registe
     Given I am on the events page
     Then I should not see "edit"
     When I click on "register for this event"
-    Then I should see "Event Registration"
-    And I should see "Register for a Walk & Run"
+    Then I should see "Register for a Walk & Run"
     When I fill in "jessica@example.com" for "Email"
     When I select "1" for "Adults"
     And I select "2" for "Children"
@@ -18,7 +17,6 @@ Feature: As a participant in the Foundations events I want to be able to registe
     Then I should see "Step 2 of 2 (review and payment)"
     And I should see "donate the $50 registration fee using PayPal"
     When I click "Click here"
-    Then I should see "Event Registration"
-    When I select "2" for "Adults"
+    And I select "2" for "Adults"
     And I press "Continue >>"
     Then I should see "donate the $80 registration fee using PayPal"
