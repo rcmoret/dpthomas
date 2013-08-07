@@ -1,9 +1,0 @@
-.left
-  - if current_member
-    = render 'members/actions'
-
-.right
-  #member-session
-    currently signed in as #{current_member.name}
-    %br
-    = link_to 'sign out', destroy_member_session_path, method: :delete
