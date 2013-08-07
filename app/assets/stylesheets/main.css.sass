@@ -4,7 +4,8 @@ $dolly_blue:       #99B4CB
 $dark_gray:        #38434B
 $background_matte: #22394B
 $light_gray:       #435059
-$charcoal:        #252B33
+$charcoal:         #252B33
+$muted_red:        #610A06
 
 $screen:     "only screen"
 $xtra_small: "only screen and (max-width:768px)"
@@ -120,16 +121,100 @@ header
   position: relative
   z-index: 3
 
-#right
-  width: 48%
-  float: left
-  background: $dolly_blue
-  border-radius: 40px
-  padding: 5px 20px
-  h3
+#flash
+  .right
+    margin: 10px 0
+    color: $muted_red
     font-size: 1.5em
 
-#left
-  width: 30%
-  margin-right: 2%
+#content
+  min-height: 400px
+  .right
+    background: $dolly_blue
+    border-radius: 40px
+    padding: 5px 20px 20px
+  h3
+    font-size: 1.5em
+  a, a:visited
+    color: white
+    font-style: italic
+
+footer
+  min-height: 100px
+  width: 100%
+  padding: 10px 0
+  margin-bottom: 100px
+  clear: both
+  hr
+    border-top: 1px solid $dolly_blue
+  .right
+    background: $dark_gray
+  a
+    color: $dolly_blue
+
+#member-session
+  width: 300px
+  background: $dolly_blue
+  border-radius: 12px
+  padding: 10px
+  position: fixed
+  bottom: 10px
+  left: 5%
+
+address
+  padding: 2px 20px
+  background: $light_gray
+  border-radius: 40px
   float: left
+  ul
+    margin: 5px 20px
+    padding: 0
+
+#sign-in
+  float: right
+  a, a:visited
+    color: $dolly_blue
+  margin-bottom: 20px
+  padding-right: 20px
+
+.discussion
+  a.large-link, .title
+    font-size: 1.2em
+  .title, .details, .content
+    margin-bottom: 5px
+  .content, .details
+    margin-left: 10px
+  .details
+    font-style: italic
+  hr
+    border-top: 1px solid white
+
+.events
+  .event-title
+    font-size: 1.2em
+  .event-date, .event-location
+    margin-left: 10px
+  .event-location
+    margin-bottom: 10px
+  .event
+    margin-bottom: 20px
+
+#member-dashboard
+  background: $dolly_blue
+  border-radius: 40px
+  div
+    padding: 5px 20px 20px
+  .title
+    margin-top: 10px
+    font-size: 1.2em
+
+.info
+  margin: 10px 0 0 10px
+
+.member_profile
+  img
+    float: left
+    margin-right: 10px
+
+.hidden
+  display: none

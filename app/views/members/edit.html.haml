@@ -1,15 +1,13 @@
-= render partial: '/header', :locals => { :page_title => 'Member Profile' }
-.wrapper
-  %section
-    = render partial: '/nav'
-    %article
-      = render partial: '/flash_message'
-      = simple_form_for member, html: { multipart: true } do |f|
-        = f.input :first_name
-        = f.input :last_name
-        = f.input :position
-        = f.input :biography, as: :text
-        = f.input :phone, label: 'Phone number'
-        = f.input :image
-        = f.submit 'Update your profile'
-      = link_to 'change my email or password', edit_member_registration_path(current_member)
+.left
+  = render 'actions'
+
+%section.right
+  = simple_form_for member, html: { multipart: true } do |f|
+    = f.input :first_name
+    = f.input :last_name
+    = f.input :position
+    = f.input :biography, as: :text
+    = f.input :phone, label: 'Phone number'
+    = f.input :image
+    = f.submit 'Update your profile'
+  = link_to 'change my email or password', edit_member_registration_path(current_member)

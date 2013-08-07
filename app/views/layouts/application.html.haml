@@ -22,4 +22,8 @@
       - if flash.any?
         = render partial: '/layouts/flash', locals: { flash: flash }
 
-      = yield
+      #content
+        = yield
+      - if current_member
+        = render '/layouts/session'
+      = render '/layouts/footer'

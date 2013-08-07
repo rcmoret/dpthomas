@@ -1,0 +1,15 @@
+#member-dashboard
+  %div
+    %h3 Member Actions
+    %ul
+      %li.title Events
+      %li= link_to "Add a new event", new_event_path, class: 'large-link'
+      %li.title Discussions
+      %li= link_to "View all discussions", discussions_path, class: 'large-link'
+      %li= link_to "create a new discussion", new_discussion_path, class: 'large-link'
+      %li.title Services
+      %li= link_to "Manage Services", services_path
+      %li= link_to "Add Service", new_service_path, class: 'large-link'
+    = link_to "view the members' dashboard", members_dashboard_path
+    %br
+    = link_to 'edit your member profile', edit_member_path(current_member)

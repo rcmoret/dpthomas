@@ -1,20 +1,21 @@
-= render partial: '/header', :locals => { :page_title => 'Services' }
-.wrapper
-  %section
-    = render partial: '/nav'
-    %article
-      = render partial: '/flash_message'
-      .services
-        %h3 DP Thomas Foundation Services
-        - if services.present?
-          - services.each do |service|
-            %h4= service.name
-            %p= service.details.html_safe
-            - if current_member
-              %p= link_to "edit this service", edit_service_path(service)
-              %p= link_to "remove this service", service_path(service), method: :delete, confirm: "Are you sure that you want to delete this service?"
-        - else
-          %p No services currently listed
+.left
+  - if current_member
+    = render 'members/actions'
 
+%section.right
+  .services
+    %h3 DP Thomas Foundation Services
+    - if services.present?
+      - services.each do |service|
+        %h4= service.name
+        %div= service.details.html_safe
         - if current_member
-          %p= link_to "add a service", new_service_path
+          %p
+            = link_to "edit this service", edit_service_path(service)
+            %br
+            = link_to "remove this service", service_path(service), method: :delete, confirm: "Are you sure that you want to delete this service?"
+    - else
+      %p No services currently listed
+
+    - if current_member
+      %p= link_to "add a service", new_service_path

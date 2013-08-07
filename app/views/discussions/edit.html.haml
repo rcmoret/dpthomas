@@ -1,8 +1,6 @@
-= render partial: '/header', :locals => { :page_title => 'Discussion Board' }
-.wrapper
-  %section
-    = render partial: '/nav'
-    %article
-      = render partial: '/flash_message'
-      %h3 Edit Discussion
-      = render 'form'
+.left
+  = render '/members/actions'
+
+%section.right
+  %h3 Edit Discussion
+  = render 'form'

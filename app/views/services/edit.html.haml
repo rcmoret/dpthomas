@@ -1,7 +1,5 @@
-= render partial: '/header', :locals => { :page_title => 'Services' }
-.wrapper
-  %section
-    = render partial: '/nav'
-    %article
-      = render partial: '/flash_message'
-      = render 'form'
+.left
+  = render '/members/actions'
+
+%section.right
+  = render 'form'

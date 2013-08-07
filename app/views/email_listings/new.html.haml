@@ -1,11 +1,10 @@
-= render partial: '/header', :locals => { :page_title => 'Newsletter Sign Up' }
-.wrapper
-  %section
-    = render partial: '/nav'
-    %article
-      = render partial: '/flash_message'
-      = simple_form_for email_listing do |f|
-        = f.input :first_name
-        = f.input :last_name
-        = f.input :email
-        = f.submit 'Sign up'
+.left
+  - if current_member
+    = render 'members/actions'
+
+%section.right
+  = simple_form_for email_listing do |f|
+    = f.input :first_name
+    = f.input :last_name
+    = f.input :email
+    = f.submit 'Sign up'
