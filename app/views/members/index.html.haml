@@ -10,14 +10,14 @@
     %h2 Board Members
     - members_with_profiles.each do |member|
       .member_profile
-        %h3 #{ member.name } - #{ member.position }
+        %h3.member-name #{ member.name } - #{ member.position }
         - if member.image_url
           = image_tag member.image_url
         .bio= member.biography.html_safe
         - if !member.email.match(/example\.com/) && (current_member || member.public_email?)
-          %p email: #{ mail_to member.email }
+          %p.contact email: #{ mail_to member.email }
         - if current_member && member.phone
-          %p Phone: #{ number_to_phone(member.phone, area_code: true) }
+          %p.contact Phone: #{ number_to_phone(member.phone, area_code: true) }
         - if current_member && current_member.id == member.id
           = render 'edit'
         .clear

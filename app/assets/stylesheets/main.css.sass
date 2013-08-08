@@ -69,7 +69,8 @@ header
     border-top: 1px solid $dolly_blue
   ul
     height: 55px
-    margin: 0 2%
+    margin: 10px 2% 0
+    padding: 0
   li
     float: left
     width: 25%
@@ -78,6 +79,7 @@ header
     text-align: center
     .nav-item
       width: 80%
+      margin: 0 auto
       line-height: 35px
       background: $light_gray
       border: 2px solid $dark_gray
@@ -135,6 +137,7 @@ header
     padding: 5px 20px 20px
   h3
     font-size: 1.5em
+    margin-bottom: 5px
   a, a:visited
     color: white
     font-style: italic
@@ -208,6 +211,15 @@ address
     margin-top: 10px
     font-size: 1.2em
 
+#action-items
+  div
+    padding: 0
+  div:last-child
+    margin-bottom: 10px
+
+#member-links
+  margin-top: 10px
+
 .info
   margin: 10px 0 0 10px
 
@@ -215,6 +227,8 @@ address
   img
     float: left
     margin-right: 10px
+  p:first-child
+    margin-top: 0
 
 .hidden
   display: none

@@ -11,7 +11,7 @@
             .event-title Event: #{ event.name }
             .event-date Date: #{ event.date.strftime('%-m/%-d/%Y') }
             .event-location Location: #{ event.location }
-            %div= link_to "Event Details", event_path(event)
+            %div= link_to "Events Page", events_path
             %div= link_to 'edit this event', edit_event_path(event)
       - else
         %p No scheduled events
@@ -38,4 +38,3 @@
       - else
         %p No active discussions
       %div= link_to "View all discussions", discussions_path, class: 'large-link'
-    %hr
