@@ -10,7 +10,7 @@
 
     %header
       = render '/layouts/header'
-      #title_bar
+      #title-bar
         .left
           = link_to root_path do
             #logo= image_tag 'dp-thomas.png'
@@ -20,7 +20,7 @@
           %h2= page_title
 
     .wrapper
-      #top_back
+      #top-back
       - if flash.any?
         = render partial: '/layouts/flash', locals: { flash: flash }
 
