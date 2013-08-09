@@ -12,7 +12,8 @@
       = render '/layouts/header'
       #title_bar
         .left
-          #logo= image_tag 'dp-thomas.png'
+          = link_to root_path do
+            #logo= image_tag 'dp-thomas.png'
         .right
           %h1 DP Thomas Foundation for Obesity
           %hr
