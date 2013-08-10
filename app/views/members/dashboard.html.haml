@@ -3,8 +3,8 @@
 
 %section.right
   %div
-    .events
-      %h3 Events
+    #events
+      %h2 Events
       - if future_events.present?
         - future_events.each do |event|
           .event
@@ -16,7 +16,7 @@
       - else
         %p No scheduled events
     %hr
-      %h3 Recent Discussions
+      %h2 Recent Discussions
       - if discussions.present?
         - discussions.each do |discussion|
           .discussion

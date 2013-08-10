@@ -6,7 +6,7 @@ $(document).ready(function() {
     $('#flash').hide(3000)
     windowWidth = window.innerWidth
     if (windowWidth < 786){
-        $('#member-actions h3').click(function() {
+        $('#member-actions h2').click(function() {
             $('#action-items').slideToggle();
         });
     }
