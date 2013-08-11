@@ -11,8 +11,8 @@
     - members_with_profiles.each do |member|
       .member_profile
         %h3.member-name #{ member.name } - #{ member.position }
-        - if member.image_url
-          = image_tag member.image_url
+        - if member.image_name
+          = image_tag "/assets/member_profiles/#{member.image_name}"
         .bio= member.biography.html_safe
         - if !member.email.match(/example\.com/) && (current_member || member.public_email?)
           %p.contact email: #{ mail_to member.email }
@@ -20,4 +20,3 @@
           %p.contact Phone: #{ number_to_phone(member.phone, area_code: true) }
         - if current_member && current_member.id == member.id
           = render 'edit'
-        .clear

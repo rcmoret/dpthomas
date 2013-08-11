@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130801192425) do
+ActiveRecord::Schema.define(:version => 20130811001725) do
 
   create_table "discussions", :force => true do |t|
     t.string   "topic"
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(:version => 20130801192425) do
     t.string   "position"
     t.integer  "rank"
     t.boolean  "public_email",           :default => true
+    t.string   "image_name"
   end
 
   add_index "members", ["email"], :name => "index_members_on_email", :unique => true
