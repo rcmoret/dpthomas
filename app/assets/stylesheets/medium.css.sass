@@ -1,3 +1,4 @@
+$light_gray:       #435059
 @media screen and (max-width: 1280px)
   h1, h2
     font-size: 1.6em
@@ -15,7 +16,14 @@
     height: 300px
 
   #title-bar
-    height: 212px
+    height: 250px
+    background: -moz-linear-gradient(top,  rgba(67,80,89,1) 0%, rgba(67,80,89,1) 80%, rgba(67,80,89,0.8) 86%, rgba(67,80,89,0.65) 93%, rgba(67,80,89,0.33) 96%, rgba(67,80,89,0) 100%)
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(67,80,89,1)), color-stop(80%,rgba(67,80,89,1)), color-stop(86%,rgba(67,80,89,0.8)), color-stop(93%,rgba(67,80,89,0.65)), color-stop(96%,rgba(67,80,89,0.33)), color-stop(100%,rgba(67,80,89,0)))
+    background: -webkit-linear-gradient(top,  rgba(67,80,89,1) 0%,rgba(67,80,89,1) 80%,rgba(67,80,89,0.8) 86%,rgba(67,80,89,0.65) 93%,rgba(67,80,89,0.33) 96%,rgba(67,80,89,0) 100%)
+    background: -o-linear-gradient(top,  rgba(67,80,89,1) 0%,rgba(67,80,89,1) 80%,rgba(67,80,89,0.8) 86%,rgba(67,80,89,0.65) 93%,rgba(67,80,89,0.33) 96%,rgba(67,80,89,0) 100%)
+    background: -ms-linear-gradient(top,  rgba(67,80,89,1) 0%,rgba(67,80,89,1) 80%,rgba(67,80,89,0.8) 86%,rgba(67,80,89,0.65) 93%,rgba(67,80,89,0.33) 96%,rgba(67,80,89,0) 100%)
+    background: linear-gradient(to bottom,  rgba(67,80,89,1) 0%,rgba(67,80,89,1) 80%,rgba(67,80,89,0.8) 86%,rgba(67,80,89,0.65) 93%,rgba(67,80,89,0.33) 96%,rgba(67,80,89,0) 100%)
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#435059', endColorstr='#00435059',GradientType=0 )
 
   footer
     address.right
