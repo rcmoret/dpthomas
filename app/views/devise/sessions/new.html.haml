@@ -3,7 +3,7 @@
     = render "/member/actions"
 
 %section.right
-  %div
+  %article
     %h2 Member Sign In
     = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
       = f.label :email
