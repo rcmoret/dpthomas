@@ -1,6 +1,9 @@
 class RegistrationsController < ApplicationController
   expose(:registration)
   expose(:event)
+  expose(:registrations) { event.registrations }
+
+  before_filter :authenticate!, only: :index
 
   def show
     render :complete

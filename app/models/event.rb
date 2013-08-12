@@ -4,6 +4,8 @@ class Event < ActiveRecord::Base
 
   validates_presence_of :title, :date, :location, :details
 
+  has_many :registrations
+
   before_save :set_fees, if: :has_registration?
 
   scope :in_the_future, where('date >= ?', Date.today)
