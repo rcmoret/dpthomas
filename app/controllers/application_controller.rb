@@ -6,12 +6,19 @@ class ApplicationController < ActionController::Base
   def page_title
     controller = params[:controller]
     action = params[:action]
-    return controller.capitalize if ['services', 'events'].include?(controller)
-    return 'Donate' if action == 'donate'
-    return 'Home Page' if controller == 'home' && action == 'index'
-    if controller == 'members'
-      return 'Foundation Information' if current_member
-      return 'About the Foundation'
+    case
+    when ['announcements', 'services', 'events'].include?(controller)
+      controller.capitalize
+    when action == 'donate'
+      'Donate'
+    when controller == 'home' && action == 'index'
+      'Home Page'
+    when controller == 'members' && current_member
+      'Foundation Information'
+    when controller == 'members' && !current_member
+      'About the Foundation'
+    else
+      ''
     end
   end
 
