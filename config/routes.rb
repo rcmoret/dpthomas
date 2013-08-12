@@ -27,4 +27,6 @@ Dpthomas::Application.routes.draw do
     resources :replies
   end
 
+  resources :announcements
+
 end

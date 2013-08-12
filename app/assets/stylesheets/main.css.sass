@@ -2,7 +2,7 @@
 
 $dolly_blue:       #99B4CB
 $dark_gray:        #38434B
-$background_matte: #22394B
+$sand: #615849
 $light_gray:       #435059
 $charcoal:         #252B33
 $muted_red:        #610A06
@@ -131,12 +131,6 @@ header
   position: relative
   z-index: 3
 
-#flash
-  .right
-    margin: 10px 0
-    color: $muted_red
-    font-size: 1.5em
-
 #content
   z-index: 2
   .right
@@ -155,7 +149,7 @@ section.right
     div
       padding: 0
   article
-    padding: 20px 20px 20px
+    padding: 10px 20px 10px
   h3
     margin-top: 0
 
@@ -230,14 +224,21 @@ address
   .event
     margin-bottom: 20px
 
-#member-actions
-  background: $dolly_blue
+#member-actions, .flash
   border-radius: 40px
-  div
-    padding: 5px 20px 20px
+  margin-bottom: 10px
+  .inner
+    padding: 5px 20px 10px
   .title
     margin-top: 10px
     font-size: 1.2em
+
+#member-actions
+  background: $dolly_blue
+
+.flash
+  background: $sand
+  font-size: 1.3em
 
 #action-items
   div
@@ -273,8 +274,6 @@ address
       font-size: 2em
     .annoucement-details
       font-size: 1.3em
-    .headline, .annoucement-details
-      padding: 5px
 
 table
   th

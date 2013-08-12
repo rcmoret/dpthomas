@@ -7,13 +7,7 @@
 - if announcements.any?
   - announcements.each do |announcement|
     .announcement
-      %div
-        .announcement-details
-          Thank you for registering for this event with the DP Thomas Foundation
+      .inner= announcement.announcement.html_safe
 
-  .announcement
-    %div
-      .headline Announcing the 2nd Annual DP Thomas walk and run
-      .annoucement-details Details about the event and registration are available on the #{ link_to "Events Page", events_path  }.
-  - if current_member
-    = render 'members/actions'
+- if current_member
+  = render 'members/actions'

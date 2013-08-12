@@ -1,0 +1,11 @@
+.left
+  = render 'layouts/sidebar'
+
+%section.right
+  - announcements.each do |announcement|
+    %article
+      .inner
+        = announcement.announcement.html_safe
+        = link_to 'edit this site announcement', edit_announcement_path(announcement)
+        %br
+        = link_to 'delete this site announcement', announcement_path(announcement), method: :delete, confirm: 'Are you sure that you want to delete this announcement?'

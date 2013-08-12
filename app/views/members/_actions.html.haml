@@ -10,6 +10,12 @@
       .title Services
       %div= link_to "Manage Services", services_path
       %div= link_to "Add Service", new_service_path, class: 'large-link'
+      .title Announcements
+      %div= link_to "Create a new site announcement", new_announcement_path, class: 'large-link'
+      - if announcements.any?
+        %div= link_to "View all site announcements", announcements_path, class: 'large-link'
+      - else
+        %div There are currently no site announcements
       #member-links
         .title Helpful Links
         = link_to "view the members' dashboard", members_dashboard_path

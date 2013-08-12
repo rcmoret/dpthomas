@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   expose(:page_title)
+  expose(:announcements)
 
   def page_title
     controller = params[:controller]

@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130811001725) do
+ActiveRecord::Schema.define(:version => 20130812150154) do
+
+  create_table "announcements", :force => true do |t|
+    t.text     "announcement"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "discussions", :force => true do |t|
     t.string   "topic"
