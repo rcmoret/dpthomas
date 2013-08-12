@@ -1,0 +1,14 @@
+= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Carter+One'
+.left
+  - if params[:paypal] == 'success'
+    .announcement
+      %div
+        .announcement-details
+          Thank you for registering for this event with the DP Thomas Foundation
+
+  .announcement
+    %div
+      .headline Announcing the 2nd Annual DP Thomas walk and run
+      .annoucement-details Details about the event and registration are available on the #{ link_to "Events Page", events_path  }.
+  - if current_member
+    = render 'members/actions'

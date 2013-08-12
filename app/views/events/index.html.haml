@@ -1,12 +1,4 @@
-= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Carter+One'
-.left
-  - if params[:paypal] == 'success'
-    .announcement
-      %div
-        .announcement-details
-          Thank you for registering for this event with the DP Thomas Foundation
-  - if current_member
-    = render 'members/actions'
+= render 'layouts/sidebar'
 
 %section.right
   %article
