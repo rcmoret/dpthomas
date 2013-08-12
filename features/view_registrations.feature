@@ -12,5 +12,3 @@ Feature: As a board member I want to be able to view the individuals who have re
     Then I should see "bill@mail.com"
     And I should see "2"
     And I should see "1"
-
-  Scenario: logged in redirected

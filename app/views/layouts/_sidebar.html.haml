@@ -1,6 +1,11 @@
-= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Carter+One'
-.left
-  - if params[:paypal] == 'success'
+- if flash.any?
+  .flash
+    .inner
+      - flash.each do |type, message|
+        %em #{type.capitalize}: #{message}
+
+- if announcements.any?
+  - announcements.each do |announcement|
     .announcement
       %div
         .announcement-details

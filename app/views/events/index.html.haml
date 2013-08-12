@@ -1,4 +1,9 @@
-= render 'layouts/sidebar'
+.left
+  - if params[:paypal] == 'success'
+    .announcement
+      .announcement-details
+        Thank you for registering for this event with the DP Thomas Foundation
+  = render 'layouts/sidebar'
 
 %section.right
   %article
