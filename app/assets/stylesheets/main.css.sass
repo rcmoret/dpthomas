@@ -133,9 +133,6 @@ header
 
 #content
   z-index: 2
-  .right
-    background: $dolly_blue
-    border-radius: 40px
   h3
     font-size: 1.5em
     margin-bottom: 5px
@@ -143,15 +140,19 @@ header
     color: white
     font-style: italic
 
-section.right
-  .discussion
-    padding: 0
-    div
-      padding: 0
+.right section
+  border-radius: 40px
+  background: $dolly_blue
+  margin-bottom: 10px
   article
-    padding: 10px 20px 10px
-  h3
-    margin-top: 0
+    padding: 10px 20px
+
+.discussion
+  padding: 0
+  div
+    padding: 0
+h3
+  margin-top: 0
 
 footer
   min-height: 100px
@@ -282,6 +283,10 @@ table
     padding-right: 15px
   td.children, td.adults
     text-align: center
+
+h2.centered
+  text-align: center
+  margin: 20px 0
 
 .hidden
   display: none

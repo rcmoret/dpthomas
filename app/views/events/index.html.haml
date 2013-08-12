@@ -5,25 +5,26 @@
         Thank you for registering for this event with the DP Thomas Foundation
   = render 'layouts/sidebar'
 
-%section.right
-  %article
-    - if future_events.present?
-      #events
-        - future_events.each do |event|
-          %h2= event.title + ":"
-          %h3= event.name
-          %hr
-          .event-date
-            %em Date: #{ event.date.strftime('%B %d, %Y') }
-          .event-location
-            %em Location: #{ event.location }
-          %h3 Event Details
-          .event= event.details.html_safe
-          - if current_member
-            %p= link_to 'edit this event', edit_event_path(event)
-          - if event.has_registration?
-            %p= link_to 'register for this event', new_event_registration_path(event)
-      - else
+.right
+  - if future_events.present?
+    - future_events.each do |event|
+      %section
+        %article
+          #events
+            %h2= event.title + ":"
+            %h3= event.name
+            %hr
+            .event-date
+              %em Date: #{ event.date.strftime('%B %d, %Y') }
+            .event-location
+              %em Location: #{ event.location }
+            %h3 Event Details
+            .event= event.details.html_safe
+            - if current_member
+              %p= link_to 'edit this event', edit_event_path(event)
+            - if event.has_registration?
+              %p= link_to 'register for this event', new_event_registration_path(event)
+  - else
+    %section
+      %article
         %p No scheduled events
-
-    %em Let's come together and have healthy fun to fight the war against obesity!

@@ -1,22 +1,24 @@
 .left
   = render 'layouts/sidebar'
 
-%section.right
-  %article
-    #events
-      %h2 Events
-      - if future_events.present?
-        - future_events.each do |event|
-          .event
-            .event-title Event: #{ event.name }
-            .event-date Date: #{ event.date.strftime('%-m/%-d/%Y') }
-            .event-location Location: #{ event.location }
-            %div= link_to "Events Page", events_path
-            %div= link_to 'edit this event', edit_event_path(event)
-            %div= link_to 'View registered participants for this event', event_registrations_path(event)
-      - else
-        %p No scheduled events
-    %hr
+.right
+  %section
+    %article
+      #events
+        %h2 Events
+        - if future_events.present?
+          - future_events.each do |event|
+            .event
+              .event-title Event: #{ event.name }
+              .event-date Date: #{ event.date.strftime('%-m/%-d/%Y') }
+              .event-location Location: #{ event.location }
+              %div= link_to "Events Page", events_path
+              %div= link_to 'edit this event', edit_event_path(event)
+              %div= link_to 'View registered participants for this event', event_registrations_path(event)
+        - else
+          %p No scheduled events
+  %section
+    %article
       %h2 Recent Discussions
       - if discussions.present?
         - discussions.each do |discussion|

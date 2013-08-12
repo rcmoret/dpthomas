@@ -1,16 +1,17 @@
 .left
   = render 'layouts/sidebar'
 
-%section.right
-  %article
-    %h2 Member Sign In
-    = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
-      = f.label :email
-      %br
-      = f.email_field :email
-      %br
-      = f.label :password
-      %br
-      = f.password_field :password
-      %br
-      = f.submit 'Sign In', :class => 'button'
+.right
+  %section
+    %article
+      %h2 Member Sign In
+      = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+        = f.label :email
+        %br
+        = f.email_field :email
+        %br
+        = f.label :password
+        %br
+        = f.password_field :password
+        %br
+        = f.submit 'Sign In', :class => 'button'

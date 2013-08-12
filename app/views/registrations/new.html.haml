@@ -1,10 +1,11 @@
 .left
   = render 'layouts/sidebar'
 
-%section.right
-  %article
-    #registration
-      %h2 Register for #{ event.name }
-      %p Step 1 of 2 (your information)
-      = simple_form_for registration, url: event_registrations_path, method: 'post' do |f|
-        = render partial: 'form', locals: { f: f }
+.right
+  %section
+    %article
+      #registration
+        %h2 Register for #{ event.name }
+        %p Step 1 of 2 (your information)
+        = simple_form_for registration, url: event_registrations_path, method: 'post' do |f|
+          = render partial: 'form', locals: { f: f }
