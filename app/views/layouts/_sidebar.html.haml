@@ -6,8 +6,7 @@
 
 - if announcements.any?
   - announcements.each do |announcement|
-    .announcement
-      .inner= announcement.announcement.html_safe
+    .announcement= announcement.announcement.html_safe
 
 - if current_member
   = render 'members/actions'
