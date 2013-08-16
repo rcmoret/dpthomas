@@ -8,5 +8,8 @@
   - announcements.each do |announcement|
     .announcement= announcement.announcement.html_safe
 
+- unless params[:controller] == 'home' && params[:action] == 'index'
+  = render 'layouts/images'
+
 - if current_member
   = render 'members/actions'
