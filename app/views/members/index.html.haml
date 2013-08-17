@@ -17,7 +17,7 @@
       %article
         .member_profile
           %h3.member-name #{ member.name } - #{ member.position }
-          - if member.image_name
+          - unless member.image_name.nil? || member.image_name.empty?
             = image_tag "/assets/member_profiles/#{member.image_name}"
           .bio= member.biography.html_safe
           - if !member.email.match(/example\.com/) && (current_member || member.public_email?)
