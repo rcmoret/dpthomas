@@ -1,6 +1,6 @@
 function totalParticipants() {
-    var adults = $('#registration_adults').val();
-    var children = $('#registration_children').val();
+    var adults = $('#adults').val();
+    var children = $('#children').val();
     if ((children + adults) === '') {
         return 0
     } else {
@@ -9,9 +9,9 @@ function totalParticipants() {
 }
 
 function calculateFee() {
-    var adults = $('#registration_adults').val();
+    var adults = $('#adults').val();
     var adultFee = $('#adult_fee').text();
-    var children = $('#registration_children').val();
+    var children = $('#children').val();
     var childFee = $('#child_fee').text();
     return (adults * adultFee) + (children * childFee)
 }
@@ -29,9 +29,9 @@ $(document).ready(function() {
         $('#registration_fee').text('($' + calculateFee() + ')');
     });
     $('form#new_registration').submit(function(ev) {
-        // if (totalParticipants() === 0) {
-        //     ev.preventDefault();
-        //     alert('You need to be registering at least one participant');
-        // }
+        if (totalParticipants() === 0) {
+           alert('You need to be registering at least one participant');
+           return false
+        }
     });
 });
