@@ -2,9 +2,9 @@ function totalParticipants() {
     var adults = $('#adults').val();
     var children = $('#children').val();
     if ((children + adults) === '') {
-        return 0
+        return false
     } else {
-        return children + adults
+        return true
     }
 }
 
@@ -29,7 +29,7 @@ $(document).ready(function() {
         $('#registration_fee').text('($' + calculateFee() + ')');
     });
     $('form#new_registration').submit(function(ev) {
-        if (totalParticipants() === 0) {
+        if (!totalParticipants()) {
            alert('You need to be registering at least one participant');
            return false
         }

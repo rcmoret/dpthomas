@@ -3,11 +3,19 @@ class ApplicationController < ActionController::Base
   expose(:page_title)
   expose(:announcements)
 
+  private
+  def authenticate!
+    unless current_member
+      redirect_to new_member_session_path, alert: 'Must be signed in'
+      false
+    end
+  end
+
   def page_title
     controller = params[:controller]
     action = params[:action]
     case
-    when ['announcements', 'services', 'events'].include?(controller)
+    when ['announcements', 'services', 'events', 'registrations'].include?(controller)
       controller.capitalize
     when action == 'donate'
       'Donate'
@@ -30,11 +38,4 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  private
-  def authenticate!
-    unless current_member
-      redirect_to new_member_session_path, alert: 'Must be signed in'
-      false
-    end
-  end
 end
