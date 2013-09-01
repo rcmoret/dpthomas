@@ -20,8 +20,8 @@ function slider() {
 }
 
 function orderSideDivs() {
+    sideDivs = [$('.facebook'), $('#photo-gallery')]
     if(window.innerWidth <= '768') {
-        sideDivs = [$('.facebook'), $('#photo-gallery')]
         $.each(sideDivs, function() {
             $(this).appendTo('#content .right')
         })
