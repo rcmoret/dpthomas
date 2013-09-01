@@ -19,7 +19,21 @@ function slider() {
     }, 3000)
 }
 
+function orderSideDivs() {
+    if(window.innerWidth <= '768') {
+        sideDivs = [$('.facebook'), $('#photo-gallery')]
+        $.each(sideDivs, function() {
+            $(this).appendTo('#content .right')
+        })
+    } else {
+        $.each(sideDivs, function() {
+            $(this).appendTo('#content .left')
+        })
+    }
+}
+
 $(document).ready(function() {
+    orderSideDivs();
     setHeight();
     $('.photos img:first-of-type').addClass('active')
 })
@@ -29,5 +43,6 @@ window.onload = function start() {
 }
 
 window.onresize = function(ev) {
-    setHeight()
+    setHeight();
+    orderSideDivs();
 }
