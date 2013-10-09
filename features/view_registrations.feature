@@ -8,7 +8,6 @@ Feature: As a board member I want to be able to view the individuals who have re
     Given I am signed in as "ryancmoret@example.com"
     And I am on the members dashboard
     When I click on "View registered participants for this event"
-    Then show me the page
     Then I should see "bill@mail.com"
     And I should see "2"
     And I should see "1"
