@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130812150154) do
+ActiveRecord::Schema.define(:version => 20131009174623) do
 
   create_table "announcements", :force => true do |t|
     t.text     "announcement"
@@ -38,14 +38,15 @@ ActiveRecord::Schema.define(:version => 20130812150154) do
   create_table "events", :force => true do |t|
     t.string   "title"
     t.date     "date"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
     t.string   "location"
     t.text     "details"
     t.boolean  "has_registration"
     t.integer  "adult_fee"
     t.integer  "child_fee"
     t.string   "name"
+    t.boolean  "show_past_event",  :default => false
   end
 
   create_table "members", :force => true do |t|
