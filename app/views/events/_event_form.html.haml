@@ -8,6 +8,7 @@
     = f.input :name
     = f.input :location
     = f.input :date, as: :string
+    = f.input :show_past_event, as: :boolean, label: "Display event after the event's date"
   = f.input :details, as: :text, input_html: { class: 'tinymce' }
   %div
     = f.input :has_registration, as: :boolean, label: 'Registration required?'

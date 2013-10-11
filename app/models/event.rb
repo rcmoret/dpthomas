@@ -9,8 +9,8 @@ class Event < ActiveRecord::Base
 
   before_save :set_fees, if: :has_registration?
 
-  scope :past_events, where('date < ?', Date.today)
-  scope :past_events_to_show, where('date < ?', Date.today).where(show_past_event: true)
+  scope :archived_events, where('date < ?', Date.today).where(show_past_event: false)
+  scope :non_archived_events, where('date < ?', Date.today).where(show_past_event: true)
   scope :in_the_future, where('date >= ?', Date.today)
 
   private

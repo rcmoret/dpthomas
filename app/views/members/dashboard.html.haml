@@ -4,7 +4,7 @@
 .right
   %section
     %article
-      #events
+      .events
         %h2 Events
         - if future_events.present?
           - future_events.each do |event|
@@ -16,7 +16,11 @@
               %div= link_to 'edit this event', edit_event_path(event)
               %div= link_to 'View registered participants for this event', event_registrations_path(event)
         - else
-          %p No scheduled events
+          %p No scheduled future events
+        - if past_events.present?
+          %div= link_to 'View all events', events_path
+        - else
+          %div There are no past events
   %section
     %article
       %h2 Recent Discussions

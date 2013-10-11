@@ -10,17 +10,17 @@ describe Event do
     end
   end
 
-  describe '.past_events' do
+  describe '.archived_events' do
     it 'should return events in the past' do
-      Event.past_events.count.should eq(1)
+      Event.archived_events.count.should eq(1)
     end
   end
 
-  describe '.past_events_to_show' do
+  describe '.non_archived_events' do
     let!(:past_event_to_show){ FactoryGirl.create(:past_event, show_past_event: true) }
     it 'should return only return events in the past with the show flag true' do
       Event.count.should eq(3)
-      Event.past_events_to_show.count.should eq(1)
+      Event.non_archived_events.count.should eq(1)
     end
   end
 

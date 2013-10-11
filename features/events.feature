@@ -14,10 +14,11 @@ Feature: Members need to add and update events
     And I press "Create Event"
     Then I should be on the members dashboard
     And I should see "2nd Annual walk and run"
-    And I should not see "No scheduled events"
+    And I should not see "No scheduled future events"
     When I go to the events page
     Then I should see "2nd Annual walk and run"
-    And I should not see "No scheduled events"
+    And I should not see "No scheduled future events"
+    And I should see "No past events"
 
   Scenario: New Event; date in past
     When I click "Add a new event"
@@ -30,10 +31,10 @@ Feature: Members need to add and update events
     And I press "Create Event"
     Then I should be on the members dashboard
     And I should not see "2nd Annual walk and run"
-    And I should see "No scheduled events"
+    And I should see "No scheduled future events"
     When I go to the events page
     Then I should not see "Fundraiser"
-    And I should see "No scheduled events"
+    And I should see "There are no future events scheduled"
 
   Scenario: New Event; requires registration
     Given I am on the new event page
@@ -54,3 +55,16 @@ Feature: Members need to add and update events
     And I press "Update Event"
     Then I should be on the events page
     And I should see "New Name"
+
+  Scenario: Show event after event date
+    Given there is a past fundraising event
+    And I am on the members dashboard
+    When I click "View all events"
+    Then I should not see "fundraising"
+    When I click "View all past events"
+    Then I should see "fundraising"
+    And I press "edit this event"
+    And I check "Display event after the event's date"
+    And I press "Update Event"
+    And I go to the events page
+    Then I should see "fundraising"

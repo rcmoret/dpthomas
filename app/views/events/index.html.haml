@@ -10,21 +10,56 @@
     - future_events.each do |event|
       %section
         %article
-          #events
-            %h2= event.title + ":"
-            %h3= event.name
+          .events
+            %h2 Future Events
+            %h3= event.title + ":"
+            %h4= event.name
             %hr
             .event-date
               %em Date: #{ event.date.strftime('%B %d, %Y') }
             .event-location
               %em Location: #{ event.location }
-            %h3 Event Details
+            %h4 Event Details
             .event= event.details.html_safe
             - if current_member
               %p= link_to 'edit this event', edit_event_path(event)
             - if event.has_registration?
               %p= link_to 'register for this event', new_event_registration_path(event)
-  - else
+  %section
+    %article
+      .events
+        %h2 Past Events
+        - if non_archived_events.any?
+          - non_archived_events.each do |event|
+            %h3= event.title + ":"
+            %h4= event.name
+            %hr
+            .event-date
+              %em Date: #{ event.date.strftime('%B %d, %Y') }
+            .event-location
+              %em Location: #{ event.location }
+            %h4 Event Details
+            .event= event.details.html_safe
+            - if current_member
+              %p
+                %em This post is currently shown on the events main page.
+              %p= link_to 'edit this event', edit_event_path(event)
+      - if archived_events.any? && params[:past]
+        - archived_events.each do |event|
+          %h3= event.title + ":"
+          %h4= event.name
+          %hr
+          .event-date
+            %em Date: #{ event.date.strftime('%B %d, %Y') }
+          %p= link_to "view this event's details", edit_event_path(event)
+          - if current_member
+            %p= link_to 'edit this event', edit_event_path(event)
+      - else
+        %p= link_to 'View all past events', events_path(past: true)
+        - if non_archived_events.empty? && archived_events.empty?
+          %p No past events
+
+  - if future_events.empty?
     %section
       %article
-        %p No scheduled events
+        %p There are no future events scheduled.

@@ -2,7 +2,7 @@ class MembersController < ApplicationController
   expose(:members_with_profiles){ Member.completed_profiles.by_rank }
   expose(:members){ Member.by_rank }
   expose(:member)
-  expose(:past_events_to_show){ Event.past_events_to_show }
+  expose(:past_events){ Event.archived_events }
   expose(:future_events){ Event.in_the_future }
   expose(:discussions){ Discussion.recent_first.limit(5) }
 
