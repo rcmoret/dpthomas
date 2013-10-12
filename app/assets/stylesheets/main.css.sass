@@ -1,4 +1,3 @@
-
 $dolly-blue:       #99B4CB
 $dark-gray:        #38434B
 $sand:             #615849
@@ -155,17 +154,23 @@ footer
   min-height: 100px
   width: 100%
   padding: 10px 0
-  margin-bottom: 100px
   clear: both
   hr
     border-top: 1px solid $dolly-blue
-  address.right
+  address
+    margin: 0 1% 50px 1%
     background: $dark-gray
+    border-radius: 40px
     text-align: center
+    div
+      padding: 2px 20px
     li#tax-exempt
-      width: 50%
-      margin-left: 25%
-      margin-right: 25%
+      width: 30%
+      margin-left: 35%
+      margin-right: 35%
+    ul
+      margin: 5px 20px
+      padding: 0
   a
     color: $dolly-blue
 
@@ -177,16 +182,6 @@ footer
   position: fixed
   bottom: 10px
   left: 5%
-
-address
-  background: $light-gray
-  border-radius: 40px
-  float: left
-  div
-    padding: 2px 20px
-  ul
-    margin: 5px 20px
-    padding: 0
 
 #sign-in
   float: right
