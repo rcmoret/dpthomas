@@ -8,6 +8,10 @@ class MembersController < ApplicationController
 
   before_filter :authenticate!, except: [:index, :show]
 
+  def edit
+    redirect_to edit_member_path(current_member) if params[:id].to_i != current_member.id
+  end
+
   def update
     if member.save
       redirect_to members_path, notice: 'You successfully updated your profile'
