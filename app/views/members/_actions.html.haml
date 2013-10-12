@@ -1,25 +1,27 @@
 #member-actions
   .inner
     %h2 Member Actions
-    #action-items
-      .title Events
-      %div= link_to "Add a new event", new_event_path, class: 'large-link'
-      .title Discussions
-      %div= link_to "View all discussions", discussions_path, class: 'large-link'
-      %div= link_to "create a new discussion", new_discussion_path, class: 'large-link'
-      .title Services
-      %div= link_to "Manage Services", services_path
-      %div= link_to "Add Service", new_service_path, class: 'large-link'
-      .title Announcements
-      %div= link_to "Create a new site announcement", new_announcement_path, class: 'large-link'
-      - if announcements.any?
-        %div= link_to "View all site announcements", announcements_path, class: 'large-link'
-      - else
-        %div There are currently no site announcements
-      #member-links
-        .title Helpful Links
-        = link_to "view the members' dashboard", members_dashboard_path
-        %br
-        = link_to 'edit your member profile', edit_member_path(current_member)
-        %br
-        = link_to 'sign out', destroy_member_session_path, method: :delete
+    View the #{ link_to "members' dashboard", members_dashboard_path }
+    %br
+    Edit your #{ link_to 'member profile', edit_member_path(current_member) }
+    %br
+    %strong= link_to 'SIGN OUT', destroy_member_session_path, method: :delete
+    %hr
+    .title Events
+    %div.large-link Add a #{ link_to 'new event', new_event_path }
+    %hr
+    .title Discussions
+    %div.large-link View all #{ link_to 'discussions', discussions_path }
+    %div.large-link Create a #{ link_to 'create a new discussion', new_discussion_path }
+    %hr
+    .title Services
+    %div.large-link Manage #{ link_to 'services', services_path }
+    %div.large-link Add a #{ link_to 'service', new_service_path }
+    %hr
+    .title Announcements
+    %div.large-link Create a new #{ link_to 'new site announcement', new_announcement_path }
+    - if announcements.any?
+      %div.large-link View all #{ link_to 'site announcements', announcements_path }
+    - else
+      %div There are currently no site announcements
+    %hr
