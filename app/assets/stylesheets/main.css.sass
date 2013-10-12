@@ -1,9 +1,12 @@
-$dolly-blue:       #99B4CB
-$dark-gray:        #38434B
-$sand:             #615849
-$light-gray:       #435059
-$charcoal:         #252B33
-$muted-red:        #610A06
+$charcoal:    #252B33
+$dark-gray:   #38434B
+$dolly-blue:  #C0E2FF
+$light-blue:  #C0E2FF
+$light-gray:  #435059
+$link-gray:   #808080
+$medium-blue: #A9C7E0
+$muted-red:   #610A06
+$sand:        #615849
 
 $screen:     "only screen"
 $xtra_small: "only screen and (max-width:768px)"
@@ -39,7 +42,7 @@ hr
   border: 0
   margin: 1em 0
   padding: 0
-  border-top: 1px solid white
+  border-top: 1px solid $link-gray
 
 .left
   width: 34.1%
@@ -62,7 +65,8 @@ header
   z-index: 5
   background: $dark-gray
   font-size: 1.5em
-  height: 75px
+  height: 70px
+  border-bottom: 5px solid $dolly-blue
   a
     color: $dolly-blue
   hr
@@ -125,7 +129,7 @@ header
     font-size: 1.5em
     margin-bottom: 5px
   a, a:visited
-    color: white
+    color: $link-gray
     font-style: italic
   .left, .right
     margin-top: 1%
@@ -136,6 +140,13 @@ header
   margin-bottom: 10px
   article
     padding: 10px 20px
+    h2
+      font-size: 2.2em
+    .content-item
+      padding: 15px
+      margin: 10px 0
+      border-radius: 20px
+      background: $medium-blue
 
 .discussion
   padding: 0
@@ -143,6 +154,9 @@ header
     padding: 0
 h3
   margin-top: 0
+
+.content-item
+  background: $light-blue
 
 footer
   min-height: 100px
@@ -185,7 +199,7 @@ footer
   .details
     font-style: italic
   hr
-    border-top: 1px solid white
+    border-top: 1px solid $link-gray
 
 .events
   padding: 0
@@ -228,7 +242,7 @@ footer
 #member-links
   margin-top: 10px
   a
-    color: white
+    color: $link-gray
 
 .info
   margin: 10px 0 0 10px
@@ -243,15 +257,16 @@ footer
   p:first-child
     margin-top: 0
 
-.announcement
-  background: $muted-red
-  border-radius: 40px
-  font-family: 'Carter One', Arial
-  margin-bottom: 10px
-  font-size: 1.4em
-  padding: 10px
-  h2, h3, p
-    margin: 0
+#content
+  .announcement
+    background: $muted-red
+    border-radius: 40px
+    font-family: 'Carter One', Arial
+    margin-bottom: 10px
+    font-size: 1.4em
+    padding: 10px
+    h2, h3, p
+      margin: 0
 
 table
   th

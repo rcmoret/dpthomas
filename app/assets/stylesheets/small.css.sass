@@ -1,3 +1,4 @@
+$dolly-blue: #C0E2FF
 $dark_gray:  #38434B
 $light_gray: #435059
 
@@ -11,6 +12,7 @@ $light_gray: #435059
     ul
       width: 100%
       height: 95px
+      border-bottom: 5px solid $dolly-blue
       background: $dark_gray
       margin: 0 auto
       position: fixed
@@ -37,6 +39,8 @@ $light_gray: #435059
       margin: 0 auto
     .right
       margin-bottom: 0
+    h1, h2
+      font-size: 1.8em
 
   h1, h2
     font-size: 1em
@@ -56,15 +60,18 @@ $light_gray: #435059
   section.right
     article
       padding: 20px 10px 20px
-    h2
-      font-size: 1.5em
-      margin-bottom: 0.2em
-      text-align: left
+      h2
+        margin-bottom: 0.2em
+        text-align: left
+
+  .right section
+    article
+      h2
+        font-size: 1.8em
+
+  #content
     h3.member-name
       font-size: 1.2em
-
-  #top-back
-    display: none
 
   .wrapper
     padding: 0
