@@ -42,6 +42,7 @@
                 %em Location: #{ event.location }
               %h4 Event Details
               .event= event.details.html_safe
+              = render 'events/photos_2013'
               - if current_member
                 %p
                   %em This post is currently shown on the events main page.
