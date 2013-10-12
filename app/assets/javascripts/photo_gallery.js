@@ -26,9 +26,14 @@ function orderSideDivs() {
             $(this).appendTo('#content .right')
         })
     } else {
-        $.each(sideDivs, function() {
-            $(this).appendTo('#content .left')
-        })
+        if($('#title-bar h2').text() === 'Home Page') {
+            $('#photo-gallery').appendTo('#content .right')
+            $('.facebook').appendTo('#content .left')
+        } else {
+            $.each(sideDivs, function() {
+                $(this).appendTo('#content .left')
+            })
+        }
     }
 }
 
