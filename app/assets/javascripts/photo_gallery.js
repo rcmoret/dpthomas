@@ -3,18 +3,19 @@ function setHeight() {
     $('#photo-gallery').css('height', divWidth + 'px');
 }
 
-function slider() {
-    var imageCount = $('.photos img').length - 1;
+function slider(div_id) {
+    var images = $('#' + div_id + ' img')
+    var imageCount = images.length - 1;
     var index = 0
     setInterval( function() {
-        image = $('.photos img')[index]
+        image = images[index]
         $(image).removeClass('active')
         if (index === imageCount) {
             index = 0
         } else {
             index += 1
         }
-        image = $('.photos img')[index]
+        image = $(images)[index]
         $(image).addClass('active')
     }, 3000)
 }
@@ -44,7 +45,8 @@ $(document).ready(function() {
 })
 
 window.onload = function start() {
-    slider();
+    slider('side-bar-photos');
+    slider('event-photos');
 }
 
 window.onresize = function(ev) {
