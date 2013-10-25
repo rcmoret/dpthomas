@@ -9,14 +9,13 @@ function slider(div_id) {
     var index = 0
     setInterval( function() {
         image = images[index]
-        $(image).removeClass('active')
         if (index === imageCount) {
             index = 0
         } else {
             index += 1
         }
-        image = $(images)[index]
-        $(image).addClass('active')
+        $((images)[index]).addClass('active')
+        $(image).removeClass('active')
     }, 3000)
 }
 
@@ -42,7 +41,8 @@ $(document).ready(function() {
     orderSideDivs();
     setHeight('#photo-gallery');
     setHeight('#walk-run-gallery');
-    $('.photos img:first-of-type').addClass('active')
+    $('#side-bar-photos img:first-of-type').addClass('active')
+    $('#event-photos img:first-of-type').addClass('active')
 })
 
 window.onload = function start() {
