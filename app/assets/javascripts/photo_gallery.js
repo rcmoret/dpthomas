@@ -1,6 +1,6 @@
-function setHeight() {
-    divWidth = $('#photo-gallery').width() * 0.725;
-    $('#photo-gallery').css('height', divWidth + 'px');
+function setHeight(divId) {
+    divWidth = $(divId).width() * 0.725;
+    $(divId).css('height', divWidth + 'px');
 }
 
 function slider(div_id) {
@@ -40,7 +40,8 @@ function orderSideDivs() {
 
 $(document).ready(function() {
     orderSideDivs();
-    setHeight();
+    setHeight('#photo-gallery');
+    setHeight('#walk-run-gallery');
     $('.photos img:first-of-type').addClass('active')
 })
 
@@ -50,6 +51,7 @@ window.onload = function start() {
 }
 
 window.onresize = function(ev) {
-    setHeight();
+    setHeight('#photo-gallery');
+    setHeight('#walk-run-gallery');
     orderSideDivs();
 }
