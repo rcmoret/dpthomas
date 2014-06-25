@@ -11,10 +11,10 @@ class ImageUploader < CarrierWave::Uploader::Base
   # include Sprockets::Helpers::IsolatedHelper
 
   # Choose what kind of storage to use for this uploader:
-  if Rails.env == 'development'
-    storage :file
-  else
-    storage :s3
+  storage :file
+
+  def cache_dir
+    "#{Rails.root}/tmp/uploads"
   end
 
   # Override the directory where uploaded files will be stored.
