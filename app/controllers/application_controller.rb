@@ -3,14 +3,12 @@ class ApplicationController < ActionController::Base
   expose(:page_title)
   expose(:announcements)
   expose(:twenty_thirteen_images) do
-    Dir["#{Rails.root}/app/assets/images/2013_walk_run/*.jpg"].collect do |f|
-      f[/2013_walk_run.*$/]
-    end.compact
+    asset_location = "#{Rails.root}/app/assets/images/2013_walk_run"
+    Dir["#{asset_location}/*"].collect { |f| f[/2013.*DSC.*\.jpg$/] }.compact
   end
   expose(:twenty_twelve_images) do
-    Dir["#{Rails.root}/app/assets/images/shelby_walk_run/*.png"].collect do |f|
-      f[/shelby_walk_run.*$/]
-    end.compact
+    asset_location = "#{Rails.root}/app/assets/images/shelby_walk_run"
+    Dir["#{asset_location}/*"].collect { |f| f[/shelby_w\.png$/] }.compact
   end
 
   private

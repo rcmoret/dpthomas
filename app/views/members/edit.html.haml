@@ -12,6 +12,6 @@
         = f.input :position
         = f.input :biography, as: :text, input_html: { class: 'tinymce' }
         = f.input :phone, label: 'Phone number'
-        -# = f.input :image
+        = f.input :image
         = f.submit 'Update your profile'
       = link_to 'change my email or password', edit_member_registration_path(current_member)
