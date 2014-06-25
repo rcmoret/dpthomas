@@ -2,6 +2,16 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   expose(:page_title)
   expose(:announcements)
+  expose(:twenty_thirteen_images) do
+    Dir["#{Rails.root}/app/assets/images/2013_walk_run/*.jpg"].collect do |f|
+      f[/2013_walk_run.*$/]
+    end.compact
+  end
+  expose(:twenty_twelve_images) do
+    Dir["#{Rails.root}/app/assets/images/shelby_walk_run/*.png"].collect do |f|
+      f[/shelby_walk_run.*$/]
+    end.compact
+  end
 
   private
   def authenticate!
