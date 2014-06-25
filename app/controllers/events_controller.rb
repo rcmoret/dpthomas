@@ -8,6 +8,9 @@ class EventsController < ApplicationController
 
   def index
     flash[:notice] = "Thank you for your donation" if params[:paypal] && params[:paypal] == 'success'
+    @image_files = Dir["#{Rails.root}/app/assets/images/2013_walk_run/*.jpg"].collect do |f|
+      f[/2013_walk_run.*$/]
+    end
   end
 
   def create
