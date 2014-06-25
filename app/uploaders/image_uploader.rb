@@ -19,7 +19,7 @@ class ImageUploader < CarrierWave::Uploader::Base
     if Rails.env == 'development'
       "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
     else
-      "#{Rails.root}/public/uploads/member/image/"
+      "#{Rails.root}/app/assets/images/uploads/#{mounted_as}/#{model.id}"
     end
   end
 
