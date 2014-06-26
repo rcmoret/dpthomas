@@ -16,7 +16,8 @@
         .content-item
           .member_profile
             %h3.member-name #{ member.name } - #{ member.position }
-            = image_tag member.image
+            - unless member.image_name.nil? || member.image_name.empty?
+              = image_tag "/assets/member_profiles/#{member.image_name}"
             .bio= member.biography.html_safe
             - if current_member || member.public_email?
               %p.contact email: #{ mail_to member.email }

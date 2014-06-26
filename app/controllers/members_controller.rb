@@ -9,7 +9,7 @@ class MembersController < ApplicationController
   before_filter :authenticate!, except: [:index, :show]
 
   def edit
-    # redirect_to edit_member_path(current_member) if params[:id].to_i != current_member.id
+    redirect_to edit_member_path(current_member) if params[:id].to_i != current_member.id
   end
 
   def update
