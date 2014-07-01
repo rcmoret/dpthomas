@@ -5,7 +5,7 @@
         %em #{type.capitalize}: #{message}
 
 - if announcements.any?
-  - announcements.each do |announcement|
+  - announcements.reverse.each do |announcement|
     .announcement= announcement.announcement.html_safe
 
 .facebook
