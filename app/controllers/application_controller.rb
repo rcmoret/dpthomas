@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   expose(:page_title)
-  expose(:announcements)
+  expose(:announcements) { Announcement.order('created_at DESC') }
   expose(:twenty_thirteen_images) do
     asset_location = "#{Rails.root}/app/assets/images/2013_walk_run"
     Dir["#{asset_location}/*"].collect { |f| f[/2013.*DSC.*\.jpg$/] }.compact
