@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '1.9.3' if respond_to?(:ruby)
+ruby '2.1.2' if respond_to?(:ruby)
 
 gem 'activeadmin'
 gem 'carrierwave'
@@ -14,7 +14,6 @@ gem 'kaminari'
 gem 'pg'
 gem 'rails', '3.2.8'
 gem 'rmagick', '~> 2.13.2'
-gem 'rspec-rails'
 gem 'simple_form'
 gem 'tinymce-rails'
 
