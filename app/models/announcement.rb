@@ -1,3 +1,3 @@
 class Announcement < ActiveRecord::Base
-  attr_accessible :announcement
+  validates_presence_of :announcement
 end

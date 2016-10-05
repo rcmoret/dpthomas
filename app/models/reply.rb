@@ -1,15 +1,12 @@
 class Reply < ActiveRecord::Base
-  attr_accessible :content, :member_id, :discussion_id
-
   validates_presence_of :content
+  delegate :name, to: :member, prefix: true
 
   belongs_to :member
   belongs_to :discussion
+  delegate :name, to: :member, prefix: true
 
-  scope :recent_first, order('created_at DESC')
+  scope :recent_first, -> { order('created_at DESC') }
 
-  def author
-    self.member.name
-  end
-
+  alias_method :author, :member_name
 end

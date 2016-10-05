@@ -25,4 +25,11 @@ class EventsController < ApplicationController
       render :new, alert: 'There was an error updating your event'
     end
   end
+
+  private
+
+  def event_params
+    params.require(:event).permit(*%i(title date location details has_registration adult_fee
+                                      child_fee title name show_past_event))
+  end
 end

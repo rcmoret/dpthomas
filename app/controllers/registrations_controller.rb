@@ -26,4 +26,10 @@ class RegistrationsController < ApplicationController
       render :new, alert: 'Your registration was unsuccessful'
     end
   end
+
+  private
+
+  def registration_params
+    params.require(:registration).permit(*%i(event_id email adults children additional_info))
+  end
 end

@@ -11,4 +11,10 @@ class EmailListingsController < ApplicationController
       render :new, alert: 'there was an error; please submit again'
     end
   end
+
+  private
+
+  def email_listing_params
+    params.require(:email_listing).permit(*%i(first_name last_name email))
+  end
 end

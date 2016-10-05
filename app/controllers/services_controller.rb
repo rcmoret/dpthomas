@@ -24,4 +24,10 @@ class ServicesController < ApplicationController
     service.destroy
     redirect_to members_dashboard_path, notice: "Service was removed"
   end
+
+  private
+
+  def service_params
+    params.require(:service).permit(*%i(name details))
+  end
 end

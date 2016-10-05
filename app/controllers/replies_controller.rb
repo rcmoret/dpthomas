@@ -11,4 +11,10 @@ class RepliesController < ApplicationController
       render :new, alert: 'There was an error'
     end
   end
+
+  private
+
+  def reply_params
+    params.require(:reply).permit(*%i(content discussion_id member_id))
+  end
 end

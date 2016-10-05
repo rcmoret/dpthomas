@@ -28,4 +28,10 @@ class DiscussionsController < ApplicationController
     discussion.destroy
     redirect_to members_dashboard_path, notice: 'Discussion was removed'
   end
+
+  private
+
+  def discussion_params
+    params.require(:discussion).permit(*%i(topic content member_id))
+  end
 end

@@ -5,7 +5,7 @@ class AnnouncementsController < ApplicationController
   before_filter :authenticate!
 
   def index
-    unless announcements.any?
+    if announcements.none?
       redirect_to new_announcement_path, notice: 'There are currently no site announcements. Would you like to create one?'
     end
   end
@@ -30,6 +30,12 @@ class AnnouncementsController < ApplicationController
     if announcement.destroy
       redirect_to members_dashboard_path, notice: 'You have deleted a site announcement'
     end
+  end
+
+  private
+
+  def announcement_params
+    params.require(:announcement_params).permit(:announcement)
   end
 
 end
