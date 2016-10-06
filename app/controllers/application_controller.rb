@@ -10,6 +10,11 @@ class ApplicationController < ActionController::Base
     asset_location = "#{Rails.root}/app/assets/images/shelby_walk_run"
     Dir["#{asset_location}/*"].collect { |f| f[/shelby_w\.png$/] }.compact
   end
+  expose(:twenty_sixteen_images) do
+    Dir["#{Rails.root}/app/assets/images/2016_walk_run/*"].map do |file_path|
+      file_path.split('/')[-2..-1].join('/')
+    end
+  end
 
   private
   def authenticate!

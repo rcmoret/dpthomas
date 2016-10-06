@@ -1,5 +1,5 @@
 function setHeight(divId) {
-    divWidth = $(divId).width() * 0.725;
+    divWidth = $(divId).width() * 0.8;
     $(divId).css('height', divWidth + 'px');
 }
 

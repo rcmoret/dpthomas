@@ -1,27 +1,27 @@
 $charcoal: #252B33
 
 section#photo-gallery, section#walk-run-gallery
-  height: 350px
+  // height: 350px
   width: 85%
   margin: 0 auto 10px
   position: relative
   background: $charcoal
   overflow: hidden
   border-radius: 20px
+  text-align: center
   article
-    height: inherit
     padding: 0
     overflow: hidden
-  img
-    width: 90%
-    height: 90%
-    display: block
-    right: 300%
-    top: 5%
-    position: absolute
-    border-radius: 20px
-  img.active
-    left: 5%
+    div
+      display: flex
+      justify-content: center
+      img.active
+        display: block
+      img
+        display: none
+        top: 5%
+        position: absolute
+        border-radius: 20px
 
 section#flyer
   margin: 20px auto
