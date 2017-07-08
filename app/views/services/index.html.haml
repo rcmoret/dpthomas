@@ -5,7 +5,7 @@
   %section
     %article
       %h2 DP Thomas Foundation Services
-      - if services.present?
+      - if services.any?
         - services.each do |service|
           %h4= service.name
           = service.details.html_safe

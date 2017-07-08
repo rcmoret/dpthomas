@@ -1,5 +1,5 @@
 class ServicesController < ApplicationController
-  expose(:services)
+  expose(:services) { Service.all }
   expose(:service)
 
   before_filter :authenticate!, except: :index
