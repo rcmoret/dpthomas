@@ -1,6 +1,6 @@
 class AnnouncementsController < ApplicationController
   expose(:announcement)
-  expose(:announcements)
+  expose(:announcements) { Announcement.all }
 
   before_filter :authenticate!
 
