@@ -1,27 +1,27 @@
 #member-actions
   .inner
     %h2 Member Actions
-    View the #{ link_to "members' dashboard", members_dashboard_path }
+    View the #{link_to "members' dashboard", members_dashboard_path}
     %br
-    Edit your #{ link_to 'member profile', edit_member_path(current_member) }
+    Edit your #{link_to 'member profile', edit_member_path(current_member)}
     %br
     %strong= link_to 'SIGN OUT', destroy_member_session_path, method: :delete
     %hr
     .title Events
-    %div.large-link Add a #{ link_to 'new event', new_event_path }
+    .large-link Add a #{link_to 'new event', new_event_path}
     %hr
     .title Discussions
-    %div.large-link View all #{ link_to 'discussions', discussions_path }
-    %div.large-link Create a #{ link_to 'create a new discussion', new_discussion_path }
+    .large-link View all #{link_to 'discussions', discussions_path}
+    .large-link Create a #{link_to 'create a new discussion', new_discussion_path}
     %hr
     .title Services
-    %div.large-link Manage #{ link_to 'services', services_path }
-    %div.large-link Add a #{ link_to 'service', new_service_path }
+    .large-link Manage #{link_to 'services', services_path}
+    .large-link Add a #{link_to 'service', new_service_path}
     %hr
     .title Announcements
-    %div.large-link Create a new #{ link_to 'new site announcement', new_announcement_path }
+    .large-link Create a #{link_to 'new site announcement', new_announcement_path}
     - if announcements.any?
-      %div.large-link View all #{ link_to 'site announcements', announcements_path }
+      %div.large-link View all #{link_to 'site announcements', announcements_path}
     - else
       %div There are currently no site announcements
     %hr
