@@ -35,7 +35,7 @@ class AnnouncementsController < ApplicationController
   private
 
   def announcement_params
-    params.require(:announcement).permit(:announcement)
+    params.require(:announcement).permit(:announcement, :priority)
   end
 
 end
