@@ -8,11 +8,12 @@
   - announcements.each do |announcement|
     .announcement= announcement.announcement.html_safe
 
-= render 'layouts/images'
-
 .facebook
   %h3 Like us on Facebook!
   = render 'layouts/facebook'
+
+- unless params[:controller] == 'home' && params[:action] == 'index'
+  = render 'layouts/images'
 
 - if current_member
   = render 'members/actions'
