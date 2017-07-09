@@ -2,14 +2,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   expose(:page_title)
   expose(:announcements) { Announcement.order('priority ASC') }
-  expose(:twenty_thirteen_images) do
-    asset_location = "#{Rails.root}/app/assets/images/2013_walk_run"
-    Dir["#{asset_location}/*"].collect { |f| f[/2013.*DSC.*\.jpg$/] }.compact
-  end
-  expose(:twenty_twelve_images) do
-    asset_location = "#{Rails.root}/app/assets/images/shelby_walk_run"
-    Dir["#{asset_location}/*"].collect { |f| f[/shelby_w\.png$/] }.compact
-  end
   expose(:twenty_sixteen_images) do
     Dir["#{Rails.root}/app/assets/images/2016_walk_run/*"].map do |file_path|
       file_path.split('/')[-2..-1].join('/')

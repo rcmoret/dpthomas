@@ -1,5 +1,5 @@
 %section#photo-gallery
   %article
     %div#side-bar-photos
-      - (twenty_twelve_images + twenty_thirteen_images).shuffle.each do |image|
+      - twenty_sixteen_images.shuffle.each do |image|
         = image_tag image
