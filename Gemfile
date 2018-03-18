@@ -13,7 +13,7 @@ gem 'haml-rails'
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'pg'
-gem 'rmagick', '~> 2.13.2'
+gem 'rmagick'
 gem 'simple_form'
 gem 'tinymce-rails'
 
