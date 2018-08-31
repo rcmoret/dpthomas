@@ -4,8 +4,16 @@
 .right
   %section
     %article
+      %h2 Annual 5k Celebration
       %p
-        %strong= link_to 'Click Here to Register', events_path
+        %h3 Walk and Run
+        September 5, 2018 8:00 a.m.
+        %br
+        Two Rivers Park
+        %br
+        = link_to 'More Details', events_path
+        %br
+        = link_to 'Click Here to Register', new_event_registration_path(6)
 
   = render 'layouts/images'
 
