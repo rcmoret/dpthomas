@@ -10,7 +10,6 @@
   = f.input_field :children, collection: 1..5, label: 'Children', id: 'children'
   (pre-registration fee is $#{event.child_fee} per child)
   #child_fee.hidden= event.child_fee
-%p List your the size t-shirts you would like for your goodie bag in the additional information
 = f.input :additional_info
 = f.submit 'Continue >>'
 %div Review your registration and pay the registration fee <span id='registration_fee'></span>
