@@ -1,8 +1,8 @@
 class DiscussionsController < ApplicationController
-  expose(:discussions){ Discussion.recent_first.page(params[:page]).per(10) }
+  expose(:discussions) { Discussion.recent_first.page(params[:page]).per(10) }
   expose(:discussion)
-  expose(:reply){ Reply.new }
-  expose(:replies){ discussion.replies }
+  expose(:reply) { Reply.new }
+  expose(:replies) { discussion.replies }
 
   before_filter :authenticate!
 

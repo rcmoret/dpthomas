@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   expose(:future_events) { Event.in_the_future }
-  expose(:archived_events){ Event.archived_events }
-  expose(:non_archived_events){ Event.non_archived_events }
+  expose(:archived_events) { Event.archived_events }
+  expose(:non_archived_events) { Event.non_archived_events }
   expose(:event)
 
   before_filter :authenticate!, except: [:index, :show]

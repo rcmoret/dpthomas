@@ -28,7 +28,7 @@ class Member < ActiveRecord::Base
   private
 
   def strip_phone_number
-    phone = phone.gsub(/\D/, '') unless phone.nil?
+    self.phone = phone.gsub(/\D/, '') unless phone.nil?
   end
 
 end
