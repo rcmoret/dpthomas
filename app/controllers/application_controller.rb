@@ -7,8 +7,8 @@ class ApplicationController < ActionController::Base
       file_path.split('/')[-2..-1].join('/')
     end
   end
-  expose(:twenty_sixteen_images) do
-    Dir["#{Rails.root}/app/assets/images/2016_walk_run/*"].map do |file_path|
+  expose(:twenty_eighteen_images) do
+    Dir["#{Rails.root}/app/assets/images/2018_walk_run/*"].map do |file_path|
       file_path.split('/')[-2..-1].join('/')
     end
   end
