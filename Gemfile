@@ -17,6 +17,9 @@ gem 'rmagick'
 gem 'simple_form'
 gem 'tinymce-rails'
 
+# recommended for heroku
+gem 'rails_12factor'
+
 # assets
 gem 'sass-rails'
 gem 'uglifier', '>= 1.0.3'
