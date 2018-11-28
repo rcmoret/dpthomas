@@ -1,9 +1,13 @@
 %ul
-  %li
-    .nav-item= link_to "Events", events_path
-  %li
-    .nav-item= link_to "About Us", members_path
-  %li
-    .nav-item= link_to "Services", services_path
-  %li
-    .nav-item= link_to "Donate", donations_path
+  = link_to events_path do
+    %li
+      .nav-item Events
+  = link_to members_path do
+    %li
+      .nav-item About Us
+  = link_to services_path do
+    %li
+      .nav-item Services
+  = link_to donations_path do
+    %li
+      .nav-item Donate
