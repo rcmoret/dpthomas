@@ -16,3 +16,5 @@
 /features/step_definitions/debugger_steps.rb
 /public/assets
 /public/uploads/tmp
+
+/archive/images
