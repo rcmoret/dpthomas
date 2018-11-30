@@ -10,8 +10,10 @@
         %hr
         %li#tax-exempt
           %em The DP Thomas Foundation is a 501(c)-3 organization. All donations and contributions are tax deductible
-  - unless current_member
-    .left
-    .right
-      #sign-in
+  .left
+  .right
+    #sign-in
+      - if current_member
+        = link_to 'member sign out', destroy_member_session_path, method: :delete
+      - else
         = link_to 'member sign in', new_member_session_path
