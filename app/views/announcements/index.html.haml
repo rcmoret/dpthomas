@@ -14,3 +14,5 @@
         %br
         = link_to 'delete ', announcement_path(announcement), method: :delete, confirm: 'Are you sure that you want to delete this announcement?'
         this site announcement
+        %br
+        Priority: #{announcement.priority}

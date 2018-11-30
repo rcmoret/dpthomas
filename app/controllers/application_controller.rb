@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   expose(:page_title)
-  expose(:announcements) { Announcement.order('priority ASC') }
+  expose(:announcements) { Announcement.by_priority }
   expose(:health_fair_images) do
     Dir["#{Rails.root}/app/assets/images/2017_health_fair/*"].map do |file_path|
       file_path.split('/')[-2..-1].join('/')
