@@ -12,13 +12,9 @@ class ApplicationController < ActionController::Base
       file_path.split('/')[-2..-1].join('/')
     end
   end
-  expose(:twenty_seventeen_images) do
-    Dir["#{Rails.root}/app/assets/images/2017_walk_run/*"].map do |file_path|
-      file_path.split('/')[-2..-1].join('/')
-    end
-  end
 
   private
+
   def authenticate!
     unless current_member
       redirect_to new_member_session_path, alert: 'Must be signed in'
