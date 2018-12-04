@@ -25,6 +25,11 @@ class Member < ActiveRecord::Base
     end
   end
 
+  def image_name
+    return if self[:image_name].nil? || self[:image_name].empty?
+    "member_profiles/#{self[:image_name]}"
+  end
+
   private
 
   def strip_phone_number
