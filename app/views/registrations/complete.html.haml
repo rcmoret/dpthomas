@@ -1,7 +1,4 @@
 .left
-  = render 'layouts/sidebar'
-
-.right
   %section
     %article
       %h2 Register for #{ event.name }
@@ -17,3 +14,6 @@
 
       #paypal
         = render 'paypal'
+
+.right
+  = render 'layouts/sidebar'

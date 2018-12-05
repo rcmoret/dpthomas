@@ -1,3 +1,4 @@
+$alert:        #FF002F
 $charcoal:     #252B33
 $dark-gray:    #38434B
 $dolly-blue:   #C0E2FF
@@ -46,18 +47,6 @@ hr
   padding: 0
   border-top: 1px solid $link-gray
 
-.left
-  width: 55.9%
-  min-width: 30%
-  min-height: 1px
-  margin: 0 1% 0 3%
-  float: left
-
-.right
-  width: 34.1%
-  margin: 0 3% 0 1%
-  float: left
-
 header
   position: fixed
   margin: 0
@@ -77,134 +66,67 @@ header
     height: 100%
     display: inline-block
     margin-right: -4px
-    padding: 10px 0
+    padding: 5px 0
     .link-wrapper
       width: 50%
       height: 80%
       display: inline-block
       text-align: center
-      font-size: 1.5em
+      font-size: 1.2em
       padding: 0 25%
       a
         .link-button
-          padding: 10px 0
+          padding: 5px 0
           background-color: $dolly-blue
           border-radius: 15px
         .link-button:hover
           background-color: $medium-blue
 
-.wrapper
-  height: 100%
-  max-height: 100%
-  width: 100%
-  max-width: 100%
-  padding: 0
-  background: $light-gray
-  display: block
-  position: relative
-  z-index: 3
+.left, .right
+  display: inline-block
+  margin-right: -4px
+  vertical-align: top
+
+#title-bar
+  margin-top: 60px
+  .left
+    width: 24.1%
+    img
+      width: 100%
+      max-width: 350px
+      min-width: 270px
+  .right
+    width: 65.9%
+    vertical-align: top
+    h1
+      margin-top: 0
 
 #content
-  z-index: 2
-  h3
-    font-size: 1.5em
-    margin-bottom: 5px
-  a, a:visited
-    color: $link-gray
-    font-style: italic
-  .left, .right
-    margin-top: 1%
+  padding: 10px
+  .right
+    width: 37.2%
+    margin-left: 2%
+  .left
+    width: 60.8%
 
 .left section
-  border-radius: 40px
-  background: $dolly-blue
+  background-color: $dolly-blue
+  padding: 20px
+  border-radius: 15px
   margin-bottom: 10px
-  article
-    padding: 10px 20px
-    h2
-      font-size: 2.2em
-    .content-item
-      padding: 15px
-      margin: 10px 0
-      border-radius: 20px
-      background: $medium-blue
+  h2
+    margin-top: 0
 
-.discussion
-  padding: 0
-  div
-    padding: 0
-h3
-  margin-top: 0
-
-.content-item
-  background: $light-blue
-
-footer
-  min-height: 100px
-  width: 100%
-  padding: 10px 0
-  clear: both
-  hr
-    border-top: 1px solid $dolly-blue
-  address
-    margin: 0 1% 50px 1%
-    background: $dark-gray
-    border-radius: 40px
-    text-align: center
-    div
-      padding: 2px 20px
-    li#tax-exempt
-      width: 30%
-      margin-left: 35%
-      margin-right: 35%
-    ul
-      margin: 5px 20px
-      padding: 0
-  a
-    color: $dolly-blue
-
-#sign-in
-  float: right
-  a, a:visited
-    color: $dolly-blue
-  margin-bottom: 20px
-  padding-right: 20px
-
-.discussion
-  a.large-link, .title
-    font-size: 1.2em
-  .title, .details, .content
-    margin-bottom: 5px
-  .content, .details
-    margin-left: 10px
-  .details
-    font-style: italic
-  hr
-    border-top: 1px solid $link-gray
-
-.events
-  padding: 0
-  h3
-    font-size: 1.25em
-  div
-    padding: 0
-  .event-title
-    font-size: 1.2em
-  .event-date, .event-location
-    margin-left: 10px
-  .event-location
-    margin-bottom: 10px
-  .event
-    margin-bottom: 20px
-
-#member-actions, .flash
-  border-radius: 40px
-  margin-bottom: 10px
-  font-style: italic
+.right .flash
+  background-color: $alert
+  padding: 20px
+  border-radius: 15px
   .inner
-    padding: 5px 20px 10px
+    font-weight: 800
+    font-size: 1.5em
+
+.discussion
   .title
-    margin-top: 10px
     font-size: 1.2em
 
 #member-actions

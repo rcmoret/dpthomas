@@ -1,9 +1,9 @@
-.right
+.left
   - announcements.each do |announcement|
     %section
       %article
         = announcement.announcement.html_safe
-        %br
+        %hr
         posted at: #{ announcement.created_at.strftime('%m/%d/%y') }
         %br
         = link_to 'edit ', edit_announcement_path(announcement)
@@ -14,5 +14,5 @@
         %br
         Priority: #{announcement.priority}
 
-.left
+.right
   = render 'layouts/sidebar'

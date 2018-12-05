@@ -1,11 +1,4 @@
 .left
-  - if params[:paypal] == 'success'
-    .announcement
-      .announcement-details
-        Thank you for registering for this event with the DP Thomas Foundation
-  = render 'layouts/sidebar'
-
-.right
   - if future_events.present?
     %section
       %article
@@ -66,3 +59,10 @@
     %section
       %article
         %p There are no future events scheduled.
+
+.right
+  - if params[:paypal] == 'success'
+    .announcement
+      .announcement-details
+        Thank you for registering for this event with the DP Thomas Foundation
+  = render 'layouts/sidebar'

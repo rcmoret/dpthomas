@@ -1,7 +1,4 @@
 .left
-  = render 'layouts/sidebar'
-
-.right
   %section
     %article
       %h2 DP Thomas Foundation Services
@@ -19,3 +16,6 @@
 
       - if current_member
         %p= link_to "add a service", new_service_path
+
+.right
+  = render 'layouts/sidebar'

@@ -1,4 +1,4 @@
-.right
+.left
   %section
     %article
       = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
@@ -15,7 +15,7 @@
           = f.label :password
           %i (leave blank if you don't want to change it)
           %br
-          = f.password_field :password, :autocomplete => "off"
+          = f.password_field :password, autocomplete: "off"
 
         %div
           = f.label :password_confirmation
@@ -31,5 +31,5 @@
         %div
         = f.submit "Update"
 
-.left
+.right
   = render 'layouts/sidebar'

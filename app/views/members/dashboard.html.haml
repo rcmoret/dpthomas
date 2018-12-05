@@ -1,7 +1,4 @@
 .left
-  = render 'layouts/sidebar'
-
-.right
   %section
     %article
       .events
@@ -45,3 +42,6 @@
       - else
         %p No active discussions
       %div= link_to "View all discussions", discussions_path, class: 'large-link'
+
+.right
+  = render 'layouts/sidebar'
