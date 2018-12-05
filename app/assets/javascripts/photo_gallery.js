@@ -38,7 +38,6 @@ function orderSideDivs() {
 }
 
 $(document).ready(function() {
-    orderSideDivs();
     setHeight('#photo-gallery');
     setHeight('#walk-run-gallery');
     $('#side-bar-photos img:first-of-type').addClass('active')
