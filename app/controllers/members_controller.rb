@@ -18,4 +18,10 @@ class MembersController < ApplicationController
       render :edit, alert: 'There was an error updating your profile'
     end
   end
+
+  private
+
+  def page_title
+    current_member ? 'Foundation Information' : 'About the Foundation'
+  end
 end

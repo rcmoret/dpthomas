@@ -23,22 +23,7 @@ class ApplicationController < ActionController::Base
   end
 
   def page_title
-    controller = params[:controller]
-    action = params[:action]
-    case
-    when ['announcements', 'services', 'events', 'registrations'].include?(controller)
-      controller.capitalize
-    when action == 'donate'
-      'Donate'
-    when controller == 'home' && action == 'index'
-      'Home Page'
-    when controller == 'members' && current_member
-      'Foundation Information'
-    when controller == 'members' && !current_member
-      'About the Foundation'
-    else
-      ''
-    end
+    params[:controller].titleize
   end
 
   def after_sign_in_path_for(member)
