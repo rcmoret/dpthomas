@@ -129,83 +129,265 @@ header
   .title
     font-size: 1.2em
 
-#member-actions
-  background: $dolly-blue
+// .left
+//   width: 55.9%
+//   min-width: 30%
+//   min-height: 1px
+//   margin: 0 1% 0 3%
+//   float: left
 
-.flash
-  background: $sand
-  font-size: 1.3em
+// .right
+//   width: 34.1%
+//   margin: 0 3% 0 1%
+//   float: left
 
-#action-items
-  div
-    padding: 0
-  div:last-child
-    margin-bottom: 10px
+// header
+//   position: fixed
+//   margin: 0
+//   top: 0
+//   display: block
+//   width: 100%
+//   z-index: 5
+//   background: $dark-gray
+//   font-size: 1.5em
+//   height: 70px
+//   border-bottom: 5px solid $dolly-blue
+//   a
+//     color: $dolly-blue
+//   hr
+//     border-top: 1px solid $dolly-blue
+//   ul
+//     width: 100%
+//     height: 55px
+//     margin: 10px 2% 0
+//     padding: 0
+//   li
+//     float: left
+//     width: 25%
+//     height: 35px
+//     padding-top: 10px
+//     text-align: center
+//     .nav-item
+//       width: 80%
+//       margin: 0 auto
+//       line-height: 35px
+//       background: $medium-gray
+//       border: 2px solid $dark-gray
+//       border-radius: 12px
+//       &:hover
+//         background: $charcoal
 
-#member-links
-  margin-top: 10px
-  a
-    color: $link-gray
+// #title-bar
+//   margin: 75px 0 10px
+//   background: $charcoal
+//   z-index: 4
+//   padding-bottom: 10px
+//   width: 100%
+//   .left
+//     padding: 10px 0
+//     img
+//       width: 75%
+//       max-width: 350px
+//       min-width: 270px
+//       background: $dark-gray
+//       border-radius: 40px
+//   .right
+//     margin-top: 10px
+//   h1, h2
+//     margin: 0
+//     color: $dolly-blue
 
-.info
-  margin: 10px 0 0 10px
+// .wrapper
+//   height: 100%
+//   max-height: 100%
+//   width: 100%
+//   max-width: 100%
+//   padding: 0
+//   background: $light-gray
+//   display: block
+//   position: relative
+//   z-index: 3
 
-.member_profile
-  .bio
-    padding: 0
-  padding-bottom: 0
-  img
-    float: left
-    margin-right: 10px
-  p:first-child
-    margin-top: 0
+// #content
+//   z-index: 2
+//   h3
+//     font-size: 1.5em
+//     margin-bottom: 5px
+//   a, a:visited
+//     color: $link-gray
+//     font-style: italic
+//   .left, .right
+//     margin-top: 1%
 
-#content
-  .announcement
-    background: $announcement
-    border-radius: 40px
-    font-family: 'Carter One', Arial
-    margin-bottom: 10px
-    font-size: 1.4em
-    padding: 20px 15px
-    h2, h3, p
-      margin: 0
-    a, a:visited
-      color: white
+// .left section
+//   border-radius: 40px
+//   background: $dolly-blue
+//   margin-bottom: 10px
+//   article
+//     padding: 10px 20px
+//     h2
+//       font-size: 2.2em
+//     .content-item
+//       padding: 15px
+//       margin: 10px 0
+//       border-radius: 20px
+//       background: $medium-blue
 
-table
-  th
-    text-align: left
-  td, th
-    padding-right: 15px
-  td.children, td.adults
-    text-align: center
+// .discussion
+//   padding: 0
+//   div
+//     padding: 0
+// h3
+//   margin-top: 0
 
-h2.centered
-  text-align: center
-  margin: 20px 0
+// .content-item
+//   background: $light-blue
 
-.hidden
-  display: none
+// footer
+//   min-height: 100px
+//   width: 100%
+//   padding: 10px 0
+//   clear: both
+//   hr
+//     border-top: 1px solid $dolly-blue
+//   address
+//     margin: 0 1% 50px 1%
+//     background: $dark-gray
+//     border-radius: 40px
+//     text-align: center
+//     div
+//       padding: 2px 20px
+//     li#tax-exempt
+//       width: 30%
+//       margin-left: 35%
+//       margin-right: 35%
+//     ul
+//       margin: 5px 20px
+//       padding: 0
+//   a
+//     color: $dolly-blue
 
-.clear
-  clear: both
-  height: 1px
+// #sign-in
+//   float: right
+//   a, a:visited
+//     color: $dolly-blue
+//   margin-bottom: 20px
+//   padding-right: 20px
 
-.facebook
-  padding: 20px
-  margin-bottom: 20px
-  border-radius: 40px
-  background: $sand
-  h3
-    font-family: 'Carter One', Arial
+// .discussion
+//   a.large-link, .title
+//     font-size: 1.2em
+//   .title, .details, .content
+//     margin-bottom: 5px
+//   .content, .details
+//     margin-left: 10px
+//   .details
+//     font-style: italic
+//   hr
+//     border-top: 1px solid $link-gray
 
-img.five_k
-  margin: 5%
-  width: 80%
-  height: 80%
+// .events
+//   padding: 0
+//   h3
+//     font-size: 1.25em
+//   div
+//     padding: 0
+//   .event-title
+//     font-size: 1.2em
+//   .event-date, .event-location
+//     margin-left: 10px
+//   .event-location
+//     margin-bottom: 10px
+//   .event
+//     margin-bottom: 20px
 
-.sponsors
-  padding-left: 3%
-  margin-bottom: 10px
-  font-size: 1.4em
+// #member-actions, .flash
+//   border-radius: 40px
+//   margin-bottom: 10px
+//   font-style: italic
+//   .inner
+//     padding: 5px 20px 10px
+//   .title
+//     margin-top: 10px
+//     font-size: 1.2em
+
+// #member-actions
+//   background: $dolly-blue
+
+// .flash
+//   background: $sand
+//   font-size: 1.3em
+
+// #action-items
+//   div
+//     padding: 0
+//   div:last-child
+//     margin-bottom: 10px
+
+// #member-links
+//   margin-top: 10px
+//   a
+//     color: $link-gray
+
+// .info
+//   margin: 10px 0 0 10px
+
+// .member_profile
+//   .bio
+//     padding: 0
+//   padding-bottom: 0
+//   img
+//     float: left
+//     margin-right: 10px
+//   p:first-child
+//     margin-top: 0
+
+// #content
+//   .announcement
+//     background: $announcement
+//     border-radius: 40px
+//     font-family: 'Carter One', Arial
+//     margin-bottom: 10px
+//     font-size: 1.4em
+//     padding: 20px 15px
+//     h2, h3, p
+//       margin: 0
+//     a, a:visited
+//       color: white
+
+// table
+//   th
+//     text-align: left
+//   td, th
+//     padding-right: 15px
+//   td.children, td.adults
+//     text-align: center
+
+// h2.centered
+//   text-align: center
+//   margin: 20px 0
+
+// .hidden
+//   display: none
+
+// .clear
+//   clear: both
+//   height: 1px
+
+// .facebook
+//   padding: 20px
+//   margin-bottom: 20px
+//   border-radius: 40px
+//   background: $sand
+//   h3
+//     font-family: 'Carter One', Arial
+
+// img.five_k
+//   margin: 5%
+//   width: 80%
+//   height: 80%
+
+// .sponsors
+//   padding-left: 3%
+//   margin-bottom: 10px
+//   font-size: 1.4em
