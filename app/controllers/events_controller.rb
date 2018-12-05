@@ -19,7 +19,7 @@ class EventsController < ApplicationController
   end
 
   def update
-    if event.save
+    if event.update(event_params)
       redirect_to events_path, notice: 'Event successfully update'
     else
       render :new, alert: 'There was an error updating your event'
