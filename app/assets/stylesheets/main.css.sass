@@ -1,11 +1,12 @@
 $charcoal:     #252B33
 $dark-gray:    #38434B
 $dolly-blue:   #C0E2FF
+$medium-blue:  #A7C5DE
 $light-blue:   #C0E2FF
 $medium-gray:  #435059
 $light-gray:   #e0e0e0
 $link-gray:    #808080
-$medium-blue:  #A9C7E0
+// $medium-blue:  #A9C7E0
 $announcement: #FF7B10
 $sand:         #615849
 
@@ -64,54 +65,33 @@ header
   display: block
   width: 100%
   z-index: 5
-  background: $dark-gray
-  font-size: 1.5em
-  height: 70px
+  height: 40px
+  background-color: $dark-gray
   border-bottom: 5px solid $dolly-blue
   a
-    color: $dolly-blue
+    color: black
   hr
     border-top: 1px solid $dolly-blue
-  ul
-    width: 100%
-    height: 55px
-    margin: 10px 2% 0
-    padding: 0
-  li
-    float: left
+  .quarter-block
     width: 25%
-    height: 35px
-    padding-top: 10px
-    text-align: center
-    .nav-item
-      width: 80%
-      margin: 0 auto
-      line-height: 35px
-      background: $medium-gray
-      border: 2px solid $dark-gray
-      border-radius: 12px
-      &:hover
-        background: $charcoal
-
-#title-bar
-  margin: 75px 0 10px
-  background: $charcoal
-  z-index: 4
-  padding-bottom: 10px
-  width: 100%
-  .left
+    height: 100%
+    display: inline-block
+    margin-right: -4px
     padding: 10px 0
-    img
-      width: 75%
-      max-width: 350px
-      min-width: 270px
-      background: $dark-gray
-      border-radius: 40px
-  .right
-    margin-top: 10px
-  h1, h2
-    margin: 0
-    color: $dolly-blue
+    .link-wrapper
+      width: 50%
+      height: 80%
+      display: inline-block
+      text-align: center
+      font-size: 1.5em
+      padding: 0 25%
+      a
+        .link-button
+          padding: 10px 0
+          background-color: $dolly-blue
+          border-radius: 15px
+        .link-button:hover
+          background-color: $medium-blue
 
 .wrapper
   height: 100%

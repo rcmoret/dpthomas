@@ -1,13 +1,19 @@
-%ul
-  = link_to events_path do
-    %li
-      .nav-item Events
-  = link_to members_path do
-    %li
-      .nav-item About Us
-  = link_to services_path do
-    %li
-      .nav-item Services
-  = link_to donations_path do
-    %li
-      .nav-item Donate
+.quarter-block
+  .link-wrapper
+    = link_to events_path do
+      .link-button Events
+
+.quarter-block
+  .link-wrapper
+    = link_to members_path do
+      .link-button About Us
+
+.quarter-block
+  .link-wrapper
+    = link_to services_path do
+      .link-button Services
+
+.quarter-block
+  .link-wrapper
+    = link_to donations_path do
+      .link-button Donate
