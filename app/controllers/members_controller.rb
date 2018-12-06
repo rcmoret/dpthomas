@@ -12,7 +12,7 @@ class MembersController < ApplicationController
   end
 
   def update
-    if member.save
+    if member.update(member_params)
       redirect_to members_path, notice: 'You successfully updated your profile'
     else
       render :edit, alert: 'There was an error updating your profile'
@@ -23,5 +23,9 @@ class MembersController < ApplicationController
 
   def page_title
     current_member ? 'Foundation Information' : 'About the Foundation'
+  end
+
+  def member_params
+    params.require(:member).permit(:first_name, :last_name, :position, :biography, :phone)
   end
 end

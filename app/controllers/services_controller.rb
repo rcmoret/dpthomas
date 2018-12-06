@@ -13,7 +13,7 @@ class ServicesController < ApplicationController
   end
 
   def update
-    if service.save
+    if service.update(service_params)
       redirect_to members_dashboard_path, notice: "#{service.name} service was edited"
     else
       render :edit, alert: 'There was an error editing the service'
