@@ -5,10 +5,21 @@
     = stylesheet_link_tag "application", :media => "all"
     = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Questrial'
     = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Contrail+One'
+    %link{ rel: 'stylesheet', media: 'all', href: 'https://use.fontawesome.com/releases/v5.5.0/css/all.css', integrity: 'sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU', crossorigin: 'anonymous' }
     = javascript_include_tag 'application'
     = csrf_meta_tags
     %meta{ name: 'viewport', content: 'width=device-width, initial-scale=1' }
   %body
+    #fb-root
+    :javascript
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+
     %header
       = render '/layouts/header'
     #title-bar

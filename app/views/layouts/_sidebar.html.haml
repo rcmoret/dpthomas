@@ -10,6 +10,8 @@
 
 .facebook
   %h3 Like us on Facebook!
+  .logo
+    %i.fab.fa-facebook-square
   = render 'layouts/facebook'
 
 - unless params[:controller] == 'home' && params[:action] == 'index'
