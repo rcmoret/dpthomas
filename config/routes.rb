@@ -1,12 +1,15 @@
 Dpthomas::Application.routes.draw do
 
-  devise_for :members, skip: :registrations
+  devise_for :members, skip: :registrations, controllers: {
+    sessions: 'members/sessions'
+  }
   as :member do
     get 'members/edit' => 'devise/registrations#edit', as: :edit_member_registration
     put 'members' => 'devise/registrations#update', as: :member_registration
   end
 
-  root :to => 'home#index'
+  root to: 'home#index'
+
   get '/about_us' => 'members#index', as: :members
   get '/members/dashboard' => 'members#dashboard', as: :members_dashboard
   get '/newsletter/sign_up' => 'email_listings#new', as: :new_email_listing
