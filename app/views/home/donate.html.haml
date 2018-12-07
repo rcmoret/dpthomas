@@ -1,7 +1,16 @@
 .left
   %section
-    %article
-      = render 'paypal'
+    %article#paypal
+      %h2 You can make a general donation through PayPal.
+
+      .logo
+        %i.fab.fa-paypal
+      .form
+        %form{ action: 'https://www.paypal.com/cgi-bin/webscr', method: 'post' }
+          %input{ type: 'hidden', name: 'cmd', value: '_s-xclick' }
+          %input{ type: 'hidden', name: 'hosted_button_id', value: "CPU7229JALSEG" }
+          %input{ style: 'margin-left: 15px;', type: 'image', src: 'https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif', border: '0', name: 'submit', alt: 'PayPal - The safer, easier way to pay online!' }
+          = image_tag 'https://www.paypalobjects.com/en_US/i/scr/pixel.gif', class: 'donate', border: '0', width: '1', height: '1'
 
 .right
   = render 'layouts/sidebar'
