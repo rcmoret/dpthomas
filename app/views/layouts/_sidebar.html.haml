@@ -15,11 +15,7 @@
   .fb-like{ data: facebook_hash }
 
 - unless params[:controller] == 'home' && params[:action] == 'index'
-  %section#photo-gallery
-    %article
-      #side-bar-photos
-        - [*health_fair_images, *twenty_eighteen_images].shuffle.each do |image|
-          = image_tag image
+  = render 'layouts/images'
 
 - if current_member
   = render 'members/actions'
