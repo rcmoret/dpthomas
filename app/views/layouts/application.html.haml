@@ -32,5 +32,6 @@
         %h2= page_title
     .wrapper
       #content
-        = yield
+        .left= yield
+        .right= render'/layouts/sidebar'
       = render '/layouts/footer'

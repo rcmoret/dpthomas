@@ -1,68 +1,67 @@
-.left
-  - if future_events.present?
-    %section
-      %article
-        %h2 Upcoming Events
-        - future_events.each do |event|
-          .content-item
-            .events
-              %h3= event.title
-              %h4= event.name
-              %hr
-              .event-date
-                %em Date: #{ event.date.strftime('%B %d, %Y') }
-              .event-location
-                %em Location: #{ event.location }
-              %h4 Event Details
-              .event= event.details.html_safe
-              - if current_member
-                %p= link_to 'edit this event', edit_event_path(event)
-              - if event.has_registration?
-                %p= link_to 'register for this event', new_event_registration_path(event)
+- if future_events.present?
   %section
     %article
-      .events
-        %h2 Past Events
-        - if non_archived_events.any?
-          - non_archived_events.each do |event|
-            .content-item
-              %h3= event.title + ":"
-              %h4= event.name
-              %hr
-              .event-date
-                %em Date: #{ event.date.strftime('%B %d, %Y') }
-              .event-location
-                %em Location: #{ event.location }
-              %h4 Event Details
-              .event= event.details.html_safe
-              - if current_member
-                %p
-                  %em This post is currently shown on the events main page.
-                %p= link_to 'edit this event', edit_event_path(event)
-        - if archived_events.any? && params[:past]
-          - archived_events.each do |event|
-            .content-item
-              %h3= event.title + ":"
-              %h4= event.name
-              %hr
-              .event-date
-                %em Date: #{ event.date.strftime('%B %d, %Y') }
-              %p= link_to "view this event's details", edit_event_path(event)
-              - if current_member
-                %p= link_to 'edit this event', edit_event_path(event)
-        - else
-          %p= link_to 'View all past events', events_path(past: true)
-          - if non_archived_events.empty? && archived_events.empty?
-            %p No past events
+      %h2 Upcoming Events
+      - future_events.each do |event|
+        .content-item
+          .events
+            %h3= event.title
+            %h4= event.name
+            %hr
+            .event-date
+              %em Date: #{ event.date.strftime('%B %d, %Y') }
+            .event-location
+              %em Location: #{ event.location }
+            %h4 Event Details
+            .event= event.details.html_safe
+            - if current_member
+              %p= link_to 'edit this event', edit_event_path(event)
+            - if event.has_registration?
+              %p= link_to 'register for this event', new_event_registration_path(event)
+%section
+  %article
+    .events
+      %h2 Past Events
+      - if non_archived_events.any?
+        - non_archived_events.each do |event|
+          .content-item
+            %h3= event.title + ":"
+            %h4= event.name
+            %hr
+            .event-date
+              %em Date: #{ event.date.strftime('%B %d, %Y') }
+            .event-location
+              %em Location: #{ event.location }
+            %h4 Event Details
+            .event= event.details.html_safe
+            - if current_member
+              %p
+                %em This post is currently shown on the events main page.
+              %p= link_to 'edit this event', edit_event_path(event)
+      - if archived_events.any? && params[:past]
+        - archived_events.each do |event|
+          .content-item
+            %h3= event.title + ":"
+            %h4= event.name
+            %hr
+            .event-date
+              %em Date: #{ event.date.strftime('%B %d, %Y') }
+            %p= link_to "view this event's details", edit_event_path(event)
+            - if current_member
+              %p= link_to 'edit this event', edit_event_path(event)
+      - else
+        %p= link_to 'View all past events', events_path(past: true)
+        - if non_archived_events.empty? && archived_events.empty?
+          %p No past events
 
-  - if future_events.empty?
-    %section
-      %article
-        %p There are no future events scheduled.
+- if future_events.empty?
+  %section
+    %article
+      %p There are no future events scheduled.
 
-.right
-  - if params[:paypal] == 'success'
-    .announcement
-      .announcement-details
-        Thank you for registering for this event with the DP Thomas Foundation
-  = render 'layouts/sidebar'
+-# .right
+-#   - if params[:paypal] == 'success'
+-#     .announcement
+-#       .announcement-details
+-#         Thank you for registering for this event with the DP Thomas Foundation
+-#   = render 'layouts/sidebar'

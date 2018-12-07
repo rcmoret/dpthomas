@@ -1,20 +1,16 @@
-.left
-  %section
-    %article
-      %h2 Registered participants for #{ event.name }
-      - if registrations.any?
-        %table
+%section
+  %article
+    %h2 Registered participants for #{event.name}
+    - if registrations.any?
+      %table
+        %tr
+          %th Email
+          %th Adults
+          %th Children
+        - registrations.each do |registrant|
           %tr
-            %th Email
-            %th Adults
-            %th Children
-          - registrations.each do |registrant|
-            %tr
-              %td= registrant.email
-              %td.adults= registrant.adults
-              %td.children= registrant.children
-      - else
-        %div There are no registred participants for this event
-
-.right
-  = render 'layouts/sidebar'
+            %td= registrant.email
+            %td.adults= registrant.adults
+            %td.children= registrant.children
+    - else
+      %div There are no registred participants for this event

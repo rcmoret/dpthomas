@@ -1,11 +1,7 @@
-.left
-  %section
-    %article
-      = simple_form_for email_listing do |f|
-        = f.input :first_name
-        = f.input :last_name
-        = f.input :email
-        = f.submit 'Sign up'
-
-.right
-  = render 'layouts/sidebar'
+%section
+  %article
+    = simple_form_for email_listing do |f|
+      = f.input :first_name
+      = f.input :last_name
+      = f.input :email
+      = f.submit 'Sign up'
