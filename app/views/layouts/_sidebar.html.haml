@@ -12,7 +12,7 @@
   %h3 Like us on Facebook!
   .logo
     %i.fab.fa-facebook-square
-  = render 'layouts/facebook'
+  .fb-like{ data: facebook_hash }
 
 - unless params[:controller] == 'home' && params[:action] == 'index'
   = render 'layouts/images'

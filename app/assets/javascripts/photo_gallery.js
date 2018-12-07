@@ -20,7 +20,7 @@ function slider(div_id) {
 }
 
 function orderSideDivs() {
-    sideDivs = [$('.facebook'), $('#photo-gallery')]
+    sideDivs = [$('#photo-gallery')]
     if(window.innerWidth <= '768') {
         $.each(sideDivs, function() {
             $(this).appendTo('#content .right')
@@ -28,7 +28,6 @@ function orderSideDivs() {
     } else {
         if($('#title-bar h2').text() === 'Home Page') {
             $('#photo-gallery').appendTo('#content .right')
-            $('.facebook').appendTo('#content .left')
         } else {
             $.each(sideDivs, function() {
                 $(this).appendTo('#content .left')

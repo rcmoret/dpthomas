@@ -12,6 +12,16 @@ class ApplicationController < ActionController::Base
       file_path.split('/')[-2..-1].join('/')
     end
   end
+  expose(:facebook_hash) do
+    {
+      'href' => 'https://www.facebook.com/DpThomasFoundation/',
+      'layout' => 'standard',
+      'action' => 'like',
+      'size' => 'small',
+      'show-faces' => 'true',
+      'share' => 'true',
+    }
+  end
 
   private
 
