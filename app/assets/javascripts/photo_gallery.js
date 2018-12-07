@@ -19,37 +19,14 @@ function slider(div_id) {
     }, 3000)
 }
 
-function orderSideDivs() {
-    sideDivs = [$('#photo-gallery')]
-    if(window.innerWidth <= '768') {
-        $.each(sideDivs, function() {
-            $(this).appendTo('#content .right')
-        })
-    } else {
-        if($('#title-bar h2').text() === 'Home Page') {
-            $('#photo-gallery').appendTo('#content .right')
-        } else {
-            $.each(sideDivs, function() {
-                $(this).appendTo('#content .left')
-            })
-        }
-    }
-}
-
 $(document).ready(function() {
     setHeight('#photo-gallery');
-    setHeight('#walk-run-gallery');
-    $('#side-bar-photos img:first-of-type').addClass('active')
-    $('#event-photos img:first-of-type').addClass('active')
 })
 
 window.onload = function start() {
     slider('side-bar-photos');
-    slider('event-photos');
 }
 
 window.onresize = function(ev) {
     setHeight('#photo-gallery');
-    setHeight('#walk-run-gallery');
-    orderSideDivs();
 }
