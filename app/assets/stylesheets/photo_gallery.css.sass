@@ -1,18 +1,16 @@
 $light-gray: #BDBDBD
 $dolly-blue: #C0E2FF
 
-section#photo-gallery, section#walk-run-gallery
-  // height: 350px
-  width: 85%
-  margin: 0 auto 10px
-  position: relative
-  background: $dolly-blue
-  overflow: hidden
-  border-radius: 20px
-  text-align: center
+.left section#photo-gallery
+  background-color: $dolly-blue
+
+.right section#photo-gallery
+  background-color: $light-gray
+  border-radius: 15px
+  padding: 10px
+
+section#photo-gallery
   article
-    padding: 0
-    overflow: hidden
     div
       display: flex
       justify-content: center
@@ -20,19 +18,3 @@ section#photo-gallery, section#walk-run-gallery
         display: block
       img
         display: none
-        top: 5%
-        position: absolute
-        max-width: 90%
-        border-radius: 20px
-
-section#flyer
-  margin: 20px auto
-  width: 85%
-  height: 700px
-  position: relative
-  img
-    width: 80%
-    height: 90%
-    top: 5%
-    left: 10%
-    position: absolute
